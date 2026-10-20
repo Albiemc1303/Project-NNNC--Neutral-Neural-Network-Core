@@ -1,0 +1,181 @@
+### Critical Thinking (Process)
+**Critical Thinking (Process)** is the reflective, standards-governed evaluation of claims, evidence, sources, arguments and reasoning, including one's own, undertaken to decide what is warranted to believe or do, and sustained by the dispositions to carry out that evaluation when it matters and to act on its results.
+**Expanded Definition:**
+Critical Thinking (Process) is a purposeful, self-regulating and iterative practice in which a thinker (an individual, or a group or institution organised for the purpose) steps back from information, arguments and its own thinking to judge whether they deserve trust. It applies explicit standards: clarity, accuracy, precision, relevance, sufficiency of evidence, logical strength, depth, breadth and fairness. It begins by noticing that something merits scrutiny and clarifying what exactly is claimed. It then suspends immediate judgment; analyses arguments and the assumptions beneath them; evaluates the credibility of sources and the quality of evidence; checks for its own biases, motives and emotional pulls; and weighs alternative explanations and opposing views. It ends in a judgment held with confidence proportioned to the support, explained so that others can examine it and revised when new evidence or criticism warrants. Rooted in the Socratic method and in constructive (not cynical) scepticism, it applies the same scrutiny to its own views as to others' and aims at sound, fair and ethically responsible judgment, not at winning or at confirming what is already believed. It draws on intelligence for the knowledge, models and flexibility that evaluation needs, which is why it is hard to exercise without knowledge of the domain. It uses reasoning as its inferential engine, to derive implications, test whether conclusions follow and generate alternatives. It is neither: intelligence is the latent capacity, reasoning is the inferential process, and critical thinking is the reflective evaluation of that process and of the claims and sources it works on. Its distinctive feature is the union of evaluative skill with disposition. Sensitivity to when evaluation is needed, the inclination to undertake it, and intellectual virtues such as open-mindedness, humility, honesty, courage and perseverance decide whether the skill is used at all. It is effortful, shaped by culture, social context and the information environment, and strongest when practised in dialogue and in institutions of organised scepticism. Its results are better-calibrated beliefs, more defensible decisions, greater intellectual autonomy, resistance to misinformation and manipulation, and continual improvement in the quality of one's own thinking, even when that unsettles established beliefs.
+**Key Attributes of Critical Thinking:**
+- **Reflective (Constructive) Scepticism:** Doubt proportioned to the weakness of the grounds, and trust proportioned to their strength, used in the service of inquiry and not as an end in itself.
+  (Theory Link: Dewey's suspended judgment; constructive or mitigated scepticism; Popper's critical rationalism)
+- **Standards-Governed:** Judgments rest on explicit criteria that others can apply and check.
+  (Theory Link: Lipman's criteria; Paul and Elder's intellectual standards; Bailin and colleagues' normative conception)
+- **Self-Regulation:** Monitoring and correcting one's own thinking, motives and conclusions, not only other people's.
+  (Theory Link: the Delphi Report's self-regulation; Paul's strong-sense critical thinking)
+- **Rational Integration:** Combining evaluated evidence, arguments and perspectives into a coherent, proportioned overall judgment.
+  (Theory Link: King and Kitchener's reflective judgment; Kuhn's evaluativist epistemology)
+- **Dispositional:** Skill is necessary but not sufficient. Sensitivity and inclination decide whether it is used.
+  (Theory Link: Perkins, Jay and Tishman's triadic dispositions; Siegel's critical spirit)
+- **Context-Sensitive and Knowledge-Dependent:** Applied through knowledge of the domain and attention to the circumstances in which a claim is made.
+  (Theory Link: Lipman's sensitivity to context; the McPeck–Ennis debate on subject-specificity)
+- **Social and Dialogical:** Strengthened by others' criticism, dialogue and institutional scrutiny.
+  (Theory Link: the Socratic method; Mercier and Sperber's argumentative theory; Merton's organised scepticism)
+
+Key Components of Critical Thinking:**
+**A. Cognitive Skills: The Evaluative Tools of Critical Thinking**
+**1. Interpretation & Analysis: Clarifying and Breaking Down Claims and Arguments**
+- **Clarifying Meaning:** Establishing exactly what is being claimed or asked, including definitions, ambiguities, unstated implications and implied messages, before judging it.
+  (Theory Link: Ennis's aspects of critical thinking; the Delphi Report's interpretation skill)
+- **Argument Identification & Reconstruction:** Identifying the conclusion, the reasons offered, and the unstated assumptions, and laying out how they connect.
+  (Theory Link: Toulmin's argument model; argument mapping; Paul and Elder's elements of thought)
+- **Information Extraction & Relevance:** Picking out the key claims and evidence in a body of information and separating what bears on the question from what does not.
+  (Theory Link: the Delphi Report's analysis skill)
+- **Anomaly & Inconsistency Detection:** Noticing contradictions, gaps, implausibilities and departures from what would be expected, which warrant closer scrutiny, while guarding against reading patterns into noise.
+  (Theory Link: Ennis's "judging whether statements contradict each other"; Perkins and colleagues' sensitivity)
+**2. Evaluation: Assessing Sources, Evidence and Arguments**
+- **Source Evaluation (Epistemic Vigilance):** Judging the credibility of a source: its expertise, independence, track record, interests and motives. This includes checking what other independent sources say about it. (e.g., distinguishing a peer-reviewed study from an anonymous post; checking who funds an organisation before relying on its claims.)
+  (Theory Link: Sperber and colleagues' epistemic vigilance; Ennis's credibility criteria; Wineburg and McGrew's lateral reading)
+- **Evidence Assessment:** Judging the quality, reliability, relevance, sufficiency and representativeness of evidence, and stating its limitations.
+  (Theory Link: Ennis's criteria for observation and inductive warrant; evidence hierarchies in the empirical sciences)
+- **Argument Evaluation:** Judging whether the reasons are acceptable, relevant and sufficient, whether each inferential step is valid or strong, and whether the argument commits a fallacy. (e.g., recognising a false equivalence between risks of very different sizes; identifying an ad hominem or straw-man reply.)
+  (Theory Link: informal logic and argumentation schemes with their critical questions; Toulmin's model)
+- **Bias & Manipulation Detection:** Recognising cognitive biases, motivated reasoning, and persuasion or propaganda techniques (emotionally loaded framing, false dilemmas, scapegoating, selective evidence) in presented information and in its sources.
+  (Theory Link: heuristics-and-biases research; inoculation theory; Nguyen's epistemic bubbles and echo chambers)
+**3. Inference Evaluation: Judging What Conclusions Are Warranted**
+*The inferential forms themselves (deduction, induction, abduction, analogy, causal and counterfactual inference) belong to reasoning. Critical thinking evaluates their use.*
+- **Querying Evidence:** Identifying what information a conclusion would need, whether it is available, and what further evidence should be sought.
+  (Theory Link: the Delphi Report's "querying evidence")
+- **Judging Warrant & Strength:** Judging whether a conclusion follows from its reasons, and how strongly the evidence supports it, including whether a generalisation over-reaches.
+  (Theory Link: Ennis's "judging whether a conclusion follows necessarily" and "whether an inductive conclusion is warranted")
+- **Conjecturing & Weighing Alternatives:** Generating rival interpretations, explanations and scenarios and comparing them, instead of accepting the first one or treating the choice as binary. (e.g., asking whether an outcome reflects design, error or chance.)
+  (Theory Link: the Delphi Report's "conjecturing alternatives"; the consider-the-opposite strategy)
+- **Calibrated Tentativeness:** Holding conclusions with confidence proportioned to their support, and treating them as open to revision.
+  (Theory Link: actively open-minded thinking, Baron; Kuhn's evaluativist level)
+**4. Synthesis: Integrating Evaluated Information into Coherent Judgment**
+- **Integrating Diverse Elements & Perspectives:** Combining evaluated information from different sources, disciplines and viewpoints into a coherent, balanced understanding, and noting where they still conflict.
+  (Theory Link: King and Kitchener's reflective judgment; Paul's dialectical, strong-sense critical thinking)
+- **Appraising New Hypotheses & Models:** Critically testing novel explanations or frameworks, one's own or others', against evidence and rivals, working together with the creative thinking that produces them.
+  (Theory Link: Bailin on critical and creative thinking; Lipman's multidimensional thinking; Popper's conjecture and refutation)
+**5. Explanation: Articulating and Justifying Judgments**
+- **Justification of Conclusions:** Stating the judgment and the evidential, conceptual, methodological and contextual grounds for it openly, including its limits and uncertainties.
+  (Theory Link: the Delphi Report's explanation skill)
+- **Clarity & Precision in Communication:** Expressing reasoning and judgments clearly, precisely and in an organised way, so that ambiguity is minimised.
+  (Theory Link: Paul and Elder's standards of clarity and precision)
+- **Exposure to Scrutiny:** Presenting judgments in a form others can check, challenge and correct, and inviting that challenge.
+  (Theory Link: Merton's organised scepticism; Longino's transformative criticism)
+**6. Self-Regulation: Monitoring and Correcting One's Own Thinking (Metacognition)**
+- **Reflective Self-Examination:** Monitoring one's own reasoning, assumptions, frames of interpretation and judgments as objects of evaluation.
+  (Theory Link: the Delphi Report's self-examination; Stanovich's reflective mind; Dewey's reflective thought)
+- **Bias Mitigation & Self-Correction:** Identifying and correcting one's own cognitive, motivational and emotional biases, for example by deliberately considering the opposite and seeking evidence that would show one wrong. (e.g., listing the strongest case against one's current view before deciding.)
+  (Theory Link: the Delphi Report's self-correction; debiasing research, Lilienfeld and colleagues)
+- **Belief Revision:** Changing one's views in proportion to new evidence or stronger arguments, neither too readily nor too reluctantly.
+  (Theory Link: Siegel's "appropriately moved by reasons"; actively open-minded thinking)
+- **Emotional Regulation:** Recognising when emotions such as fear, anger or group loyalty are steering judgment, and managing their influence while still using the information they carry.
+  (Theory Link: Gross's process model of emotion regulation)
+**B. Intellectual Dispositions: Mindsets, Attitudes, and Intellectual Virtues Essential for Critical Thinking**
+**I. Sensitivity & Inquiry**
+- **Sensitivity to Occasions:** Alertness to situations that call for scrutiny: anomalies, high stakes, persuasive pressure, or one's own strong conviction.
+  (Theory Link: Perkins, Jay and Tishman's triadic dispositions)
+- **Inquisitiveness & Intellectual Curiosity:** A desire to understand, to ask probing questions ("What is assumed here? Why?") and to look beneath surface explanations.
+  (Theory Link: the Delphi Report's ideal critical thinker; Roberts and Wood's love of knowledge)
+- **Truth-Seeking:** Caring more about getting it right than about being right, including following evidence to unwelcome conclusions.
+  (Theory Link: the CCTDI disposition scales; Ennis's dispositions)
+**II. Openness & Fairness**
+- **Open-Mindedness & Flexibility:** Willingness to consider alternative viewpoints and new evidence, to entertain ideas without yet accepting them, and to shift perspective when warranted.
+  (Theory Link: actively open-minded thinking, Baron and Stanovich & West)
+- **Fair-Mindedness:** Applying the same standards to one's own views and to views one opposes, and representing others' positions accurately.
+  (Theory Link: Paul's strong-sense critical thinking; Paul and Elder's fairness standard)
+- **Cultural & Social Awareness:** Recognising that cultural, social and historical contexts shape perspectives, values and interpretations, one's own included, and taking this into account when evaluating claims.
+  (Theory Link: Atkinson's cultural critique; Burbules and Berk on critical thinking and critical pedagogy)
+**III. Humility & Constructive Scepticism**
+- **Intellectual Humility:** Awareness of the limits of one's knowledge and abilities, readiness to say "I don't know", and openness to correction.
+  (Theory Link: virtue epistemology, Roberts and Wood; intellectual humility research, Leary and colleagues)
+- **Constructive (Evaluative) Scepticism:** Withholding judgment until claims are evaluated, and calibrating doubt and trust to the evidence, avoiding both credulity and cynicism.
+  (Theory Link: Dewey's suspended judgment; mitigated scepticism; Kuhn's evaluativist level)
+**IV. Integrity, Courage & Responsibility**
+- **Intellectual Honesty & Integrity:** Commitment to accuracy and to honest representation of evidence and arguments, even against one's own interests or prior views.
+  (Theory Link: Zagzebski's intellectual virtues; Ennis's dispositions)
+- **Intellectual Courage:** Willingness to question dominant views, voice reasoned dissent, and reconsider one's own cherished beliefs when the evidence requires it.
+  (Theory Link: Roberts and Wood's courage and caution; Paul and Elder's intellectual traits)
+- **Intellectual Responsibility:** Recognising the ethical consequences of one's judgments and using critical thinking constructively, not to manipulate or merely to win.
+  (Theory Link: Baehr's intellectual character; Ennis's concern for the dignity of persons)
+- **Confidence in Reason:** Trust that careful, fair inquiry, one's own and others', tends over time to yield better judgments.
+  (Theory Link: the Delphi Report's "trustful of reason"; Paul and Elder's confidence in reason)
+**V. Persistence & Self-Awareness**
+- **Intellectual Perseverance:** Sustaining effort through complexity, ambiguity and frustration until a judgment is properly grounded.
+  (Theory Link: Paul and Elder's intellectual perseverance; the Delphi Report's "persistent in seeking results")
+- **Reflective Habit:** A standing inclination to examine one's own thinking, not only when prompted.
+  (Theory Link: Dewey's reflective thought; Stanovich's reflective mind)
+- **Emotional Awareness:** Noticing one's own and others' emotions and how they colour judgment.
+  (Theory Link: emotion regulation research, Gross)
+**VI. Collaboration**
+- **Collaborative Inquiry:** Willingness to test one's thinking in constructive dialogue, to seek out and learn from criticism, and to contribute to shared inquiry.
+  (Theory Link: Lipman's community of inquiry; Mercier and Sperber's argumentative theory; Longino's transformative criticism)
+**Challenges and Obstacles to Critical Thinking:**
+- **Failure to Notice:** Not recognising that a claim or decision calls for scrutiny. This is often the main bottleneck, ahead of lack of skill or willingness.
+  (Theory Link: Perkins and colleagues' sensitivity findings; Pennycook and Rand's "lazy, not biased")
+- **Cognitive Biases:** Systematic deviations in judgment, including confirmation bias, myside bias, anchoring, the availability heuristic and hindsight bias. Many of them are largely independent of intelligence.
+  (Theory Link: heuristics-and-biases research; Stanovich and West)
+- **Motivated & Identity-Protective Reasoning:** Evaluating evidence according to whether its conclusion suits one's goals or group identity. Greater skill can make this worse, not better.
+  (Theory Link: Kunda's motivated reasoning; Kahan's identity-protective cognition)
+- **Miscalibrated Self-Assessment:** Over- or under-estimating one's own competence. The popular "Dunning–Kruger effect" is partly a statistical artefact, and its genuine core is smaller than often claimed.
+  (Theory Link: Kruger and Dunning; Gignac and Zajenkowski's re-analysis)
+- **Continued Influence of Misinformation:** False information keeps affecting judgment after it has been corrected. The popular "backfire effect", where corrections strengthen false beliefs, is rare. Corrections usually help but do not fully undo the influence.
+  (Theory Link: Lewandowsky and colleagues' continued-influence research; Wood and Porter's tests of backfire)
+- **Emotional Override:** Strong emotion (fear, anger, group loyalty) displacing evaluation.
+  (Theory Link: Gross's process model of emotion regulation)
+- **Information Overload & Complexity:** More information than can be evaluated, which pushes people toward shortcuts and simplification.
+  (Theory Link: information-overload research, Eppler and Mengis)
+- **Epistemic Bubbles & Echo Chambers:** Environments, social or curated, that either omit other voices (bubbles) or actively discredit them (echo chambers). The two need different remedies.
+  (Theory Link: Nguyen's distinction; Pariser's filter bubble)
+- **Social Pressure & Conformity:** Groupthink, tribal loyalty and deference that replace evaluation with agreement.
+  (Theory Link: argumentative theory on group reasoning; Paul on sociocentrism)
+- **Limited Domain Knowledge & Poor Transfer:** Critical skills that fail to carry over to unfamiliar domains, or cannot be used without background knowledge.
+  (Theory Link: Willingham; the McPeck–Ennis debate)
+- **Cultural Conditioning:** Unexamined cultural norms and assumptions that shape what is questioned and how. (Claims that whole cultures lack critical thinking are not supported.)
+  (Theory Link: Atkinson; Tian and Low)
+- **Weak-Sense Use:** Turning critical skills only against opposing views.
+  (Theory Link: Paul's weak versus strong sense)
+- **Significant Cognitive Effort:** Reflection is effortful, so the default is to economise on it.
+  (Theory Link: Stanovich's cognitive miser; dual-process theory)
+- **Destabilisation of Established Beliefs:** Scrutiny can unsettle cherished beliefs and identities, which invites resistance.
+  (Theory Link: Dewey on the discomfort of suspended judgment; King and Kitchener)
+- **Manipulation, Propaganda & Misinformation:** Deliberate techniques that exploit biases and emotions.
+  (Theory Link: inoculation theory, McGuire, and van der Linden and Roozenbeek)
+**Cultivating and Enhancing Critical Thinking:**
+*Strongest evidence:* explicit instruction in critical-thinking principles combined with practice, ideally applied within subject content; dialogue; authentic problems; and mentoring. *Strong and specific:* lateral reading and technique-based inoculation (prebunking). *Moderate:* considering the opposite, argument mapping, accuracy prompts and short debiasing training. *Limited:* mindfulness, journaling and logic puzzles on their own.
+- **Learn the Principles Explicitly, Then Practise Them (strongest evidence):** Study the standards and common pitfalls of evaluation explicitly, and practise applying them repeatedly on varied examples within real subject matter.
+  (Theory Link: Abrami and colleagues' meta-analyses; Heijltjes, van Gog and Paas; Halpern's four-part model)
+- **Build Domain Knowledge (strong evidence):** Critical evaluation in a field depends on knowing that field. Pair critical-thinking practice with learning content.
+  (Theory Link: Willingham; McPeck; Bailin and colleagues' intellectual resources)
+- **Engage in Dialogue and Seek Feedback (strong evidence):** Discuss, argue and invite criticism. Others catch errors one cannot see in oneself.
+  (Theory Link: Abrami and colleagues 2015 on dialogue; Mercier and Sperber; Lipman's community of inquiry)
+- **Work on Authentic, Complex Problems, Ideally with a Mentor (strong evidence):** Practise on realistic, ill-structured problems under guidance.
+  (Theory Link: Abrami and colleagues 2015 on authentic instruction and mentoring)
+- **Read Laterally (strong, specific evidence):** Before trusting a source, leave it and check what independent sources say about it.
+  (Theory Link: Wineburg and McGrew; the Stanford History Education Group's civic online reasoning)
+- **Learn Manipulation Techniques in Advance (strong, specific evidence):** Learn the common techniques (emotionally loaded framing, false dilemmas, scapegoating, fake experts) through prebunking, so they are recognised when they appear.
+  (Theory Link: inoculation theory; Roozenbeek and van der Linden)
+- **Consider the Opposite (moderate evidence):** Before settling on a view, deliberately build the strongest case for an alternative.
+  (Theory Link: Lord, Lepper and Preston; Lilienfeld and colleagues on debiasing)
+- **Map Arguments (moderate evidence):** Lay out claims, reasons and objections visually to expose structure and gaps.
+  (Theory Link: van Gelder and colleagues)
+- **Pause for Accuracy (moderate evidence):** Before believing or sharing, ask "Is this accurate?"
+  (Theory Link: Pennycook and colleagues on accuracy prompts)
+- **Ask Probing Questions and Read Actively (moderate support):** Question, clarify and summarise while reading or listening, instead of receiving information passively.
+  (Theory Link: Socratic questioning; Paul and Elder's elements of thought)
+- **Engage in Philosophical Inquiry (moderate support):** Structured discussion of questions about knowledge, logic and ethics.
+  (Theory Link: Lipman's Philosophy for Children; Trickey and Topping's systematic review)
+- **Cultivate Intellectual Virtues and Reflect on Your Own Biases (conceptual support, limited direct evidence):** Make open-mindedness, humility, fair-mindedness and perseverance habitual, and review your own judgments periodically.
+  (Theory Link: virtue epistemology, Zagzebski and Baehr; actively open-minded thinking)
+- **Practise Emotional Regulation and Mindfulness (limited evidence):** Notice emotional states and manage their influence on judgment. Current evidence for direct gains in critical thinking is mostly correlational or preliminary.
+  (Theory Link: Gross's process model; mindfulness and critical-thinking studies)
+- **Treat It as Lifelong Development (developmental support):** Reflective judgment and evaluativist thinking mature slowly, over years of education and practice.
+  (Theory Link: King and Kitchener; Kuhn; Huber and Kuncel)
+**Boundary Note: Critical Thinking versus Reasoning and Intelligence.** Critical thinking is the reflective, standards-governed evaluation of reasoning, claims, sources and one's own beliefs, together with the dispositions to carry it out. It includes the functions that the reasoning definition placed outside reasoning: evaluating the credibility of sources and filtering out unreliable information; awareness of echo chambers, epistemic bubbles and technological mediation; detecting and correcting cognitive biases; spotting fallacies; resisting motivated reasoning, tribal pressure and groupthink; detecting deception and manipulation; and reflective awareness of one's own thinking. **It is not reasoning.** Reasoning is the inferential process (deriving, chaining and concluding) together with its own in-process control, such as checking whether a step follows. Critical thinking *uses* reasoning to do its evaluating and *judges* reasoning's products, but it does not define or replace the forms of inference. **It is not intelligence.** Intelligence is the latent capacity that supplies the knowledge, models, flexibility and working resources that evaluation depends on. Critical thinking governs how that capacity is applied to questions of belief and action, and adds dispositions that intelligence does not guarantee.
+## 29. Change log (your definition → synthesis)
+| Action | What |
+|---|---|
+| **Kept** | Reflective judgment and evaluation as the core; systematic questioning of sources and assumptions; constructive, not cynical, scepticism; withholding judgment until the evidence is evaluated; purposeful, disciplined, self-regulating and iterative; Socratic and sceptical roots; choosing to pause, reflect and evaluate (agency); resisting manipulation, biases and ideological agendas; ethically sound judgment; effortful and potentially destabilising; the outcomes (better-quality thought and action, autonomy, defence against misinformation); the Key Attributes Reflective Scepticism, Self-Regulation and Rational Integration; the iterative flow model (expanded); all six skill families; Source Evaluation (Epistemic Vigilance), Evidence Assessment, Argument Evaluation, Justification, Clarity and Precision, Reflective Judgment (as Reflective Self-Examination), Bias Mitigation; every disposition, regrouped; the Challenges of biases, emotion, overload, bubbles, cultural conditioning, effort, destabilisation and manipulation; and most Cultivation practices. |
+| **Merged** | Intellectual humility (three entries → one disposition). Scepticism (Reflective, Epistemological, Adaptive, Evaluative, constructive → one Key Attribute plus one disposition, "Constructive (Evaluative) Scepticism"). Self-Regulation, Reflective Judgment and Active Reflection → the Self-Regulation skill family plus the "Reflective Habit" disposition. The two bias-mitigation entries → "Bias & Manipulation Detection" (in others' information) and "Bias Mitigation & Self-Correction" (in oneself). Inquisitiveness and Intellectual Curiosity → one disposition. Open-mindedness and the willingness side of cognitive flexibility → "Open-Mindedness & Flexibility". The repeated outcome phrases and the double "ultimately" → one closing sentence. The repeated statements of "evaluation is the core" → one. |
+| **Removed** | Every "Mechanisms:" line and its bracketed labels (Analytical Frameworks, Cognitive Mechanisms, Psychological Mechanisms, Philosophical Intersections). Mechanism-style and computational terms ("pattern recognition algorithms (mental or computational)", "signal detection", "network analysis", "error detection and correction mechanisms", "emotional intelligence integration", "phenomenological analysis"). Topic examples (UFOs, vaccines and COVID-19, flat Earth, climate denial, conspiracy cover-ups, extraterrestrial life, mainstream versus fringe), replaced with neutral generic examples. "(Evaluation/Confirmation)" in the title. "Art and science". "Ensuring/evaluating the validity of information". "Fundamentally driven by cognitive flexibility". "Observable indication of … effective use of intelligence". "Going beyond mere problem-solving (reasoning) or knowledge acquisition (intelligence)". "Epistemological deconstruction … down to foundational components". "Distinguish truth from falsehood" (now calibrated judgment). "Intellectual solvent". The backfire effect and the Dunning–Kruger effect as stated, and "emotional hijacking" (all corrected). |
+| **Moved to reasoning or intelligence** | To **reasoning**: the inferential forms themselves (logical inference and deduction, inductive generalisation, abductive hypothesis generation, counterfactual exploration), which are defined in the reasoning definition and not redefined here. To **intelligence**: pattern recognition as an ability; cognitive flexibility as an ability; knowledge acquisition. To **creativity and reasoning**: open-ended generation of new hypotheses and models "beyond existing paradigms" (critical thinking keeps the appraisal of them). |
+| **Reframed** | The Inference block became **Inference Evaluation**: Querying Evidence, Judging Warrant & Strength, Conjecturing & Weighing Alternatives, Calibrated Tentativeness. "Pattern Recognition and Anomaly Detection" became **Anomaly & Inconsistency Detection** (noticing what warrants scrutiny). "Recognition of Implicit Meanings" moved into **Clarifying Meaning**. "Forming New Hypotheses and Models" became **Appraising New Hypotheses & Models**. "Rational Integration" moved from the dispositions to a Key Attribute (and the Synthesis skill). "Emotional Hijacking" became **Emotional Override**. "Dunning–Kruger" became **Miscalibrated Self-Assessment**. "Backfire effect" became **Continued Influence of Misinformation**. Cultivation practices were relabelled with their strength of evidence. "Problem-solving (reasoning)" was reframed as reasoning being an *object and tool* of critical thinking, not a lower rung. |
+| **Added** | A one-sentence definition aligned with the intelligence and reasoning definitions; the boundary with reasoning and intelligence (in the definition and in a Boundary Note); explicit intellectual standards; Key Attributes for Standards-Governed, Dispositional, Context-Sensitive and Knowledge-Dependent, and Social and Dialogical; flow steps "Notice That It Merits Scrutiny", "Clarify the Question or Claim", "Judge What the Support Warrants", "Explain It & Invite Others' Scrutiny", and a feedback loop to steps 2, 3 and 7; skills for Argument Reconstruction, Exposure to Scrutiny, Belief Revision and Emotional Regulation; dispositions for Sensitivity to Occasions, Truth-Seeking and Confidence in Reason; obstacles for Failure to Notice, Motivated and Identity-Protective Reasoning, Social Pressure and Conformity, Limited Domain Knowledge and Poor Transfer, and Weak-Sense Use; cultivation practices for building domain knowledge, mentoring and authentic problems, lateral reading, inoculation (prebunking), considering the opposite, argument mapping and accuracy prompts; substrate neutrality (individual, group, institution, machine); framework-only Theory Links. |

@@ -1,0 +1,1298 @@
+PROJECT NNNC
+NEUTRAL NEURAL NETWORK CORE
+MASTER ARCHITECTURAL SPECIFICATION
+Phase 0 of 13 — Ontological Boundary
+Document 1 of 2 — Consolidated Architectural Specification
+Revision: v1.3
+Supersedes: Document 1 v1.2
+Architectural baseline: Conditionally accepted, 18 October 2026
+Original document classification: Proposed consolidated specification for independent review
+Scope: Foundational architecture, existential foundation, governance boundaries, and formalization obligations
+Companion: Document 2 v1.3, including Transition-Semantics Amendment v1.3.1
+
+───
+
+DOCUMENT CONTROL AND ACCEPTANCE STATUS
+This specification consolidates the Phase 0 boundary architecture, existential foundation, and corrections arising from independent adversarial review.
+It establishes the conceptual and normative foundation for subsequent mathematical formalization, implementation, and verification.
+Acceptance qualification: Phase 0 has been conditionally closed as an architectural baseline. This acceptance does not constitute production certification, complete mathematical verification, or proof that all implementation obligations have been discharged.
+Eight outstanding engineering obligations, P0-O01 through P0-O08, remain open and are assigned to subsequent project phases.
+The original v1.3 text was a consolidated normative reconstruction of earlier architectural decisions rather than a verified line-by-line reproduction of v1.1. Historical requirements whose precise wording is material remain subject to archival reconciliation.
+
+───
+
+PART I — DOCUMENT CONSTITUTION
+0. Purpose and Authority
+0.1 Purpose
+This specification establishes the architectural boundary of the Neutral Neural Network Core (NNNC).
+It defines:
+• What NNNC is intended to be.
+• What belongs to NNNC and what remains external.
+• How logical ownership differs from execution, custody, and authority.
+• What constitutes declared membership and operational integration.
+• How the existential heartbeat and recovery mechanisms relate to NNNC.
+• How continuous operation, degradation, suspension, and termination are represented.
+• How protected foundational components are governed.
+• Which architectural properties must be formalized and tested.
+It does not claim that the proposed architecture has already demonstrated intelligence, consciousness, life, or metaphysical individuality.
+0.2 Architectural Hierarchy
+The NNNC program proceeds through thirteen phases, numbered 0–12.
+Phase 0 is foundational. Its requirements constrain later phases unless explicitly superseded through governed architectural revision.
+Each phase produces two principal documents:
+Document 1: Comprehensive architectural specification.
+Document 2: Mathematical, technical, and verification formalization.
+Implementation follows a sufficiently defined and reviewed contract.
+0.3 Design Discipline
+The project follows four principles:
+Architecture first. Mechanisms second. Implementation third. Verification throughout.
+Additionally:
+• Confirmed design intentions must be distinguished from proposed mechanisms.
+• Architectural definitions must not be confused with empirical discoveries.
+• Unresolved questions must be assigned to responsible phases.
+• Formalization must identify implementable obligations.
+• Implementation results must be reported separately from intended behavior.
+• Failed experiments must be permitted to invalidate architectural hypotheses.
+0.4 Normative Vocabulary
+
+Term
+Meaning
+
+SHALL
+Binding requirement for a conforming implementation
+
+SHOULD
+Preferred approach; deviations require justification
+
+MAY
+Permitted but not required
+
+MUST NOT
+Prohibited behavior
+
+DEF
+Architectural definition
+
+HYP
+Testable hypothesis
+
+EPI
+Epistemic limitation
+
+
+Requirements describe intended conformance, not evidence of successful implementation.
+
+───
+
+PART II — FOUNDATIONAL ONTOLOGY
+1. Definition of NNNC
+1.1 Foundational Proposition
+DEF-001 — Neutral Neural Network Core
+NNNC is a proposed persistent, internally organized, developmentally adaptable artificial cognitive architecture with a distinguishable operational boundary, governed constituent organization, internal state, and capacity for ongoing activity independent of externally assigned tasks.
+Its intended organization includes cognitive, existential, representational, regulatory, motivational, agentic, and developmental responsibilities.
+The architecture is designed to support future investigation of autonomous cognition and developmental change.
+1.2 What NNNC Is Not
+NNNC shall not be defined solely as:
+• A conventional artificial neural network.
+• An FFNN.
+• A language model.
+• A reward-maximizing policy.
+• A prompt-response service.
+• A process identifier.
+• A checkpoint or memory database.
+• The NES runtime.
+• An external task or environment.
+• A consciousness claim.
+No individual constituent is sufficient, merely by existing, to establish the full NNNC architecture.
+1.3 Persistent Organization
+NNNC is intended to maintain a continuing internal organization across ordinary changes in memory, internal state, cognitive processing, and authorized architectural development.
+Persistence does not require every component to remain unchanged.
+It does require the architecture to distinguish ordinary transformation, temporary unavailability, replacement, branching, and termination.
+1.4 Continuous Operation
+OB-23 — Continuous Operation by Design
+NNNC shall be designed for ongoing operation as its normal condition, without depending on an external prompt, task, or request to initiate its existence.
+Operational continuity means recurring progress or responsiveness under declared scheduling and resource assumptions—not uninterrupted processor execution.
+Authorized suspension and shutdown remain permissible.
+1.5 Neutrality
+Neutrality does not mean NNNC must lack internal preferences, motivations, priorities, or evaluative mechanisms.
+It means that its fundamental architecture shall not be defined exclusively by a predetermined external task, fixed reward objective, or single environment.
+OB-04 — Task-Independent Architectural Boundary
+The definition and membership of NNNC shall not depend on successful performance of any particular external task.
+Task-independent architecture does not establish task-general intelligence.
+2. Ontological Domains
+2.1 Domain Definitions
+E — EXTERNAL ENVIRONMENTS
+Simulations · Games · Tools · Robotics · Other Agents
+S — NEUTRAL ENVIRONMENT SUBSTRATE
+Scheduling · Resources · Storage Custody · Runtime Services · Interfaces
+N — NNNC PROPER
+Entity boundary
+Cognitive and Developmental Organization
+FFNN · Memory · Internal Models · Motivation · Agency · Learning · Evolution
+Internal Recovery
+Health assessment · Diagnosis · Authorized repair
+Existential Heartbeat
+ADMIN CLASS
+Minimal continuity-related operation and bounded recovery activation
+L — SYSTEMIC ALGORITHMS
+Cross-cutting principles with heterogeneous roles throughout applicable NNNC mechanisms.
+H — PHYSICAL COMPUTATION
+Hardware · Operating Systems · Processors · Memory · Storage
+These definitions describe conceptual ownership and dependency relationships, not a physical execution stack or mandatory dataflow pipeline.
+2.2 Responsibilities
+
+Domain
+Primary Responsibility
+
+N — NNNC
+Internal organization and governed entity mechanisms
+
+S — NES
+Execution conditions and substrate services
+
+E — Environment
+External observations, consequences, and interaction contexts
+
+H — Hardware
+Physical computational realization
+
+L — Systemic Algorithms
+Cross-cutting organizing and evaluative principles
+
+
+2.3 Boundary Requirements
+OB-01: NNNC shall be logically distinguishable from NES.
+OB-02: NNNC shall be distinguishable from external environments and tasks.
+OB-03: NNNC shall not be defined solely by FFNN.
+OB-09: Reliance on NES or physical resources shall not automatically transfer logical ownership of NNNC constituents.
+OB-13: Distributed execution shall not automatically establish multiple entities; shared infrastructure shall not automatically establish a single entity.
+2.4 NES Is Not NNNC
+NES provides computational conditions.
+It may schedule NNNC-owned mechanisms, allocate resources, custody protected state, and enforce infrastructure-level policies.
+Those services do not make NES the logical owner of NNNC's internal mechanisms.
+Likewise, NNNC's ownership of a mechanism does not mean NNNC can execute it without substrate support.
+2.5 External Environments
+External environments may include games, simulations, software systems, robots, or other agents.
+NNNC may receive observations and consequences from them and issue authorized actions.
+External information, even if essential to NNNC's behavior, does not automatically become an NNNC constituent.
+3. Membership and Integration
+3.1 Declared Membership
+A component belongs to NNNC at the declared architectural level when it is included in an authorized constituent manifest under the applicable membership contract.
+Membership is governed by explicit registration, role, and authority rules.
+OB-05 — Governed Membership
+NNNC constituent membership shall be established and changed through authorized architectural transitions.
+An external payload shall not establish its own membership.
+3.2 Operational Integration
+Declared membership does not prove that a component is functioning or integrated.
+Operational integration requires evidence that the component participates in its specified causal relationships.
+3.3 Constitutive Significance
+A component's significance to NNNC depends on the organizational role it fulfills.
+An individual implementation may be replaceable while the role it implements remains necessary.
+Constitutive significance must not be inferred solely from a component's name, label, or declared membership.
+3.4 Three Conformance Levels
+Declared instance: A registered instance satisfying foundational identity, manifest, and governance conditions.
+Operational instance: A declared instance whose required components, state, and runtime-role contracts satisfy the operational specification.
+Cognitively conformant instance: An operational instance that additionally satisfies the empirical cognitive criteria established by later phases.
+These classifications shall remain distinct.
+An empty but valid manifest may establish a declared instance without establishing an operational or cognitively conformant one.
+3.5 Integration Evidence
+Causal integration requires evidence beyond communication frequency or statistical correlation.
+Controlled interventions should establish whether the specified organizational relationship exists.
+Unexpected dependencies shall be recorded rather than counted as successful expected integration.
+
+───
+
+PART III — STATE, OWNERSHIP, AND AUTHORITY
+4. State and Responsibility Boundaries
+4.1 State Categories
+NNNC-related state may include:
+• Constituent registry and manifests.
+• Component roles and interfaces.
+• Cognitive and developmental state.
+• Memory and internal representations.
+• Existential heartbeat state.
+• Recovery state.
+• Authorization policies.
+• Lifecycle records.
+• Resource allocations.
+• Checkpoints.
+• Provenance and event journals.
+• Pending operations and transactions.
+These categories do not require separate physical databases.
+4.2 Ownership, Custody, Execution, and Authority
+Four relationships shall be represented independently:
+
+Relationship
+Question
+
+Logical ownership
+To which entity or principal does this state or mechanism belong?
+
+Physical custody
+Which service stores or maintains the bytes?
+
+Execution
+Which runtime executes the mechanism?
+
+Authority
+Who may read, change, replace, or govern it?
+
+
+Semantic responsibility and governance responsibility may require further distinctions.
+4.3 Canonical Ownership
+Registered protected state shall have a well-defined canonical owner.
+Unassigned objects may exist during permitted creation or registration procedures, but protected objects shall not remain ambiguously owned.
+Shared access does not imply shared canonical ownership.
+4.4 Protected Mutation
+Authoritative protected state shall change only through permitted operations.
+Ordinary callers must not be able to mutate protected nested objects through references returned by an interface.
+OB-06 — Protected State Integrity
+Protected state mutations shall require authorized transitions and shall not be bypassable through ordinary reference aliasing, payload manipulation, or direct access exposed by the declared interface.
+4.5 Information Is Not Authority
+External content, internal cognitive proposals, and tool outputs may contain instructions.
+Such content does not become an authorized control operation merely by expressing one.
+OB-07 — Authority Separation
+Information-bearing payloads shall not grant themselves elevated membership, modification, or governance authority.
+5. Governance and Policy Integrity
+5.1 Trusted Control Plane
+A trusted control-plane mechanism shall govern foundational operations including:
+• Instance registration.
+• Membership changes.
+• Protected state mutation.
+• Policy modification.
+• Lifecycle transitions.
+• ADMIN CLASS maintenance.
+• Checkpoint publication.
+• Authorized restoration.
+This is a logical architectural responsibility.
+Its physical implementation may use NES infrastructure or other protected services.
+5.2 Prior-Policy Authorization
+A proposed policy change shall be authorized under the policy in force before the change commits.
+A component shall not grant itself authority through the very policy update being evaluated.
+5.3 Revocation
+Privilege revocation shall have defined commit-order semantics.
+An operation whose authority is revoked before its commit shall not be permitted to commit using the revoked privilege.
+5.4 Trusted Bootstrap
+The implementation shall identify how initial administrative authority is established.
+Ordinary NNNC cognitive components shall not be permitted to replace the trusted authority root through their own modification operations.
+5.5 Policy Versioning
+Governed changes shall preserve policy version information and relevant provenance.
+Unauthorized rollback to an earlier vulnerable policy shall be prohibited.
+
+───
+
+PART IV — EXISTENTIAL FOUNDATION
+6. Purpose and Scope
+6.1 Foundational Objective
+The existential foundation is intended to support NNNC's continued operational organization when higher cognitive mechanisms are impaired or unavailable.
+It introduces a distinction between:
+• The availability of cognition.
+• The continued operation of a minimal NNNC-owned mechanism.
+• The recoverability of cognitive state.
+• Satisfaction of the operational continuity contract.
+• Claims about individual identity.
+These properties are not equivalent.
+6.2 Constituent Mechanisms
+The existential foundation contains two separately governed mechanisms:
+Existential heartbeat: Minimal continuity-related operation and bounded recovery activation.
+Internal recovery: Health assessment, fault diagnosis, and authorized restoration attempts.
+They shall have distinct responsibilities and interfaces.
+6.3 Separation Requirement
+OB-25 — Heartbeat and Recovery Separation
+The heartbeat and recovery system shall be separately identifiable NNNC constituents with distinct responsibilities.
+Recovery failure shall not automatically imply heartbeat failure.
+Heartbeat failure shall not be concealed by recovery activity.
+Logical separation does not establish physical fault independence.
+7. Existential Heartbeat
+7.1 Definition
+DEF-002 — Existential Heartbeat
+The existential heartbeat is a protected NNNC-owned mechanism that maintains a narrowly defined subset of operational continuity state and participates in specified lifecycle and recovery-activation protocols.
+Its significance shall be established through demonstrable causal participation, not through continuous execution alone.
+7.2 Logical Ownership
+OB-24 — Internal Existential Ownership
+The heartbeat's role, state, logic, and constituent membership shall belong logically to NNNC.
+NES may provide its execution, storage, scheduling, and enforcement infrastructure without becoming its logical owner.
+7.3 Minimal Responsibilities
+The heartbeat shall:
+• Maintain the permitted state of its active continuity session.
+• Participate in specified operational lifecycle transitions.
+• Expose a minimal authorized status interface.
+• Detect overdue acknowledgements for designated recovery activation requests.
+• Issue bounded wake-up requests when the activation contract permits.
+• Respect administrative shutdown and resource controls.
+These responsibilities shall be formalized without granting the heartbeat general cognitive or repair authority.
+7.4 Prohibited Responsibilities
+The heartbeat shall not:
+• Perform general-purpose reasoning.
+• Diagnose cognitive failures.
+• Conduct unrestricted subsystem monitoring.
+• Repair damaged components.
+• Rewrite NNNC's memory.
+• Modify the FFNN.
+• Independently change policy.
+• Grant itself additional privileges.
+• Override authorized shutdown.
+• Pursue unrestricted self-preservation.
+7.5 Minimality
+OB-26 — Heartbeat Minimality
+The heartbeat shall maintain a narrowly bounded responsibility set and minimize unnecessary dependencies.
+Additional functionality shall require justification against its impact on complexity, reliability, and fault isolation.
+Minimality alone does not prove reliability.
+7.6 Bounded Authority
+OB-27 — Heartbeat Authority Boundary
+The heartbeat shall possess only the authority required for its declared operational functions.
+It shall not obtain general diagnostic, repair, policy, or self-modification privileges.
+7.7 Causal Participation
+OB-37 — Demonstrable Existential Causal Participation
+The heartbeat shall maintain or update a specified subset of NNNC-owned operational state and participate in at least one lifecycle or recovery protocol whose observable behavior depends on that participation.
+Its absence, corruption, or failure shall produce a measurable difference in a specified operational property under controlled testing.
+The test shall not be satisfied solely by an artificial rule that refuses operation whenever the heartbeat is missing.
+Candidate contributions include:
+• Continuity-session record integrity.
+• Correct minimal-mode lifecycle coordination.
+• Recovery activation reliability.
+• Reduced recovery latency under selected faults.
+• Improved containment of specified failure conditions.
+The first three are candidate functional responsibilities. The latter two are comparative performance hypotheses.
+7.8 Continuity-Session Record
+The heartbeat may maintain a protected continuity-session record containing:
+• NNNC instance reference.
+• Operational session identifier.
+• Session generation or epoch.
+• Applicable lifecycle version.
+• Heartbeat progress information.
+• Permitted transition metadata.
+• Integrity or provenance references.
+The exact schema belongs to Document 2.
+The record shall not be treated as evidence of subjective experience or metaphysical identity.
+7.9 Progress Requirement
+OB-41 — Measurable Progress and Activation Contracts
+The heartbeat shall satisfy a declared progress or responsiveness contract under stated scheduling and resource assumptions.
+It need not consume CPU continuously.
+Event-driven waiting or low-power operation may satisfy the contract if required responses occur within specified bounds.
+Progress intervals, scheduling assumptions, and failure-detection tolerances shall be explicit and measurable.
+8. Recovery Mechanism
+8.1 Definition
+DEF-003 — Internal Recovery
+The recovery mechanism is an NNNC-owned subsystem responsible for monitoring designated internal mechanisms, diagnosing supported faults, and coordinating authorized attempts to restore impaired functionality.
+8.2 Responsibilities
+Recovery may:
+• Receive subsystem health signals.
+• Inspect permitted diagnostic state.
+• Identify supported fault classes.
+• Request authorized resource allocation.
+• Restart permitted components.
+• Coordinate permitted state restoration.
+• Validate restoration outcomes.
+• Record unresolved failures.
+It shall not presume unlimited access to protected components.
+8.3 Fallibility
+Recovery may fail, misdiagnose, or exhaust its resources.
+Some damaged components or state may be irrecoverable.
+The architecture shall represent those conditions explicitly.
+8.4 Bounded Recovery
+OB-28 — Recovery Bounds
+Recovery attempts shall be constrained by explicit authorization, resource budgets, retry limits, and failure policies.
+Recovery shall not enter an uncontrolled repair loop.
+8.5 Recovery State Model
+The recovery mechanism shall support states equivalent to:
+IDLE, PENDING, ACTIVE, SUCCEEDED, FAILED, and EXHAUSTED.
+A failed attempt may be retried only while its governing policy permits.
+8.6 Exhaustion
+OB-42 — Bounded Recovery Exhaustion
+When the permitted retry or resource budget is exhausted, automatic recovery attempts shall cease.
+The unresolved fault shall remain observable.
+Further automatic attempts require a separately authorized reset or reactivation condition.
+Exhaustion does not necessarily terminate the NNNC instance.
+9. Recovery Activation Protocol
+9.1 Responsibility Boundary
+The recovery system performs general health monitoring.
+The heartbeat does not monitor all NNNC subsystems.
+A minimal activation channel communicates whether a recovery request is pending and whether its acknowledgement deadline has expired.
+9.2 Activation-Channel Contract
+Each activation request shall have:
+• A unique identifier.
+• An authenticated or otherwise authorized origin.
+• A target recovery mechanism.
+• A creation point or logical ordering reference.
+• An acknowledgement deadline.
+• An acknowledgement state.
+• A finite wake-up budget.
+• A terminal outcome.
+9.3 Narrow Watchdog Role
+The heartbeat may evaluate whether a pending activation request has missed its acknowledgement deadline.
+This is a deliberately narrow watchdog function.
+It shall not infer the cause of the underlying subsystem failure.
+9.4 Wake-Up Semantics
+OB-29 — Bounded Recovery Wake-Up
+The heartbeat may issue a wake-up request only when a valid activation contract permits it.
+Requests shall be identifiable, deduplicated, deadline-aware, and subject to finite retry and resource budgets.
+Stale acknowledgements, duplicate requests, and delayed messages shall not trigger uncontrolled repeated activations.
+9.5 Activation-Channel Failure
+The activation channel may itself fail.
+The heartbeat's behavior when the channel is unavailable shall be bounded and explicitly defined.
+Failure of the activation interface shall not silently grant additional heartbeat authority.
+9.6 Recovery Failure
+If recovery itself is damaged, the heartbeat is not responsible for repairing it.
+A sufficiently functional NNNC may later possess authorized mechanisms to investigate or modify recovery.
+Those capabilities remain subject to governance and later-phase specifications.
+10. Dependency and Fault-Domain Contract
+10.1 Declared Dependencies
+The heartbeat, recovery mechanism, and activation channel shall declare their dependencies.
+These include, where applicable:
+• Scheduler.
+• Process or execution context.
+• Memory allocator.
+• Storage service.
+• Communication transport.
+• Resource quota.
+• Authorization service.
+• Integrity service.
+• Hardware and operating system.
+10.2 Common-Mode Failures
+Logical separation does not establish independence from common infrastructure.
+A shared scheduler failure may disable both heartbeat and recovery.
+A shared storage failure may corrupt both their state records.
+10.3 Requirement
+OB-38 — Dependency and Fault-Domain Declaration
+The heartbeat, recovery system, and activation channel shall have explicit dependency and fault-domain descriptions.
+Shared dependencies and possible common-mode failures shall be identified.
+Fault-injection testing shall establish the actual isolation properties of the implementation.
+10.4 Scope of Independence
+The heartbeat is intended to operate without successful execution of the full FFNN.
+It is not intended to operate independently of all computational resources.
+OB-34 — Independence from Full Cognition
+The heartbeat's minimum operating contract shall not require all five FFNN flows to remain functional.
+10.5 Experimental Qualification
+A single-process reference implementation can demonstrate logical separation and governed transitions.
+It cannot, by itself, demonstrate strong isolation against arbitrary code executing with unrestricted access to the same process.
+Such limitations shall be documented.
+
+───
+
+PART V — ADMIN CLASS GOVERNANCE
+11. Protected Foundational Components
+11.1 Definition
+DEF-004 — ADMIN CLASS
+ADMIN CLASS is a governance classification for NNNC-owned components designated foundational to its operating architecture and protected against ordinary autonomous modification.
+The heartbeat is the first designated ADMIN CLASS component.
+Future designations require explicit architectural authorization.
+11.2 Protection Scope
+ADMIN CLASS protection covers:
+• Executable implementation.
+• Protected configuration.
+• Component role definitions.
+• Operational-state schema.
+• Modification authority.
+• Replacement and removal procedures.
+• Relevant policy versions.
+• Authorized maintenance records.
+11.3 Operational State Versus Implementation
+ADMIN CLASS components may change their permitted operational state.
+A heartbeat updating a session record is not thereby learning, evolving, or modifying its protected implementation.
+11.4 Autonomous Restrictions
+OB-30 — ADMIN CLASS Integrity
+Ordinary NNNC cognitive, learning, developmental, and self-modification mechanisms shall not alter ADMIN CLASS implementation code, protected configuration, role contracts, or modification policies.
+11.5 Enforcement Boundary
+OB-39 — ADMIN CLASS Enforcement
+ADMIN CLASS protection shall be enforced by a trusted mechanism outside the ordinary modification authority of restricted components.
+The enforcement boundary shall identify which code, configuration, schema, policy, and state changes it prevents.
+Unauthorized rollback, replacement, or privilege escalation shall be rejected.
+11.6 Ownership Is Not Enforcement
+NNNC may logically own its heartbeat while NES or another trusted control-plane mechanism enforces its protection.
+This does not transfer the heartbeat's constituent membership to NES.
+11.7 Administrative Maintenance
+OB-31 — Governed Maintenance
+Authorized ADMIN CLASS maintenance shall follow a controlled procedure addressing:
+• Authority verification.
+• Integrity validation.
+• Compatibility.
+• Transactional change.
+• Rollback or recovery.
+• Audit records.
+• Lifecycle implications.
+• Continuity-related consequences.
+A maintenance procedure shall not claim to preserve individual identity merely because state is retained.
+11.8 Authorized Shutdown
+OB-35 — Administrative Controllability
+Continuous operation and heartbeat protection shall not prevent authorized suspension, shutdown, or termination.
+The heartbeat shall not treat its continuity function as permission to resist legitimate administrative control.
+
+───
+
+PART VI — LIFECYCLE, FUNCTION, AND HEALTH
+12. Independent State Dimensions
+12.1 Lifecycle
+The lifecycle model retains:
+CREATED, INITIALIZED, ACTIVE, SUSPENDED, STOPPED, TERMINATED.
+Lifecycle transitions shall be governed and auditable.
+12.2 Functional Mode
+Functional modes are:
+FULL, DEGRADED, MINIMAL, NONE, FAULTED.
+• FULL: Required cognitive capabilities are available.
+• DEGRADED: Some cognitive capabilities are impaired but permitted reduced functionality remains.
+• MINIMAL: The existential kernel remains operational while required higher cognition is unavailable.
+• NONE: No active functional mode is asserted.
+• FAULTED: The active-state operational contract is violated or capability classification is unreliable.
+FAULTED does not automatically imply termination.
+12.3 Component Health
+The system shall independently represent health or availability for at least:
+• Heartbeat.
+• Recovery.
+• Required cognitive mechanisms.
+Health assessments may be healthy, degraded, failed, or unknown, subject to the implementation's formal model.
+12.4 Compatibility Rules
+
+Lifecycle
+Mode
+Classification
+
+ACTIVE
+FULL
+Permitted
+
+ACTIVE
+DEGRADED
+Permitted
+
+ACTIVE
+MINIMAL
+Permitted
+
+ACTIVE
+FAULTED
+Permitted as fault condition
+
+ACTIVE
+NONE
+Invalid in committed normal operation
+
+SUSPENDED
+NONE
+Permitted
+
+STOPPED
+NONE
+Permitted
+
+TERMINATED
+NONE
+Permitted
+
+SUSPENDED
+FULL
+Invalid
+
+TERMINATED
+MINIMAL
+Invalid
+
+
+CREATED and INITIALIZED require separately specified pre-active semantics in Document 2.
+12.5 Requirement
+OB-40 — Independent Operational Classification
+Lifecycle, functional mode, and component health shall be represented independently.
+Permitted combinations and transition conditions shall be explicitly defined.
+Heartbeat failure while cognition remains active shall be representable without automatically asserting termination.
+12.6 Normal Active Operation
+OB-32 — Existential Operating Contract
+During normal ACTIVE operation, the existential kernel shall satisfy its declared progress or responsiveness contract under specified resource and scheduling assumptions.
+Violations shall be represented through fault or transition semantics rather than concealed by an invalid normal-state classification.
+13. Suspension, Restoration, and Termination
+13.1 Cognitive Inactivity
+The absence of cognitive processing does not automatically mean that the entire NNNC runtime has stopped.
+An instance may enter ACTIVE/MINIMAL while the heartbeat continues to fulfill its operational contract.
+13.2 Complete Suspension
+Complete suspension differs from minimal operation.
+During SUSPENDED/NONE, the instance's active mechanisms are not executing under the declared suspension contract.
+Its relevant state may remain preserved.
+13.3 Transactional Suspension
+Suspension shall account for:
+• Pending operations.
+• In-flight state mutations.
+• External side effects.
+• Quiescence.
+• Checkpoint preparation.
+• Checkpoint integrity.
+• Atomic publication.
+• Recovery after partial failure.
+A partially prepared checkpoint shall not be represented as a completed valid checkpoint.
+13.4 Restoration
+Restoration shall validate checkpoint integrity, compatibility, authorization, and lifecycle preconditions before committing recovered state.
+Restoration does not automatically establish individual identity continuity.
+13.5 Termination
+Termination is a governed operational lifecycle event.
+Its relationship to philosophical individual death remains a separate question.
+13.6 Successor Lineage
+OB-33 — Lineage Separation
+Operational restoration, informational inheritance, branching, and successor creation shall be separately representable.
+Independent branches shall not silently share one exclusive runtime identity.
+
+───
+
+PART VII — IDENTITY AND CONTINUITY
+14. Distinct Continuity Concepts
+14.1 Operational Continuity
+Continuity of the specified runtime organization under the declared operational contract.
+14.2 Informational Continuity
+Preservation or inheritance of data, configuration, memories, learned parameters, and developmental history.
+14.3 Individual Identity Continuity
+The claim that an entity remains numerically the same individual across time.
+These concepts are not interchangeable.
+14.4 Philosophical Identity Convention
+The project originator has proposed that definitive termination of an entity's active existential continuity ends that individual, and a later reconstruction constitutes a successor.
+This position shall be preserved as a candidate architectural identity convention for Phase 2.
+Phase 0 shall not represent it as an empirically proven fact about subjective continuity.
+14.5 Branching
+Two independent instances created from identical state shall receive distinguishable operational identities and lineage records.
+Whether either is metaphysically identical to the predecessor is not established by this operational distinction.
+14.6 Epistemic Limitations
+EPI-001: Continuous execution does not prove biological life.
+EPI-002: Heartbeat activity does not prove consciousness.
+EPI-003: Checkpoint restoration does not prove numerical identity continuity.
+EPI-004: Cognitive functionality does not establish subjective experience.
+EPI-005: Exact informational inheritance does not settle philosophical questions of personal identity.
+
+───
+
+PART VIII — COGNITIVE AND DEVELOPMENTAL BOUNDARIES
+15. FFNN
+The Five Flow Neural Network retains five proposed conceptual flows.
+
+Flow
+Intended Responsibility
+
+Forward
+Present-oriented information processing
+
+Backward
+Retrieval and reconstruction of prior sequences
+
+In-between
+Identification and processing of informational gaps
+
+Subconscious
+Background memory, narrative, instinct-like, emotion-like, and bias-related processing
+
+Meta-cognitive
+Reflection, evaluation, reasoning, and decision-related processing
+
+
+The Backward Flow is not synonymous with backpropagation.
+Detailed mechanisms belong to Phase 5.
+FFNN does not define the entirety of NNNC.
+16. Systemic Algorithms
+The six Systemic Algorithms are:
+• Life.
+• Intelligence.
+• Reasoning.
+• Critical Thinking.
+• Symmetry.
+• Evolution.
+Their roles are heterogeneous.
+They may operate as capacities, processes, evaluative mechanisms, organizing constraints, or developmental principles.
+They shall not automatically be represented as six physically isolated modules.
+16.1 Life Algorithm
+The heartbeat is a candidate mechanism relevant to the Life Algorithm.
+However, heartbeat execution does not establish life.
+HYP-001: A minimal continuity mechanism may provide a useful operational contribution to a future computational realization of the Life Algorithm.
+The exact relationship remains a Phase 6 responsibility.
+16.2 Symmetry
+Symmetry retains its intended concern with differentiating fact, fiction, and uncertainty so that reasoning and decision processes can operate on appropriately classified information.
+The detailed computational interpretation remains deferred.
+16.3 Other Algorithms
+Intelligence, Reasoning, Critical Thinking, and Evolution retain their distinct conceptual roles.
+Their implementations shall not be collapsed into a single undifferentiated optimization score merely for convenience.
+17. Memory and Internal State
+NNNC's memory architecture may include:
+• Experience records.
+• Internal representations.
+• Learned parameters.
+• Narrative state.
+• Developmental history.
+• Self-model information.
+• Relevant provenance.
+• Continuity-related records.
+Memory ownership, custody, access, and modification permissions shall remain distinct.
+The heartbeat shall not require unrestricted access to cognitive memory.
+A preserved memory state does not guarantee recoverability of the complete cognitive organization.
+18. Motivation and Agency
+NNNC is intended eventually to support internally generated goals, action selection, and autonomous interaction.
+This does not mean that all future actions must be reward-driven.
+Nor does it establish that NNNC will lack evaluative criteria, preferences, or selection pressures.
+Agency shall operate under explicit environmental and governance boundaries.
+The heartbeat's operational continuity requirement shall not become an unrestricted motivational command to preserve NNNC at any cost.
+19. Learning, Development, and Self-Modification
+NNNC may eventually develop mechanisms for:
+• Learning from experience.
+• Updating internal models.
+• Changing cognitive mechanisms.
+• Modifying permitted architecture.
+• Diagnosing and repairing selected internal components.
+• Interacting with authorized hardware interfaces.
+Self-modification shall not bypass foundational governance.
+ADMIN CLASS components remain outside ordinary autonomous modification authority.
+The recovery system may be modifiable under appropriate safeguards.
+The heartbeat remains protected unless a separately authorized administrative procedure applies.
+
+───
+
+PART IX — INTERFACES, EVENTS, AND CONSISTENCY
+20. Boundary Event Model
+20.1 Event Categories
+The architecture shall support typed events for:
+• Observations.
+• Actions.
+• Consequences.
+• Resource requests.
+• Tool interactions.
+• Lifecycle control.
+• Recovery activation.
+• Existential-mode changes.
+• Administrative maintenance.
+20.2 Event Provenance
+Governed events shall carry sufficient information to establish their authenticated or trusted origin, intended destination, operation type, and relevant policy context.
+An event's claimed source shall not be accepted as proof of authority.
+20.3 Replay and Deduplication
+Repeated event identifiers shall have defined semantics.
+Identical authorized replays may return a previous outcome without repeating the operation.
+Conflicting reuse of an event identifier shall be rejected.
+20.4 Consistency Model
+A sequential state-transition model may serve as the Phase 0 reference semantics.
+That does not imply the eventual implementation must execute all cognition through one global sequential processor.
+Protected control-plane operations shall satisfy their declared consistency guarantees.
+Ordinary cognitive message processing may use different consistency semantics where permitted.
+
+───
+
+PART X — FAULT MODEL AND RESILIENCE
+21. Failure Classification
+
+Failure Condition
+Required Architectural Response
+
+FFNN unavailable
+Represent degraded or minimal operation where possible
+
+Memory inaccessible
+Record health failure; recovery may investigate
+
+Recovery unresponsive
+Bounded activation protocol
+
+Recovery exhausted
+Stop automatic retries and record unresolved failure
+
+Heartbeat failed
+Represent operational contract violation
+
+Activation channel failed
+Apply bounded channel-failure policy
+
+Checkpoint corrupted
+Reject invalid restoration
+
+ADMIN CLASS mutation attempted
+Reject unauthorized modification
+
+Shared scheduler failed
+Recognize common-mode failure
+
+Cognitive state irrecoverable
+Distinguish heartbeat operation from recoverability
+
+Total execution resources lost
+Do not claim guaranteed continued operation
+
+Multiple copies activated
+Enforce distinct operational identities and lineage
+
+
+21.1 Failure Containment
+OB-36 — Failure Containment
+Recovery, wake-up, and maintenance operations shall be bounded to prevent uncontrolled recursive repair, unbounded retries, or resource exhaustion caused by the recovery process itself.
+21.2 Three Independent Predicates
+The architecture shall distinguish:
+[ \operatorname{HeartbeatOperational}(n) ]
+[ \operatorname{CognitiveStateRecoverable}(n) ]
+[ \operatorname{OperationalContinuityContractSatisfied}(n) ]
+No one of these shall automatically imply the others.
+21.3 Unknown Outcomes
+An implementation may lack sufficient evidence to determine whether a component is functioning or a state is recoverable.
+Such conditions shall be represented as unknown or undetermined where appropriate rather than incorrectly reported as success.
+
+───
+
+PART XI — VERIFICATION AND EXPERIMENTAL OBLIGATIONS
+22. Verification Categories
+22.1 Safety Properties
+Machine-checkable properties should include:
+• Protected ownership integrity.
+• Authorized mutation.
+• Prior-policy authorization.
+• No payload-based authority escalation.
+• Event replay consistency.
+• Protected-state isolation.
+• Valid lifecycle transitions.
+• Checkpoint publication integrity.
+• ADMIN CLASS enforcement.
+• Bounded recovery activation.
+• Recovery exhaustion behavior.
+• Valid lifecycle–mode combinations.
+22.2 Architectural Conformance
+Conformance evaluation should establish:
+• Valid declared manifests.
+• Correct declared versus operational classification.
+• Role-contract compatibility.
+• Ownership and custody separation.
+• Explicit existential dependencies.
+• Correct activation-channel authority.
+• Provenance and auditability.
+• Correct fault-state representation.
+22.3 Empirical Hypotheses
+Empirical experiments shall examine whether the existential foundation provides benefits beyond simpler alternatives.
+These benefits shall not be assumed from the architecture's terminology.
+23. Comparative Experiment
+Three reference architectures shall be compared where feasible.
+
+Architecture
+Description
+
+Baseline A
+Conventional supervised cognitive process with checkpoint/restart
+
+Baseline B
+NNNC with internal recovery but without heartbeat
+
+Candidate C
+NNNC with recovery and protected heartbeat
+
+
+23.1 Controls
+Experiments should use comparable:
+• Computational resources.
+• Fault-injection conditions.
+• Cognitive workloads.
+• Recovery opportunities.
+• Storage assumptions.
+• Measurement periods.
+23.2 Measurements
+Measurements shall include, where relevant:
+• Recovery success rate.
+• Recovery latency.
+• False wake-up frequency.
+• Continuity-record integrity.
+• Resource overhead.
+• Failure propagation.
+• Time spent in degraded or minimal operation.
+• Unresolved failure frequency.
+23.3 Falsifiability
+If Candidate C provides no meaningful advantage over simpler alternatives, its engineering justification shall be reconsidered.
+A philosophical motivation is not sufficient evidence of an operational advantage.
+
+───
+
+PART XII — REQUIREMENTS AND FORMALIZATION REGISTER
+24. Consolidated Requirement Register
+The register below gives the normative subject of each requirement. Where earlier exact wording is unavailable, the wording is reconstructed and must be reconciled against the archived source before freezing.
+
+ID
+Normative Subject
+
+OB-01
+NNNC–NES logical separation
+
+OB-02
+Separation from external environments and tasks
+
+OB-03
+NNNC not reducible to FFNN
+
+OB-04
+Task-independent architectural boundary
+
+OB-05
+Governed constituent membership
+
+OB-06
+Protected state integrity
+
+OB-07
+Information cannot grant authority
+
+OB-08
+Distinguish membership from operational integration
+
+OB-09
+Ownership independent of physical execution
+
+OB-10
+Explicit component-role contracts
+
+OB-11
+Governed state and lifecycle transitions
+
+OB-12
+Ownership, custody, and authority separation
+
+OB-13
+Distributed execution and entity multiplicity distinction
+
+OB-14
+No unsupported consciousness or identity inference
+
+OB-15
+Declared versus operational instance distinction
+
+OB-16
+Causal integration requires evidence
+
+OB-17
+Protected policy integrity
+
+OB-18
+Heterogeneous Systemic Algorithm roles
+
+OB-19
+Transactional lifecycle and checkpoint integrity
+
+OB-20
+Event provenance and replay control
+
+OB-21
+Task-independent boundary not equivalent to general intelligence
+
+OB-22
+Sequential reference model distinguished from distributed execution
+
+OB-23
+Continuous operation by design
+
+OB-24
+NNNC ownership of heartbeat
+
+OB-25
+Heartbeat–recovery separation
+
+OB-26
+Heartbeat minimality
+
+OB-27
+Bounded heartbeat authority
+
+OB-28
+Bounded recovery
+
+OB-29
+Bounded activation and wake-up protocol
+
+OB-30
+ADMIN CLASS integrity
+
+OB-31
+Governed ADMIN CLASS maintenance
+
+OB-32
+Active existential progress contract
+
+OB-33
+Lineage and successor distinction
+
+OB-34
+Heartbeat independence from full FFNN
+
+OB-35
+Authorized administrative controllability
+
+OB-36
+Failure containment
+
+OB-37
+Demonstrable heartbeat causal participation
+
+OB-38
+Dependency and fault-domain declaration
+
+OB-39
+ADMIN CLASS enforcement boundary
+
+OB-40
+Independent lifecycle, mode, and health representation
+
+OB-41
+Measurable progress and activation contracts
+
+OB-42
+Bounded recovery exhaustion
+
+
+25. Document 2 Formalization Obligations
+The revised mathematical document shall preserve the existing obligations F0-01 through F0-12 and incorporate the following.
+
+ID
+Obligation
+
+F0-13
+Heartbeat membership and minimum state
+
+F0-14
+Independent lifecycle and functional-mode representation
+
+F0-15
+Heartbeat transition semantics
+
+F0-16
+Recovery activation protocol
+
+F0-17
+ADMIN CLASS authorization predicates
+
+F0-18
+Protected maintenance transitions
+
+F0-19
+Heartbeat and recovery failure representation
+
+F0-20
+Operational continuity and lineage records
+
+F0-21
+Resource budgets and bounded retries
+
+F0-22
+Administrative shutdown precedence
+
+F0-23
+Minimal-operation conformance tests
+
+F0-24
+Separation of operational evidence from identity claims
+
+F0-25
+Demonstrable causal participation tests
+
+F0-26
+Dependency and fault-domain formalization
+
+F0-27
+Enforcement-boundary assumptions and tests
+
+F0-28
+Lifecycle–mode–health compatibility invariants
+
+F0-29
+Timing, deadlines, acknowledgement, and stale-message semantics
+
+F0-30
+Recovery exhaustion and reset conditions
+
+F0-31
+Comparative baseline experiment contracts
+
+F0-32
+Heartbeat activity versus recoverability distinction
+
+
+Document 2 must define exact state structures, transitions, invariants, event contracts, and executable tests.
+It shall not substitute illustrative pseudocode for validated implementation.
+
+───
+
+PART XIII — IMPLEMENTATION ROADMAP
+26. Phase 0 Executable Progression
+The following table preserves the implementation roadmap recorded in the original v1.3 specification. Its status entries describe the position at the time that revision was drafted, not the later Phase 0 closure status.
+
+Build
+Scope
+Original v1.3 Status
+
+Build 1
+Registry, governed transitions, protected state, preliminary policy enforcement
+Initial reference implementation reported
+
+Build 2
+Existential heartbeat, recovery activation, lifecycle and checkpointing
+Pending
+
+Build 3
+NES interfaces and environmental interaction
+Pending
+
+Build 4
+Adversarial conformance and bounded model verification
+Pending
+
+
+Build 1 shall be rechecked against the consolidated requirements before being treated as a trusted foundation for later builds.
+Subsequent implementation qualification
+Following preparation of this specification, Phase 0 Build 2 underwent incremental implementation and targeted testing. Those results supported conditional architectural closure but did not establish a fully integrated, production-ready implementation.
+Outstanding engineering requirements remain tracked in the Phase 0 obligation register.
+27. Build 2 Minimum Demonstration
+Build 2 shall aim to demonstrate:
+• An NNNC instance is registered.
+• The heartbeat is registered as an NNNC-owned ADMIN CLASS component.
+• Recovery is registered as a separate NNNC-owned component.
+• A placeholder cognitive component enters operation.
+• The cognitive component becomes unavailable.
+• The heartbeat continues under its declared progress contract.
+• The instance enters ACTIVE/MINIMAL.
+• Recovery activation is requested.
+• A delayed acknowledgement triggers at most the permitted wake-up attempts.
+• Recovery succeeds, fails, or becomes exhausted.
+• Unauthorized heartbeat modification is rejected.
+• A heartbeat failure while cognition remains active produces a representable fault condition.
+• Authorized suspension produces a valid preserved-state record.
+• Restoration validates its source state without automatically asserting individual identity continuity.
+• Dependency fault injection identifies shared failure domains.
+These tests shall be executed and reported with actual results.
+A placeholder cognitive component does not constitute a demonstrated intelligent NNNC.
+
+───
+
+PART XIV — DEFERRED QUESTIONS AND ACCEPTANCE
+28. Deferred Responsibilities
+
+Question
+Responsible Phase
+
+What constitutes minimal computational existence?
+Phase 1
+
+What establishes individual identity across interruptions?
+Phase 2
+
+How are protected administrative authorities constituted?
+Phase 3
+
+What causal architecture supports continuity and cognition?
+Phase 4
+
+How do the five FFNN flows operate?
+Phase 5
+
+How are the six Systemic Algorithms realized?
+Phase 6
+
+What runtime guarantees does NES provide?
+Phase 7
+
+How are intrinsic motivation and curiosity generated?
+Phase 8
+
+How does autonomous agency operate?
+Phase 9
+
+How is self-modification governed?
+Phase 10
+
+What constitutes the minimum viable NNNC?
+Phase 11
+
+How are competing architectures empirically compared?
+Phase 12
+
+
+These questions shall not automatically block Phase 0 implementation when a limited, explicitly stated reference-model assumption is sufficient.
+29. Acceptance Criteria
+Document 1 v1.3 may be accepted when independent review confirms that:
+• NNNC and NES remain logically distinct.
+• Heartbeat membership does not imply metaphysical identity.
+• The heartbeat has a testable causal obligation.
+• Heartbeat and recovery responsibilities remain separate.
+• Shared dependencies and fault domains are acknowledged.
+• ADMIN CLASS protection has a defined enforcement boundary.
+• Lifecycle, functional mode, and health are consistently represented.
+• Continuous operation has measurable semantics.
+• Recovery activation and exhaustion are bounded.
+• Authorized shutdown remains possible.
+• The document does not assume that a heartbeat proves life or consciousness.
+• Its requirements are consistent enough for mathematical formalization and executable testing.
+
+───
+
+PART XV — FINAL ARCHITECTURAL CONTRACT
+30. Consolidated Foundational Definition
+NNNC — Ontological Boundary v1.3
+The Neutral Neural Network Core is a proposed persistent, internally organized, developmentally adaptable artificial cognitive architecture whose entity boundary is established through governed constituent membership, logical state ownership, operational integration, lifecycle contracts, and authority rules.
+NNNC is designed for continuous operation as its normal condition, independently of external prompts or tasks, while remaining subject to declared resource assumptions and authorized lifecycle control.
+NNNC contains a minimal, protected existential heartbeat responsible for specified continuity-related operational state and bounded recovery activation. A separate internal recovery mechanism performs health assessment, diagnosis, and authorized restoration attempts.
+The heartbeat's architectural significance shall be demonstrated through causal participation in specified operational protocols. Its continued execution alone shall not establish successful cognitive preservation, philosophical identity, biological life, or consciousness.
+NNNC-owned foundational components may receive ADMIN CLASS protection, preventing ordinary autonomous mechanisms from altering their protected implementation, configuration, and governing policies. Enforcement authority shall be distinguished from logical ownership.
+NNNC remains distinct from NES, external environments, and physical computational infrastructure, while depending upon those systems for the resources and conditions necessary for execution.
+Cognitive capabilities, operational continuity, informational inheritance, and individual identity continuity remain conceptually distinct.
+The FFNN and six Systemic Algorithms remain central research commitments whose detailed mechanisms are specified in later phases.
+The architecture's ultimate cognitive and resilience claims shall be established through executable implementations, controlled interventions, and comparison against simpler alternatives rather than through terminology or philosophical assertion.
+
+───
+
+ANNEX A — POST-REVIEW ARCHITECTURAL CLOSURE RECORD
+Record date: 18 October 2026
+Disposition: Conditional architectural acceptance
+Applies to: Phase 0 — Ontological Boundary
+This annex records the subsequent project decision. It does not retroactively change the normative wording of Document 1 v1.3.
+A.1 Closure Scope
+Phase 0 is accepted as a working architectural baseline for subsequent phases.
+This decision establishes sufficient conceptual stability to proceed with Phase 1 while retaining outstanding engineering work.
+It does not certify:
+• Complete implementation conformance.
+• Production security.
+• Durable recovery from arbitrary crashes.
+• Exactly-once external physical effects.
+• Comprehensive formal verification.
+• Empirical demonstration of intelligence or consciousness.
+A.2 Outstanding Engineering Obligation Register
+
+ID
+Outstanding Obligation
+Disposition
+
+P0-O01
+Eliminate protected-write bypasses and enforce authorized reservation at every protected-effect entry point
+Open — deployment blocker
+
+P0-O02
+Implement durable journaling, crash recovery, and recovery-consistent budget accounting
+Open — deployment blocker
+
+P0-O03
+Establish resource-side fencing and physical-effect idempotency under crash and retry conditions
+Open — deployment blocker
+
+P0-O04
+Develop an independently specified formal transition model and conduct bounded model checking
+Open
+
+P0-O05
+Integrate canonical ledger accounting and verify authority and resource conservation
+Open
+
+P0-O06
+Implement authenticated trusted callers, delegation, and revocation without self-asserted authority
+Open
+
+P0-O07
+Evaluate concurrent incidents and lifecycle, timer, recovery, acknowledgement, and restoration races
+Open
+
+P0-O08
+Resolve restoration, branching, lineage, and continuity-versus-successor distinctions
+Open — Phase 2
+
+
+All obligations shall remain traceable until resolved through evidence or an explicitly governed architectural decision.
+In particular, P0-O01 through P0-O03 must be resolved before asserting that the implementation safely supports protected external effects or durable recovery under the relevant failure model.
+A.3 Subsequent Verification Qualification
+Later Phase 0 Build 2 work included targeted tests and bounded state exploration.
+The reported Step 10 suite comprised 15 targeted passing tests, with a depth-five exploration reporting 550 states and no detected invariant violations within the explored model.
+These findings are bounded implementation evidence, not a formal proof of the entire architecture. Earlier modules were not all demonstrated to be fully integrated or production-ready.
+A.4 Forward Dependency
+The next architectural phase is:
+Phase 1 — Foundational Ontology
+The first deliverable is Document 1, defining the fundamental entity, state, process, property, relation, and boundary categories necessary for the NNNC architecture.
+The second deliverable is the corresponding mathematical formalization and verification contract.
+Phase 0 engineering obligations remain assigned to their appropriate later implementation, governance, integration, and verification milestones.
+
+───
+
+END OF DOCUMENT
+PROJECT NNNC — PHASE 0 — DOCUMENT 1 v1.3
+Architectural baseline conditionally accepted · Outstanding engineering obligations retained

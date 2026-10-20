@@ -1,0 +1,63 @@
+Reasoning (Process)
+Reasoning (Process) is a goal-directed, stepwise process by which a system (an individual, a group or a machine) moves from information it already holds, such as premises, evidence, rules, assumptions and goals, to new or revised conclusions, judgments and decisions, through transitions meant to carry support from the starting points to the conclusion. It runs both consciously, as explicit deliberation, and unconsciously, as fast implicit inference, and it is influenced by emotion, intuition and motivation. It can be applied neutrally to any content (logical, mathematical, symbolic, causal, spatial, social or moral), but it is not value-neutral in its application or consequences. Its steps can be checked against standards of correct inference: a deductive step can be valid yet unsound when a premise is false, and inductive, abductive and analogical steps can be strong or weak but never guarantee their conclusions. Its ideal aim is truth and an accurate understanding of the world. In practice it is also used to persuade and to justify conclusions already held, so its results range along a spectrum of quality from rigorous to rationalising. Reasoning draws on intelligence, the latent capacity that supplies the models, knowledge, representational flexibility and working resources it operates with, but it is not that capacity; it is one way the capacity is put to work. Nor is it critical thinking: reasoning supplies the inferential engine, while critical thinking is the separate reflective practice and disposition that evaluates reasoning, its sources and its conclusions. Reasoning is shaped by cultural norms, social context and technologically mediated information environments, and it acts as the bridge between knowledge and action, making problem-solving, decision-making and learning possible under uncertainty.
+This process is characterized by these core dimensions:
+I. Structural Components
+• Premise & Representation Handling: The process of taking information as given (facts, evidence, rules, assumptions, intentions or suppositions) and holding it in a form that further steps can work on.
+◦ (Theory Link: Toulmin's argument model; Johnson-Laird's mental model theory)
+• Inferential Transformation: The process of deriving new information from existing information through steps meant to transmit support. A step counts as inference only when the conclusion is reached because of what supports it.
+◦ (Theory Link: Peirce's theory of inference; Broome's rule-following account; Boghossian's taking condition)
+• Relational Mapping: The process of identifying and using relationships between pieces of information (logical, causal, spatial, temporal or analogical), so that what is known about one structure can inform conclusions about another.
+◦ (Theory Link: Gentner's structure-mapping theory; Holyoak's relational reasoning)
+• Mental Simulation: The process of constructing and exploring possible scenarios, outcomes and alternatives, including suppositions and counterfactuals, in order to see what would follow from them.
+◦ (Theory Link: mental model theory; Byrne's rational imagination; Pearl's ladder of causation)
+• Conclusion & Commitment: The process of ending an inference by adopting, revising, retracting or suspending a belief, a degree of confidence, an intention or a decision. This is the point at which reasoning becomes a bridge to action.
+◦ (Theory Link: Harman's reasoned change in view; the distinction between theoretical and practical reasoning)
+II. Forms of Inference
+• Deductive Inference: The process of deriving conclusions that must be true if the premises are true. It is judged by validity (correct form) and soundness (validity plus true premises).
+◦ (Theory Link: classical logic; Rips's and Braine's mental logic theory)
+• Inductive & Probabilistic Inference: The process of generalising from cases, or updating degrees of belief in light of evidence. Its conclusions go beyond the premises and are judged by strength, not validity.
+◦ (Theory Link: Hume's problem of induction; Oaksford and Chater's probabilistic approach)
+• Abductive Inference: The process of generating hypotheses and selecting the one that would best explain the available evidence.
+◦ (Theory Link: Peirce's abduction; inference to the best explanation)
+• Analogical Inference: The process of carrying conclusions over from a familiar case to a new one on the basis of shared relational structure rather than surface similarity.
+◦ (Theory Link: Gentner's structure mapping; Gick and Holyoak's analogical problem solving)
+• Causal & Counterfactual Inference: The process of reasoning about what causes what, what would happen under an intervention, and what would have happened had things been different.
+◦ (Theory Link: Pearl's ladder of causation; Byrne's counterfactual thought)
+• Practical (Means–End) Inference: The process of moving from goals and beliefs about a situation to intentions, plans and choices of action.
+◦ (Theory Link: Aristotle's practical syllogism; Bratman's planning theory of intention; Broome's instrumental requirement)
+III. Goal-Directed & Adaptive Execution
+• Goal & Question Framing: The process of fixing what the reasoning is meant to settle. This determines which information is relevant and when the process can stop.
+◦ (Theory Link: Paul and Elder's elements of thought; Kunda's distinction between accuracy goals and directional goals)
+• Strategic Sequencing: The process of formulating, ordering and chaining reasoning steps: breaking goals into sub-goals, comparing means with ends, and building longer arguments from shorter ones.
+◦ (Theory Link: Newell and Simon's theory of human problem solving)
+• Contextual Adaptation: The process of adjusting the form, depth and style of reasoning to the situation, including its domain, stakes, available time, social setting and culturally familiar styles, such as more holistic (context- and relationship-focused) or more analytic (category- and rule-focused) reasoning.
+◦ (Theory Link: Nisbett's holistic–analytic distinction; Scribner's cultural account; Gigerenzer's ecological rationality)
+• Social & Distributed Reasoning: The process of reasoning with others or with external aids, by exchanging arguments, dividing inferential work and pooling premises. In this sense the reasoner can be a group, or a person working together with tools and records.
+◦ (Theory Link: Mercier and Sperber's argumentative theory; Hutchins's distributed cognition)
+IV. In-Process Control & Monitoring
+• Step Checking: The process of checking, as reasoning proceeds, whether each step actually follows from what came before and whether the chain is consistent with itself. This is reasoning's own internal check, not a reflective verdict on its sources or motives.
+◦ (Theory Link: mental model theory's search for counterexamples; Toulmin's warrant)
+• Conflict Detection & Override: The process of noticing when a fast, intuitive answer conflicts with what the steps support, and of engaging slower, explicit reasoning to settle the conflict.
+◦ (Theory Link: Evans's and Stanovich's dual-process theory; Thompson's feeling of rightness)
+• Revision & Backtracking: The process of retracting or revising intermediate conclusions when new information or a contradiction undermines them, so that reasoning can remove commitments as well as add them.
+◦ (Theory Link: Harman's account of non-monotonic change in view; Toulmin's rebuttal and defeasible argument)
+• Termination & Confidence Setting: The process of judging when enough has been concluded for the goal at hand, and how strongly the conclusion is supported, so that confidence matches the strength of the steps.
+◦ (Theory Link: Simon's bounded rationality; Bayesian rationality)
+V. Constraints, Influences & Quality Criteria
+• Validity, Soundness & Strength: The standards reasoning is judged by. Deductive steps can be valid but unsound when premises are false, and inductive, abductive and analogical steps can be strong or weak. Reasoning aims at these standards but does not guarantee them.
+◦ (Theory Link: logical consequence; informal logic and argumentation schemes)
+• Content Neutrality, Value-Laden Application: The form of reasoning can be applied to any content, but which premises are chosen, which questions are pursued and how conclusions are used carry values and consequences.
+◦ (Theory Link: Haidt's social intuitionist model; Kahan's motivated numeracy research)
+• Conscious & Unconscious Operation: Reasoning runs along a continuum, from explicit, deliberate step-by-step inference to fast, implicit inference that has the same support-tracking structure but is not consciously inspected.
+◦ (Theory Link: dual-process theory; Broome's account of active reasoning)
+• Directional Use (Truth-Seeking vs Motivated): Reasoning can be directed at accuracy, or at persuasion and justification of a conclusion already favoured. In the second case the steps are real but the choice of premises and the stopping point are steered by the desired outcome, which can shade into rationalisation.
+◦ (Theory Link: Kunda's motivated reasoning; Mercier and Sperber's argumentative theory; Haidt's post-hoc reasoning)
+• Resource Boundedness: Reasoning is limited by available time, attention and memory, which constrain how many possibilities and steps it can handle and produce characteristic errors when exceeded.
+◦ (Theory Link: Simon's bounded rationality; Harman's principles of reasoning)
+• Cultural & Technological Shaping: Cultural norms and schooling influence which premises are admissible, which transitions are trusted and which styles are valued. Technologically mediated information environments, such as filter bubbles and personalised content curation, shape which premises are available and which conclusions are rewarded.
+◦ (Theory Link: Luria's and Scribner's cross-cultural studies; Nisbett's work on culture and systems of thought; Pariser's filter bubble)
+• Characteristic Vulnerabilities: Reasoning is prone to systematic errors: formal and probabilistic fallacies, belief bias, confirmation bias, over-reading patterns into noise, superficial analogy, confusing correlation with causation, and reasons that are given after the fact and did not produce the conclusion.
+◦ (Theory Link: Tversky and Kahneman's heuristics-and-biases research; the Wason selection task; Nisbett and Wilson on confabulation)
+• Spectrum of Quality: Reasoning ranges from rigorous and well supported to weak, fallacious or rationalising. It is a descriptive category with built-in standards, so poor reasoning is still reasoning, done badly.
+◦ (Theory Link: Broome on the normativity of reasoning; Stanovich's distinction between rationality and intelligence)
+Boundary Note: Reasoning and Critical Thinking. Several functions in the earlier definition belong to critical thinking, the reflective, standards-governed practice and disposition applied to reasoning and beliefs, rather than to reasoning itself. These are: evaluating the credibility of sources and filtering out unreliable or biased information; awareness of echo chambers and technological mediation; detecting and correcting cognitive biases (confirmation bias, proportionality bias, over-attribution of intention); spotting fallacies such as appeals to emotion and straw-man arguments; resisting motivated reasoning, tribal pressure and groupthink; detecting deception and manipulation; and reflective awareness of one's own reasoning habits. Reasoning supplies the inferential steps these evaluations use. Its own in-process control (step checking, conflict detection, revision, confidence setting) is a narrower, internal check on whether an inference goes through. It is not a judgment about whether the inference's sources, motives or conclusions deserve trust.

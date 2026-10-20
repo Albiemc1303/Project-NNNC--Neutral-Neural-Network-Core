@@ -1,0 +1,27 @@
+Intelligence (Capacity): Synthesis Definition
+Intelligence is a system of capacity that generates:
+The latent, context-sensitive potential of a system (a biological organism, an artificial system, or a collective entity) to turn limited experience into organised models of itself, its environment and others, and to use those models to adapt its behaviour toward its goals. It does this across a broad, open-ended range of situations, especially novel ones, and it is measured by how efficiently it does so relative to the experience, time and energy available. This capacity is dynamic and can be changed by internal development and by external input. Its dimensions operate interdependently, and intelligent behaviour emerges from how they interact. However, it does not, on its own, carry out higher-order processes like reasoning, critical thinking or deliberate problem-solving. Instead, it supplies the models, knowledge and flexibility that those processes draw on.
+Core Dimensions of Intelligence (Capacity):
+This capacity is characterised by the following interconnected dimensions.
+I. Foundational Acquisition Potential
+• Learning Capacity: The potential to update internal models from experience, so that performance improves as new information and experiences arrive.
+◦ (CHC Theory Link: Fluid Intelligence)
+• Pattern Abstraction Capacity: The potential to detect regularities at several levels of detail and compress them into abstract concepts and categories.
+• Predictive Modelling Capacity: The potential to anticipate likely outcomes and the consequences of actions, and to register when expectations are not met.
+• Memory Consolidation Capacity: The potential to retain and organise knowledge and skill over time and retrieve what is relevant when it is needed, which allows knowledge to build up.
+◦ (CHC Theory Link: Crystallised Intelligence, Long-Term Storage and Retrieval)
+• Social-Cultural Internalisation (sub-capacity under Learning Capacity): The potential to absorb group norms, shared knowledge and skills from others through observation, imitation and communication.
+◦ (Multiple Intelligences Link: Interpersonal Intelligence Potential)
+• Generalisation Capacity: The potential to apply acquired knowledge and skills effectively in diverse contexts and novel situations. It is gauged by how far and how widely learning transfers.
+◦ (Cognitive Science Link: Transfer of Learning Research)
+II. Orientation & Regulatory Potential
+• Relevance & Attention Capacity: The potential to detect what matters in a situation, direct attention and effort accordingly, and notice problems worth solving.
+• Metacognitive Capacity: The latent ability to monitor one's own knowledge, uncertainty and errors, and to adjust how one learns and acts. This is monitoring potential, not critical thinking itself.
+• Embodied-Affective Potential: The capacity to bring internal state and value signals into prioritisation and decision-making, and to ground concepts in sensory and motor experience.
+◦ (Multiple Intelligences Link: Bodily-Kinesthetic Potential; Grounded Cognition Theory Link: grounding concepts in simulated sensory and motor experience; Emotional Intelligence Link)
+• Exploration-Exploitation Balance: The potential to balance using what is already known against seeking new information, so the system can shift between stable and exploratory states as circumstances demand.
+III. Efficiency Constraints
+• Temporal Coordination Potential: The capacity to work across competing timescales, balancing immediate needs with long-term goals.
+• Experience Efficiency: The potential to gain broad competence from little data or experience. This is a key measure of how intelligent a system is.
+• Resource Efficiency: The potential to reach adaptive outcomes with little energy, time and effort for each unit of information processed.
+◦ (CHC Theory Link: Processing Speed)
