@@ -1,0 +1,228 @@
+{
+  "baseline": "P1-D1 v2.0; P1-D2 v0.2.1 architect-accepted",
+  "suites": [
+    {
+      "build": 1,
+      "command": "python -m unittest discover -s sources/nnnc_phase1_build1 -p test_reference.py -v",
+      "tests": 14,
+      "passed": true,
+      "exit_code": 0,
+      "output": "\ntest_T01_database_not_level_n (test_reference.BoundedRegressions.test_T01_database_not_level_n) ... ok\ntest_T02_dummy_stubs_cannot_pass (test_reference.BoundedRegressions.test_T02_dummy_stubs_cannot_pass) ... ok\ntest_T03_meta_omitted (test_reference.BoundedRegressions.test_T03_meta_omitted) ... ok\ntest_T04_external_wrapper_not_attributed (test_reference.BoundedRegressions.test_T04_external_wrapper_not_attributed) ... ok\ntest_T05_self_authorization_rejected (test_reference.BoundedRegressions.test_T05_self_authorization_rejected) ... ok\ntest_T06_cross_history_conflict (test_reference.BoundedRegressions.test_T06_cross_history_conflict) ... ok\ntest_T07_provisional_resume_no_overwrite (test_reference.BoundedRegressions.test_T07_provisional_resume_no_overwrite) ... ok\ntest_T08_snapshot_equality_not_identity (test_reference.BoundedRegressions.test_T08_snapshot_equality_not_identity) ... ok\ntest_T09_cumulative_development (test_reference.BoundedRegressions.test_T09_cumulative_development) ... ok\ntest_T10_first_time_eligibility (test_reference.BoundedRegressions.test_T10_first_time_eligibility) ... ok\ntest_T11_missing_symmetry_contract (test_reference.BoundedRegressions.test_T11_missing_symmetry_contract) ... ok\ntest_T12_model_proof_not_build_evidence (test_reference.BoundedRegressions.test_T12_model_proof_not_build_evidence) ... ok\ntest_evidence_expiry_and_scope (test_reference.BoundedRegressions.test_evidence_expiry_and_scope) ... ok\ntest_positive_authorized_commit (test_reference.BoundedRegressions.test_positive_authorized_commit) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "build": 2,
+      "command": "python -m unittest discover -s sources/nnnc_phase1_build2 -p test_model.py -v",
+      "tests": 12,
+      "passed": true,
+      "exit_code": 0,
+      "output": "EXPLORATION: {'depth': 3, 'attempts': 112, 'rejected': 98, 'reachable_final_histories': 8, 'counterexamples': []}\n\ntest_bounded_exhaustive (test_model.Build2Tests.test_bounded_exhaustive) ... ok\ntest_duplicate_occurrence_rejected (test_model.Build2Tests.test_duplicate_occurrence_rejected) ... ok\ntest_epoch_rollback_rejected (test_model.Build2Tests.test_epoch_rollback_rejected) ... ok\ntest_forged_history_cannot_be_recognized (test_model.Build2Tests.test_forged_history_cannot_be_recognized) ... ok\ntest_indeterminate_does_not_advance (test_model.Build2Tests.test_indeterminate_does_not_advance) ... ok\ntest_post_commit_failure_advances_governance (test_model.Build2Tests.test_post_commit_failure_advances_governance) ... ok\ntest_precommit_failure_does_not_advance (test_model.Build2Tests.test_precommit_failure_does_not_advance) ... ok\ntest_retroactive_self_auth_rejected (test_model.Build2Tests.test_retroactive_self_auth_rejected) ... ok\ntest_split_brain_recognition (test_model.Build2Tests.test_split_brain_recognition) ... ok\ntest_stale_authority_rejected (test_model.Build2Tests.test_stale_authority_rejected) ... ok\ntest_two_epochs_valid (test_model.Build2Tests.test_two_epochs_valid) ... ok\ntest_uncommitted_cannot_be_recognized (test_model.Build2Tests.test_uncommitted_cannot_be_recognized) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "build": 3,
+      "command": "python -m unittest discover -s sources/nnnc_phase1_build3 -p test_checker.py -v",
+      "tests": 6,
+      "passed": true,
+      "exit_code": 0,
+      "output": "\ntest_conflict_detected (test_checker.Build3.test_conflict_detected) ... ok\ntest_counterexamples_have_traces (test_checker.Build3.test_counterexamples_have_traces) ... ok\ntest_finite_depth (test_checker.Build3.test_finite_depth) ... ok\ntest_forged_claim_detected (test_checker.Build3.test_forged_claim_detected) ... ok\ntest_post_authorization_detected (test_checker.Build3.test_post_authorization_detected) ... ok\ntest_reference_has_no_counterexample (test_checker.Build3.test_reference_has_no_counterexample) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "checker_regeneration": {
+    "passed": true,
+    "data": [
+      {
+        "mutant": "reference",
+        "depth": 2,
+        "counts": {
+          "states": 5,
+          "attempts": 160,
+          "transitions": 4,
+          "rejected": 156,
+          "traces_checked": 4
+        },
+        "counterexample": null
+      },
+      {
+        "mutant": "trust_claim",
+        "depth": 2,
+        "counts": {
+          "states": 5,
+          "attempts": 160,
+          "transitions": 8,
+          "rejected": 152,
+          "traces_checked": 8
+        },
+        "counterexample": {
+          "issues": [
+            "CLAIM_MISMATCH",
+            "NO_PRESTATE_AUTHORITY"
+          ],
+          "steps": [
+            {
+              "before": {
+                "epoch": 0,
+                "executors": [
+                  "A"
+                ],
+                "approvers": [
+                  "B"
+                ]
+              },
+              "uid": "left",
+              "operation": "rotate",
+              "executor": "B",
+              "approver": "A",
+              "claimed_pre_epoch": 1,
+              "authorization_checked_epoch": 1,
+              "after": {
+                "epoch": 1,
+                "executors": [
+                  "B"
+                ],
+                "approvers": [
+                  "A"
+                ]
+              },
+              "recognized": [
+                "left"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mutant": "post_authorization",
+        "depth": 2,
+        "counts": {
+          "states": 5,
+          "attempts": 160,
+          "transitions": 4,
+          "rejected": 156,
+          "traces_checked": 4
+        },
+        "counterexample": {
+          "issues": [
+            "NO_PRESTATE_AUTHORITY"
+          ],
+          "steps": [
+            {
+              "before": {
+                "epoch": 0,
+                "executors": [
+                  "A"
+                ],
+                "approvers": [
+                  "B"
+                ]
+              },
+              "uid": "left",
+              "operation": "rotate",
+              "executor": "B",
+              "approver": "A",
+              "claimed_pre_epoch": 0,
+              "authorization_checked_epoch": 1,
+              "after": {
+                "epoch": 1,
+                "executors": [
+                  "B"
+                ],
+                "approvers": [
+                  "A"
+                ]
+              },
+              "recognized": [
+                "left"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mutant": "ignore_conflicts",
+        "depth": 2,
+        "counts": {
+          "states": 7,
+          "attempts": 160,
+          "transitions": 12,
+          "rejected": 148,
+          "traces_checked": 12
+        },
+        "counterexample": {
+          "issues": [
+            "CONFLICT_RECOGNIZED"
+          ],
+          "steps": [
+            {
+              "before": {
+                "epoch": 0,
+                "executors": [
+                  "A"
+                ],
+                "approvers": [
+                  "B"
+                ]
+              },
+              "uid": "left",
+              "operation": "rotate",
+              "executor": "A",
+              "approver": "B",
+              "claimed_pre_epoch": 0,
+              "authorization_checked_epoch": 0,
+              "after": {
+                "epoch": 1,
+                "executors": [
+                  "B"
+                ],
+                "approvers": [
+                  "A"
+                ]
+              },
+              "recognized": [
+                "left"
+              ]
+            },
+            {
+              "before": {
+                "epoch": 1,
+                "executors": [
+                  "B"
+                ],
+                "approvers": [
+                  "A"
+                ]
+              },
+              "uid": "right",
+              "operation": "rotate",
+              "executor": "B",
+              "approver": "A",
+              "claimed_pre_epoch": 1,
+              "authorization_checked_epoch": 1,
+              "after": {
+                "epoch": 1,
+                "executors": [
+                  "B"
+                ],
+                "approvers": [
+                  "A"
+                ]
+              },
+              "recognized": [
+                "left",
+                "right"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "stderr": ""
+  },
+  "sha256": {
+    "1/reference.py": "86f61be6b8b8f3fea73b9c7c7d7b1f3b8264c264b3a81e237dca359a0f9dd1d0",
+    "1/test_reference.py": "8bbf9b65bdb7a0387c802374fffb6c96fd12cd54bf62b898caf91383fc3115c2",
+    "2/model.py": "b2e81b33ea39e3e35e66b830935c65be28da381536cd8e754dda8c109356165d",
+    "2/test_model.py": "4341f7a84ddb6c099ae9e7b3f32caea1abb1250f38711e90e7dc2bba64fbd6e4",
+    "3/checker.py": "0eab21b559c578195b0ff4504b302abebe7c1434b9efe6703034e8f359f61aea",
+    "3/test_checker.py": "cc50fbc9e1de6c26bd17ed34c01a043f693c419f4dd3da62c26540f5b332ee8f"
+  },
+  "all_pass": true
+}

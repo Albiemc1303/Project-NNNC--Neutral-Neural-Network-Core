@@ -1,0 +1,15 @@
+VO,obligation,executed evidence,limitation,formal status,handoff
+VO-01,NNNC/NES separation,Build1 T-01; T-04,Scenario only; no ontological independence proof,OPEN,Phase 1 closure register / later integration
+VO-02,State/referent/identity distinctions,Build1 T-08,Conservative no-inference behavior; no identity proof,OPEN,Phase 2 Identity & Continuity
+VO-03,Process/constituent/entity distinction,Build1 T-01,Limited construction; no exhaustive independence countermodels,OPEN,Later entity integration
+VO-04,Pre-state authority,Build1 T-05; Build2 history tests; Build3 independent checker,"Finite model, simplified P0 authorization",OPEN,Phase 0 O01/O06; governance implementation
+VO-05,Continuity/branch/restoration,Build1 T-07/T-08,No substantive identity or restoration verifier,OPEN,Phase 2 Identity & Continuity; P0-O08
+VO-06,Capability/evidence/claims separation,Build1 T-10/T-12,Limited qualification decision paths,OPEN,Qualification evaluation stage
+VO-07,External trust/custody vs membership,Build1 T-04,No complete independent semantic countermodels,OPEN,Boundary/integration stage
+VO-08,Profile floor and non-substitution,Build1 T-02/T-03/T-11,"Necessary-condition checks, not realized FFNN/SA",OPEN,FFNN and SA realization phases
+VO-09,Internal causal integration,Build1 T-04,Unknown verdict; no interventions performed,OPEN,Causal integration domain
+VO-10,Cross-history protected conflicts,Build1 T-06; Build2 conflict tests; Build3 mutation,Central adjudication only; no distributed physical effects,OPEN,Phase 0 O03/O07; governance implementation
+VO-11,Build/scope/time evidence,Build1 T-12; evidence tests,"Fixture evidence, not production custody",OPEN,Evidence/certification implementation
+VO-12,Cumulative transformations,Build1 T-09,"Toy envelope, no evolving cognitive entity",OPEN,Development domain
+VO-13,Neutrality and endogenous regulation,No direct implementation,Untested interface,OPEN,Endogenous regulation domain
+VO-14,Level N certification and claims,Build1 T-01/T-02/T-03/T-10/T-11/T-12,"Necessary conditions only, no Level N certification",OPEN,Qualification and certification evaluation

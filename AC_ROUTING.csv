@@ -1,0 +1,10 @@
+case range,mapping status,notes
+AC-01–16,OPEN,Legacy exact-source reconciliation required
+AC-17–20,OPEN,Per-case oracle mapping not independently established
+AC-21–22,PARTIAL ROUTING,VO-11; no full AC execution
+AC-23–24,DEFERRED,VO-09 causal attribution
+AC-25–29,OPEN,Governance/continuity; exact mapping remains open
+AC-30–32,PARTIAL ROUTING,Build1 T-06/T-12; VO-10/11
+AC-33–36,OPEN,Profile/claim exact mapping remains open
+AC-37–39,PARTIAL ROUTING,Build1 T-02/T-11
+AC-40–42,DEFERRED,Later realization and qualification
