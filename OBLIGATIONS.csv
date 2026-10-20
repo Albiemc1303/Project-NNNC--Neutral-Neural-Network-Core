@@ -1,0 +1,9 @@
+id,status,return_gate,severity
+P0-O01,OPEN,NES integration,Deployment blocker
+P0-O02,OPEN,Existential infrastructure,Deployment blocker
+P0-O03,OPEN,Integration testing,Deployment blocker
+P0-O04,OPEN,Verification milestone,Verification blocker
+P0-O05,OPEN,Governance integration,Integration blocker
+P0-O06,OPEN,Security governance,Deployment blocker
+P0-O07,OPEN,Recovery integration,Integration blocker
+P0-O08,OPEN,Phase 2 Identity and Continuity,Ontology dependency
