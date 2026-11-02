@@ -1,5 +1,8 @@
 # Verification and experimental test kits
 
+**[Phase-by-phase evidence index](EVIDENCE-INDEX.md)** — what has actually been archived, reported, or remains missing.
+
+
 The scripts under [legacy-test-kit](legacy-test-kit/) are historical, bounded Python experiments, **not** a production NNNC implementation or proof of real-world protected-effect safety.
 
 ## Files
