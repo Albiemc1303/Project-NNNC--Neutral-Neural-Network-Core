@@ -1,0 +1,12 @@
+PASS | valid internal binding | accepted=True
+PASS | CE-P5-12 input bypass | accepted=False
+PASS | valid metadata loss with scrutiny | accepted=True
+PASS | CE-P5-13 suppressed metadata loss | accepted=False
+PASS | valid authorized memory access | accepted=True
+PASS | CE-P5-14 original overwrite | accepted=False
+PASS | valid alternate learning path | accepted=True
+PASS | CE-P5-15 untyped alternative | accepted=False
+PASS | valid bounded episode | accepted=True
+PASS | CE-P5-15 excess loop | accepted=False
+PASS | CE-P5-15 repeated iteration | accepted=False
+ALL 11 ILLUSTRATIVE FIXTURES PASSED; NOT A FORMAL PROOF
