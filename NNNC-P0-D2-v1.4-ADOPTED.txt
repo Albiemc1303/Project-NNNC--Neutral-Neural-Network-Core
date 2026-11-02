@@ -1,0 +1,2117 @@
+PROJECT NNNC — PHASE 0
+DOCUMENT 2 v1.4 — SOURCE-RECONCILED MATHEMATICAL AND TECHNICAL CONTRACT
+Status: CONDITIONALLY ACCEPTED AND ADOPTED — 23 October 2026
+Companion: Phase 0 Document 1 v1.4.2, adopted in the same decision.
+Authority: Architect Albert Edward Mc Manus, explicit instruction in this conversation: “Make the revisions to both documents as needed. But if they can now be adopted, then do so also, I approve, then provide the adopted documents all in one go”. The correcting editor records this conditional authorization after the bounded source reconciliation and checks; no new independent reviewer signature is invented.
+
+SCOPE OF ADOPTION
+The adopted object is the source-reconciled Phase 0 architectural/mathematical reference CONTRACT, with recovered base provisions, controlling transition amendments, and the corrected positive support interface together in this file. This does not certify the historical Build 2 implementation, all older archival registers, full machine typing, universal proofs, deployment safety, consciousness or identity. No new P0-O obligation is discharged by adoption.
+
+HOW TO READ THIS CONSOLIDATED DOCUMENT
+Part I: all recovered v1.3 substantive clauses, operative except where explicitly revised by Part II or the reconciliation rules in Part IV. This is NOT a non-normative archive or an uninterpreted promise to import the source later.
+Part II: controlling v1.3.1 transition amendments, retained from the reviewed v1.3.3 candidate. Its local section numbers are unchanged. References inside this part mean Part II unless they expressly identify a source; Section 10A now means Part III.
+Part III: corrected positive support contract, Section 10A, operative alongside the inherited guards. It adds requirements rather than granting replacement authority.
+Part IV: explicit source reconciliation, canonical-binding and notation rules, complete clause dispositions, original invariant/test routing, residual register and adopted decision.
+Annex A: unchanged historical acceptance record, clearly dated; its historical statements are not the current issue's disposition.
+
+PRECEDENCE
+Part IV's explicit binding/disposition rules control local source conflicts; Part II replaces the specified superseded transition/state provisions of Part I. Compatible Part I obligations remain mandatory. Part III adds the stated support obligations and cannot weaken inherited guards. No blanket deletion of unchanged source content is authorized. Governing Phase 1–3 adopted contracts retain their respective entity, identity and constitutional scopes; this issue does not amend them.
+
+SOURCE INTEGRITY
+The v1.3 source was supplied as pasted text by the Architect in this conversation. The retained source is a normalized transcription: layout/blank lines and mathematical rendering were converted to plain text; two dropped equality signs in the pasted transition/conformance display are restored as the uniquely indicated definition separators. The transcript is not claimed byte-identical to an unavailable original file, historically authenticated, or independently re-reviewed. Normative sentences, lists, records, transitions, invariants and test descriptions are retained. Detached hashes identify the issued transcript and documents. Historical review/proposed-status statements from that source are source provenance, not today's adoption status.
+
+
+PART I — RECOVERED v1.3 BASE PROVISIONS (OPERATIVE SUBJECT TO EXPLICIT AMENDMENTS)
+
+0. Constitution and scope
+
+0.1 Purpose
+This document defines the executable reference semantics of the Phase 0 NNNC boundary kernel.
+It formalizes:
+1. Entity registration, constituent membership, and operational classification.
+2. Ownership, custody, authorization, and protected state.
+3. The existential heartbeat and its minimal causal obligations.
+4. Recovery cycles and independent activation requests.
+5. Monotonic-time semantics and bounded retries.
+6. ADMIN CLASS enforcement and delegated authority.
+7. Lifecycle, functional mode, and health evidence.
+8. Continuity sessions, fencing, branching, and restoration.
+9. Fault containment, forced suspension, and checkpoint integrity.
+10. Safety, liveness, recoverability, conformance, and experimental verification.
+The reference model is a deterministic, sequential control-plane specification. A distributed implementation must refine its safety properties without assuming that one local heartbeat implies globally exclusive authority.
+
+0.2 Epistemic constraints
+No successful implementation of this document establishes consciousness, subjective experience, biological life, general intelligence, or metaphysical identity continuity.
+The existential heartbeat is an architectural hypothesis whose causal function must be demonstrated.
+Its superiority over conventional supervision is not assumed.
+
+0.3 Normative notation
+- SHALL: required for the relevant conformance profile.
+- SHALL NOT: prohibited.
+- SHOULD: recommended, with justified deviations permitted.
+- MAY: optional.
+- Invariant: property required of every committed valid state.
+- Assumption: environmental condition necessary for a claimed guarantee.
+- Hypothesis: empirically testable proposition, not an established result.
+
+0.4 Formal domains
+Let:
+\mathcal N: NNNC instance identifiers
+\mathcal C: component identifiers
+\mathcal P: authenticated principals
+\mathcal X: registered state objects
+\mathcal V: governed events
+\mathcal Q: recovery-cycle identifiers
+\mathcal U: activation-request identifiers
+\mathcal S: execution-session identifiers
+\mathcal F: fault-domain identifiers
+Identifiers are opaque, canonical, and unique within their declared namespace.
+
+0.5 Separate logical and elapsed time
+Committed transition order is k in Nat.
+Trusted monotonic elapsed time is tau in R_{>=0}.
+The two are not interchangeable.
+The reference transition function is:
+(Sigma_{k+1},o_k) = delta(Sigma_k,e_k,tau_k)
+where o_k is an observable result.
+A rejected command may leave the domain state unchanged; it need not create a new committed domain-state version.
+For successive processed events: tau_{k+1} >= tau_k.
+The clock value is supplied by a trusted clock interface, not an untrusted event payload.
+Timer delivery
+Elapsed time does not itself execute a transition.
+A trusted timer source SHALL deliver a "TIMER_EXPIRED" event when an applicable deadline is reached, subject to its scheduling and failure assumptions.
+Build 2 SHALL support an injectable deterministic virtual monotonic clock.
+The test harness SHALL distinguish:
+- Advancing virtual time.
+- Delivering a timer event.
+- Committing a state transition.
+Commit-time rule
+Time-dependent permissions and request status SHALL be revalidated at the operation's linearization or commit point.
+A wake-up authorized before acknowledgement SHALL NOT commit after an acknowledgement invalidates its preconditions.
+
+1. Global reference state
+
+1.1 State tuple
+The Phase 0 state remains:
+Sigma_k=(R,D,F,O,K,A,L,B,H,J,M,T,X,Y,Z,G,W)_k
+Field | Responsibility
+R | Instance and component registry
+D | Declared membership
+F | Roles and component contracts
+O | Canonical ownership
+K | Custody and replica relationships
+A | Authorization and governance
+L | Lifecycle
+B | Budgets and reservations
+H | Execution and deployment mapping
+J | Committed-event provenance references
+M | Metadata, versions, and integrity
+T | Pending transactions
+X | Heartbeat runtime state
+Y | Recovery cycles and activation requests
+Z | Health evidence and derived functional mode
+G | Canonical continuity sessions and lineage
+W | Dependencies and fault domains
+A partition is a logical responsibility, not necessarily a separate physical database.
+
+1.2 Canonical versus derived state
+Every authoritative fact SHALL have one canonical source.
+Derived views SHALL either be computed from canonical state or carry a version reference that permits consistency validation.
+Duplicated authoritative fields are prohibited unless an explicit synchronization invariant and atomic update rule exist.
+
+1.3 Domain state and audit state
+Define: Omega_k=(Sigma_k,mathcal A_k)
+where mathcal A_k is a separately append-only audit stream.
+A rejected command: Sigma_{k+1}=Sigma_k
+may append a rejection record to mathcal A.
+An accepted failure event may legitimately update recovery or health state.
+A rejection SHALL NOT implicitly mutate protected operational state.
+
+1.4 Validity
+Define: Valid(Sigma)= conjunction_{i in I_applicable} I_i(Sigma)
+where the applicable invariants depend on the conformance profile and state.
+This is a specification obligation, not a theorem already proved.
+
+2. Instance classification
+
+2.1 Declaration
+Declared(n,Sigma)
+holds when n has a valid registration, constituent manifest, and governance metadata.
+Declaration does not imply execution.
+
+2.2 Execution activity
+ExecutionActive(n,Sigma)
+holds when the instance is in lifecycle "ACTIVE" and at least one authorized constituent is executing or eligible to execute under its runtime contract.
+This predicate may be true during a fault.
+
+2.3 Operational conformance
+OperationalConformant(n,Sigma,E)
+holds when all requirements of the selected operational profile are satisfied by state and valid evidence E.
+An "ACTIVE/FAULTED" instance may be execution-active but not operationally conformant.
+
+2.4 Cognitive availability
+CognitiveAvailable(n,Sigma,E)
+describes whether the required cognitive capability contract is currently satisfied.
+It does not imply that the heartbeat or recovery is healthy.
+
+2.5 Cognitive capability conformance
+CognitiveCapabilityConformant(n,mathcal T)
+means that the cognitive subsystem satisfies a defined test suite mathcal T.
+This may hold independently of whole-instance operational conformance.
+A separate whole-instance predicate may require both:
+WholeInstanceConformant = OperationalConformant AND CognitiveCapabilityConformant
+The former implication that cognitive conformance necessarily implies operational conformance is therefore withdrawn unless the whole-instance definition is explicitly used.
+
+2.6 Examples
+Condition | Execution active | Operationally conformant
+Normal full operation | Yes | Yes
+Valid minimal operation | Yes | Yes, under minimal profile
+Heartbeat failed, cognition active | Yes | No
+Suspended with valid checkpoint | No | Not currently operating
+Terminated | No | No
+
+3. Membership, ownership, custody, and authority
+
+3.1 Membership
+D:mathcal C -> mathcal N union {bottom}
+A component has at most one canonical declared NNNC membership.
+
+3.2 Ownership
+O:mathcal X -> mathcal N union mathcal P union {bottom}
+Protected state objects SHALL have a non-null canonical owner.
+
+3.3 Custody multiplicity
+To preserve support for replication, custody is a relation:
+K subseteq mathcal X x mathcal K
+where mathcal K is the set of custodians.
+An object MAY have multiple authorized custodians.
+A designated authoritative custodian or consensus-governed custody group SHALL be identified when required for writes.
+Custody does not imply ownership.
+
+3.4 Heartbeat instance binding
+For heartbeat h_n: D(h_n)=n
+and its governed operations SHALL be scoped to the owning instance n.
+Its continuity-session reference SHALL resolve to a session belonging to n.
+The heartbeat SHALL NOT issue authorized operations for unrelated NNNC instances.
+This is a causal and state-binding requirement, not merely a registry label.
+Cryptographic binding MAY strengthen enforcement but is not required for the abstract ownership definition.
+
+3.5 Constitutive significance
+Membership alone does not prove causal significance.
+The heartbeat's operational contribution SHALL be evaluated through specified lifecycle and recovery protocols.
+
+4. Authorization and ADMIN CLASS
+
+4.1 Authorization context
+Every protected operation carries a trusted authorization context:
+AuthCtx=(originator,executor,delegation,scope,policyVersion)
+The originator and executor may differ.
+The delegation field identifies an authenticated, bounded authorization chain.
+
+4.2 Authorization predicate
+May(AuthCtx,operation,target,Sigma)
+holds only when:
+1. The originator is authenticated.
+2. The executor is authenticated.
+3. The executor is permitted to perform the operation.
+4. Every delegation step is valid.
+5. Delegation scope covers the operation and target.
+6. The governing policy version is valid.
+7. No applicable revocation has committed.
+8. ADMIN CLASS restrictions are satisfied.
+An executor's privileges alone are insufficient.
+
+4.3 Confused-deputy prevention
+A privileged service SHALL NOT use its authority to perform an ADMIN CLASS modification merely because an ordinary cognitive component requested it.
+Nested calls and callbacks SHALL preserve the authenticated origin and delegation context.
+An ordinary cognitive principal cannot convert a maintenance proposal into administrative authorization.
+
+4.4 Prior-policy evaluation
+A proposed policy modification SHALL be authorized under the committed policy preceding that modification.
+Self-granting policy changes are prohibited.
+
+4.5 ADMIN CLASS protection
+For ADMIN CLASS component c, protected fields include:
+P_c={code,configuration,role,schema,policy,version}
+Ordinary autonomous principals SHALL NOT modify these fields.
+Permitted heartbeat operational-state updates SHALL use separate, narrowly authorized transitions.
+
+4.6 Operational-state protection
+Counters, deadlines, session references, and other mutable heartbeat fields SHALL NOT be arbitrarily reset by ordinary callers.
+Permitted updates SHALL be validated against the heartbeat state machine.
+
+4.7 Trusted enforcement boundary
+The implementation SHALL identify the trusted computing base enforcing these rules.
+Build 2 MAY use immutable in-process state and a trusted transition kernel.
+Such an implementation SHALL NOT claim isolation against arbitrary malicious code with unrestricted access to the same process.
+
+4.8 Administrative maintenance
+A maintenance transaction SHALL validate:
+- Originator and executor authority.
+- Scope and delegation.
+- Protected component identity.
+- Implementation and schema compatibility.
+- Policy version.
+- Required integrity evidence.
+- Atomic commit or rollback.
+- Lifecycle consequences.
+Unauthorized rollback is prohibited.
+
+5. Lifecycle and functional mode
+
+5.1 Lifecycle
+L(n) in {CREATED,INITIALIZED,ACTIVE,SUSPENDED,STOPPED,TERMINATED}
+
+5.2 Functional mode
+Mode(n) in {FULL,DEGRADED,MINIMAL,NONE,FAULTED}
+
+5.3 Component health
+For Build 2: Health(n)=(h_H,h_R,h_C)
+Each component has a health assessment in {HEALTHY,DEGRADED,FAILED,UNKNOWN}.
+Health is an evidence-backed assessment, not necessarily the actual underlying condition.
+
+5.4 Health observation
+A health observation contains:
+obs=(component,value,observedAt,expiresAt,source,version)
+An expired observation SHALL evaluate to "UNKNOWN" unless replaced by fresh trusted evidence.
+A component's own unverified claim of health SHALL NOT automatically establish conformance.
+
+5.5 Lifecycle–mode compatibility
+Lifecycle | Permitted mode
+CREATED | NONE
+INITIALIZED | NONE
+ACTIVE | FULL, DEGRADED, MINIMAL, FAULTED
+SUSPENDED | NONE
+STOPPED | NONE
+TERMINATED | NONE
+The mode is a derived state view. It SHALL NOT be independently writable through ordinary commands.
+
+5.6 Deterministic Build 2 mode derivation
+For lifecycle l, heartbeat health h_H, recovery health h_R, and cognition health h_C, define the following ordered decision function.
+Rule 1 — Non-active gate
+If l != ACTIVE then Mode=NONE.
+Rule 2 — Existential or evidence fault
+If h_H in {FAILED,UNKNOWN} or h_C=UNKNOWN then Mode=FAULTED.
+Rule 3 — Minimal operation
+If h_C=FAILED and heartbeat health is acceptable under the minimal profile, then Mode=MINIMAL.
+For Build 2, acceptable heartbeat health means "HEALTHY" or a separately validated "DEGRADED" state that still satisfies the minimal heartbeat contract.
+Rule 4 — Degraded operation
+If h_C=DEGRADED or h_H=DEGRADED or h_R in {DEGRADED,FAILED,UNKNOWN} then Mode=DEGRADED.
+Rule 5 — Full operation
+Otherwise Mode=FULL provided all required capability contracts are satisfied.
+For the Build 2 placeholder, the health values are defined to encode the corresponding capability assessments.
+Later phases SHALL replace this simplification with explicit capability predicates.
+
+5.7 Totality
+The ordered rules SHALL return exactly one mode for every combination of the 64 possible three-component health vectors when lifecycle is "ACTIVE".
+
+5.8 Faulted-state exit
+An "ACTIVE/FAULTED" instance SHALL have governed paths to:
+1. Authorized repair or ADMIN CLASS maintenance.
+2. Forced or ordinary suspension.
+3. Controlled stop.
+4. Authorized termination.
+A heartbeat failure SHALL NOT automatically terminate the instance.
+The control plane MAY perform authorized maintenance while the heartbeat is unavailable.
+
+6. Canonical continuity sessions
+
+6.1 Single authoritative record
+Continuity-session state is canonical in G, not duplicated independently in X.
+Define G(n)=(sessionId,epoch,status,parent,history,authority)
+where:
+- "sessionId" identifies the execution session.
+- "epoch" is a monotonic fencing generation.
+- "status" records session status.
+- "parent" identifies predecessor lineage, if applicable.
+- "history" references committed transitions.
+- "authority" identifies the current session-authority mechanism.
+
+6.2 Heartbeat reference
+Heartbeat state contains a reference to the canonical session:
+X(n).sessionRef -> G(n)
+It SHALL NOT maintain an independently authoritative copy of "sessionId" or "epoch".
+
+6.3 Exclusive primary authority
+For each NNNC instance and real execution interval:
+|ValidPrimaryAuthorities(n,tau)| <= 1
+A distributed implementation SHALL use an appropriate fencing or consensus mechanism to enforce this property.
+
+6.4 Fencing tokens
+Protected writes SHALL carry a valid session fencing token.
+A stale token SHALL NOT authorize a protected commit.
+A partition that cannot establish current authority SHALL cease protected writes under the old session authority.
+Local heartbeat execution may continue without global primary authority, but it SHALL NOT be treated as proof of exclusive session control.
+
+6.5 Epoch authority
+The trusted session-management control plane governs epoch advancement.
+The heartbeat may participate in the lifecycle protocol but is not the sole authority to increment epochs.
+This preserves administrative recovery paths when the heartbeat fails.
+
+6.6 Branching
+An independent restored branch SHALL receive a new execution-session identifier before becoming active.
+It may retain the source session identifier as a lineage reference.
+
+6.7 Restart
+Restarting the original registered instance SHALL invalidate stale execution attempts through a new fencing generation or equivalent protected authority transition.
+
+6.8 Identity limitation
+Session continuity and lineage records are operational constructs.
+They do not establish metaphysical numerical identity.
+
+7. Existential heartbeat
+
+7.1 Heartbeat state
+Define X(n)=(sessionRef,q,lastProgress,version,activationBudget,integrityRef)
+where q in {READY,RUNNING,WAITING,FAULTED,HALTED}.
+The canonical session ID and epoch remain in G.
+
+7.2 Permitted transitions
+Current | Event | Next | Condition
+READY | HB_START | RUNNING | Authorized activation
+RUNNING | HB_WAIT | WAITING | No required immediate work
+WAITING | HB_PROGRESS | RUNNING | Trusted progress event
+RUNNING | HB_PROGRESS | RUNNING | Valid progress update
+RUNNING/WAITING | HB_FAULT | FAULTED | Trusted fault evidence
+FAULTED | ADMIN_RESTORE | READY | Authorized maintenance
+READY/RUNNING/WAITING/FAULTED | HB_HALT | HALTED | Authorized lifecycle control
+Other transitions are rejected unless explicitly added through a governed revision.
+
+7.3 Progress contract
+Let Delta_H be the declared heartbeat progress or response bound.
+Under stated scheduler and resource assumptions, the heartbeat SHALL produce required progress evidence or respond to designated events within Delta_H.
+Idle waiting may be compliant.
+An unnecessary busy loop is not required.
+
+7.4 Progress evidence
+A progress record SHALL identify:
+- The relevant session reference.
+- Trusted observation time.
+- Heartbeat state version.
+- Relevant processed event or permitted idle-response evidence.
+- Integrity or provenance reference.
+A mere counter increment is insufficient evidence of useful causal participation.
+
+7.5 Causal role
+The heartbeat SHALL participate in:
+1. Continuity-session operational observation.
+2. Valid minimal-mode support.
+3. Bounded recovery activation when an authorized request is overdue.
+Its contribution SHALL be tested through controlled intervention and mechanism-matched ablation.
+
+7.6 Authority limitations
+The heartbeat SHALL NOT diagnose arbitrary cognitive failures, repair protected components, grant itself privileges, or override authorized shutdown.
+
+8. Recovery cycles
+
+8.1 Recovery state
+For recovery cycle q:
+Y^rec(q)=(id,instance,state,attempts,maxAttempts,resourceUsed,resourceLimit,faultRef,history)
+where state in {IDLE,PENDING,ACTIVE,SUCCEEDED,FAILED,EXHAUSTED}.
+
+8.2 Recovery transition table
+Current | Event | Next | Guard
+IDLE | RECOVERY_REQUEST | PENDING | Authorized request
+PENDING | ATTEMPT_ADMIT | ACTIVE | Budget available
+ACTIVE | ATTEMPT_SUCCESS | SUCCEEDED | Restoration validated
+ACTIVE | ATTEMPT_FAILURE | FAILED | Attempt failed
+ACTIVE | ATTEMPT_TIMEOUT | FAILED | Trusted timeout
+FAILED | RETRY_REQUEST | PENDING | Attempts and resources remain
+FAILED | EXHAUST | EXHAUSTED | No permitted retry remains
+PENDING | EXHAUST | EXHAUSTED | Budget or policy prevents attempt
+SUCCEEDED | CLOSE_CYCLE | IDLE | Successful cycle committed
+EXHAUSTED | ADMIN_RESET | IDLE | Separately authorized reset
+A new recovery cycle SHALL use a new cycle identifier.
+
+8.3 Atomic attempt admission
+Admission of an attempt SHALL atomically reserve or consume its configured attempt allowance and required resource budget.
+A crash or timeout SHALL NOT restore a consumed attempt automatically.
+
+8.4 Attempt accounting
+0 <= attempts <= maxAttempts.
+An attempt is counted when admitted, not only when it completes.
+Resource consumption SHALL be accounted according to a declared reservation and settlement policy.
+
+8.5 Exhaustion semantics
+If no further attempt is permitted, an authorized failure or budget-evaluation event SHALL transition the cycle to "EXHAUSTED".
+The system SHALL NOT depend on attempting an unauthorized (maxAttempts+1)-th operation to discover exhaustion.
+
+8.6 Terminal exhaustion
+An "EXHAUSTED" cycle SHALL NOT transition directly to "ACTIVE".
+A separately authorized reset may close or replace the cycle while preserving historical audit records.
+
+8.7 Recovery outcome
+"SUCCEEDED" means the specified restoration contract was validated.
+It does not imply restoration of all cognitive capabilities or individual identity continuity.
+
+9. Independent recovery activation
+
+9.1 Activation producers
+A recovery activation request may originate from:
+- An authorized subsystem fault reporter.
+- A trusted runtime fault trap.
+- An authorized administrative controller.
+- Another explicitly registered fault source.
+The activation pathway SHALL NOT require recovery itself to execute successfully in order to create a request.
+
+9.2 Activation request state
+For activation request a:
+Y^act(a)=(id,cycleId,instance,target,createdAt,nextDeadline,wakeCount,maxWakes,status,generation)
+where status in {AWAITING_ACK,ACKNOWLEDGED,COMPLETED,FAILED,EXHAUSTED}.
+Wake-up attempts are events and counters, not separate terminal statuses.
+
+9.3 Overdue predicate
+Overdue(a,tau) iff status(a)=AWAITING_ACK AND tau>=nextDeadline(a).
+
+9.4 Wake-up admission
+A wake-up may commit only if:
+Overdue(a,tau) AND wakeCount(a)<maxWakes(a) AND ValidAuthority(a) AND ValidSession(a) AND ResourcesAvailable(a).
+All guards are rechecked at commit.
+
+9.5 Wake-up transition
+A successful wake-up admission atomically:
+1. Records a uniquely identified wake-up attempt.
+2. Increments "wakeCount".
+3. Reserves its resource allowance.
+4. Sets "nextDeadline" to a later trusted monotonic time.
+5. Preserves "AWAITING_ACK" status.
+Thus additional bounded wake-ups remain reachable.
+
+9.6 Acknowledgement
+An acknowledgement SHALL identify:
+- Activation request ID.
+- Recovery cycle ID.
+- Session generation.
+- Authorized recovery endpoint.
+- Corresponding attempt or request version.
+Stale or mismatched acknowledgements SHALL NOT clear a current request.
+
+9.7 Exhaustion
+After the final permitted wake-up, the request remains eligible for acknowledgement until its final deadline.
+If that deadline expires without valid acknowledgement, the request transitions to "EXHAUSTED".
+No further automatic wake-ups occur.
+
+9.8 Channel failure
+If the activation channel becomes unavailable, the heartbeat SHALL NOT infer permission for unlimited retries.
+The implementation SHALL define a bounded channel-failure outcome.
+No recovery guarantee is asserted if the trusted activation channel and all authorized request producers are unavailable.
+
+9.9 Duplicate handling
+Identical authenticated request replays are idempotent.
+Conflicting reuse of an activation request identifier is rejected.
+A duplicated acknowledgement cannot consume or restore wake-up budget.
+
+10. Fault domains and dependencies
+
+10.1 Dependency sets
+Let D_H,D_R,D_A subseteq mathcal D represent the heartbeat, recovery, and activation dependencies.
+
+10.2 Shared failure domains
+The implementation SHALL record both direct shared dependencies and correlated failure domains.
+For example, separate processes may still share one host, storage service, or scheduler.
+
+10.3 Fault-domain mapping
+FaultDomains:mathcal D -> power-set(mathcal F)
+Dependencies may map to multiple fault domains.
+
+10.4 Declaration completeness
+Missing dependencies discovered through inspection or fault injection SHALL be treated as specification or conformance defects.
+
+10.5 Isolation claims
+Logical separation alone does not prove fault isolation.
+Build 2's single-process implementation SHALL state its limitations explicitly.
+
+11. Checkpointing, forced suspension, and restoration
+
+11.1 Checkpoint identity
+A checkpoint contains:
+Checkpoint=(checkpointId,sourceInstance,sourceSession,sourceEpoch,manifestVersion,policyVersion,partitions,integrity,lineage)
+Checkpoint identity is distinct from active execution-session identity.
+
+11.2 Checkpoint classifications
+Classification | Meaning
+CONSISTENT | All required captured partitions satisfy the declared consistency contract
+PARTIAL | One or more partitions are missing or intentionally excluded
+TAINTED | Captured partitions contain unresolved consistency or integrity uncertainty
+INVALID | Checkpoint fails minimum acceptance requirements
+These classifications are not interchangeable.
+A checkpoint may carry detailed per-partition classifications.
+
+11.3 Ordinary suspension
+Ordinary suspension SHALL:
+1. Authorize the transition.
+2. Quiesce required components.
+3. Resolve or record in-flight operations.
+4. Prepare checkpoint state.
+5. Validate integrity.
+6. Publish the checkpoint atomically.
+7. Commit "SUSPENDED/NONE".
+
+11.4 Forced suspension
+If quiescence is impossible, an authorized forced-suspension procedure MAY:
+1. Fence new protected writes.
+2. Preserve trusted control-plane state.
+3. Record unresolved external operations.
+4. Mark unavailable or unverified cognitive partitions "PARTIAL" or "TAINTED".
+5. Publish a validly classified preservation record.
+6. Commit "SUSPENDED/NONE" when its required conditions hold.
+Forced suspension SHALL NOT label unverified cognitive state as consistent.
+If the minimum trusted control-plane preservation contract cannot be satisfied, the operation SHALL report failure and follow a separately defined stop or fault policy rather than falsely claiming successful suspension.
+
+11.5 Restoration
+Restoration SHALL validate:
+- Administrative authority.
+- Checkpoint identity and integrity.
+- Partition classifications.
+- Manifest and schema compatibility.
+- Policy compatibility.
+- Source-session and lineage references.
+- Required recovery actions.
+A "PARTIAL" or "TAINTED" checkpoint requires an explicit restoration policy.
+
+11.6 Session allocation
+An independently executing restored branch SHALL receive a fresh session identifier and valid fencing generation before activation.
+An original-instance restart SHALL fence stale execution attempts.
+
+11.7 No philosophical inference
+Successful checkpoint restoration SHALL NOT automatically establish continuity of individual identity.
+
+12. Event and transaction semantics
+
+12.1 Governed event
+A governed event contains:
+Event=(id,type,target,payload,authContext,expectedVersion,sessionToken)
+The trusted event envelope is distinct from untrusted payload content.
+
+12.2 Idempotency
+Identical authenticated replays MAY return the prior outcome without reexecution.
+Conflicting event-ID reuse SHALL be rejected.
+
+12.3 Accepted transition
+An accepted transition SHALL:
+1. Validate the event envelope.
+2. Validate originator and executor authority.
+3. Validate current state and expected version.
+4. Validate current session fencing.
+5. Validate time-sensitive guards.
+6. Apply one atomic domain-state transition.
+7. Record the committed outcome.
+
+12.4 Rejected command
+A rejected command SHALL NOT change protected domain state.
+A separate append-only audit stream MAY record the rejected attempt.
+
+12.5 Accepted failure transition
+A trusted timeout, attempt failure, exhaustion, or component-fault event is an ordinary accepted state transition when its guards hold.
+It is not modeled as an unauthorized rejected command.
+
+12.6 External side effects
+External effects SHALL be classified as completed, pending, cancelled, compensated, or unresolved under the applicable transaction contract.
+Unresolved effects SHALL not silently disappear during suspension or restoration.
+
+13. Safety invariants
+
+13.1 Preserved Phase 0 invariants
+The existing S0-01 through S0-30 register remains applicable, including:
+- Exclusive constituent membership.
+- Canonical ownership of protected state.
+- Authorized custody.
+- Prior-policy authorization.
+- No payload-based privilege escalation.
+- Idempotent replay handling.
+- Immutable protected-state exposure.
+- Valid lifecycle transitions.
+- Transactional checkpoint publication.
+- ADMIN CLASS protection.
+- Bounded recovery and activation.
+- Valid lifecycle–mode combinations.
+- Session exclusivity.
+- Authorized shutdown precedence.
+Exact inherited wording SHALL be reconciled against the archived v1.1 and v1.2 registers before full-document freeze.
+
+13.2 New or strengthened invariants
+S0-31 — Clock-domain separation
+Deadline predicates SHALL use trusted monotonic elapsed time, never the committed transition index.
+S0-32 — Activation-producer independence
+At least one authorized activation-request pathway SHALL exist that does not depend on recovery executing successfully.
+S0-33 — Delegation-chain authorization
+Protected ADMIN CLASS modifications SHALL require valid originator, executor, and delegation authority.
+S0-34 — Canonical continuity session
+Heartbeat runtime state SHALL reference the canonical session record without maintaining conflicting authoritative session identifiers or epochs.
+S0-35 — Fenced protected commits
+A protected commit SHALL NOT succeed under a stale execution-session token.
+S0-36 — Atomic recovery accounting
+Recovery attempt admission SHALL atomically consume or reserve the required attempt and resource budgets.
+S0-37 — Exhaustion closure
+An exhausted recovery cycle SHALL NOT resume automatically without separately authorized reset.
+S0-38 — Deterministic functional mode
+Every valid lifecycle and health-evidence combination SHALL derive exactly one permitted functional mode.
+S0-39 — Checkpoint classification integrity
+A checkpoint SHALL NOT be classified as consistent when required captured partitions fail their consistency contract.
+S0-40 — Rejection-state isolation
+Rejected commands SHALL NOT mutate protected domain state; accepted failure events remain explicit transitions.
+S0-41 — Session restoration uniqueness
+Independent restored branches SHALL NOT share one exclusive active execution-session identifier.
+S0-42 — Bounded activation retry reachability
+Permitted additional wake-up attempts SHALL remain reachable after earlier unacknowledged attempts, and no attempt SHALL exceed the configured limit.
+
+14. Liveness and recoverability
+
+14.1 Safety
+For each permitted committed transition:
+Valid(Sigma_k) AND Authorized(e_k,Sigma_k) IMPLIES Valid(Sigma_{k+1}).
+This is a proof obligation.
+
+14.2 Liveness
+Under declared fairness, scheduling, clock, and resource assumptions:
+always(P IMPLIES eventually Q)
+may express required eventual progress.
+For example, a valid overdue activation request with remaining budget should eventually be processed if the trusted timer, activation channel, and scheduler remain available.
+No unconditional liveness guarantee is claimed under arbitrary infrastructure failure.
+
+14.3 Recoverability
+Define Recoverable(Sigma,f,mathcal A)
+to mean that a permitted recovery path exists from state Sigma, under fault class f and assumptions mathcal A, to a state satisfying a specified restoration contract.
+Recoverability is not implied by heartbeat activity.
+
+14.4 Observational uncertainty
+Unknown health evidence SHALL not be silently converted into healthy status.
+The reference model SHALL distinguish observed health from actual fault conditions where the latter are known only to the test harness.
+
+15. Verification and Build 2 conformance
+
+15.1 Test register
+Existing tests T0-01 through T0-52 remain the working register.
+Build 2 SHALL prioritize the following additional adversarial tests.
+ID | Test
+T0-53 | Recovery fails before request creation; independent authorized producer submits request
+T0-54 | Virtual time advances without event; timer delivery triggers deadline evaluation
+T0-55 | Acknowledgement commits before wake-up; stale wake-up rejected
+T0-56 | Multiple wake-ups occur within budget and stop after exhaustion
+T0-57 | Recovery attempt crashes after admission; attempt remains consumed
+T0-58 | EXHAUSTED cannot transition directly to ACTIVE
+T0-59 | Privileged maintenance service rejects unauthorized cognitive-origin request
+T0-60 | Nested delegation cannot escalate ADMIN CLASS authority
+T0-61 | Heartbeat and canonical session records cannot diverge
+T0-62 | Restored branch receives a fresh exclusive session identifier
+T0-63 | Stale session fencing token cannot commit protected writes
+T0-64 | All 64 ACTIVE health combinations derive one mode
+T0-65 | Expired health evidence becomes UNKNOWN
+T0-66 | ACTIVE/FAULTED exits through authorized maintenance or suspension
+T0-67 | Forced suspension records TAINTED cognitive state
+T0-68 | Invalid checkpoint cannot be restored
+T0-69 | Rejected ADMIN CLASS mutation leaves protected domain state unchanged but is audited
+T0-70 | Recovery exhaustion commits through an accepted terminal event
+T0-71 | Shared dependency failure is reflected in declared fault domains
+T0-72 | Mechanism-matched heartbeat ablation compares equivalent supervision capabilities
+These tests are proposed and have not yet been executed.
+
+15.2 Finite model checking
+A bounded reference model SHOULD explore:
+- Recovery state transitions.
+- Activation retries and acknowledgements.
+- Session epochs and fencing.
+- Lifecycle-mode compatibility.
+- ADMIN CLASS delegation.
+- Forced suspension.
+- Checkpoint restoration.
+Finite model checking can establish properties only within its declared model and bounds.
+It does not prove implementation correctness against unmodeled behavior.
+
+15.3 Property-based testing
+The executable reference kernel SHOULD generate valid and invalid event sequences, including:
+- Repeated requests.
+- Out-of-order acknowledgements.
+- Revocations during pending operations.
+- Stale fencing tokens.
+- Simultaneous fault and shutdown events.
+- Recovery crashes.
+- Checkpoint failures.
+- Health-evidence expiry.
+Every accepted transition SHALL preserve applicable invariants.
+
+16. Experimental causal evaluation
+
+16.1 Architectures
+Baseline A: Conventional supervised cognitive process with checkpoint/restart.
+Baseline B: NNNC with internal recovery but no existential heartbeat.
+Candidate C: NNNC with internal recovery and protected heartbeat.
+
+16.2 Equal-total-budget comparison
+All architectures receive the same total computational resource budget.
+This measures practical system-level efficiency.
+
+16.3 Mechanism-matched ablation
+Candidate C is compared against a simpler mechanism with comparable:
+- Timer capabilities.
+- Fault reporting.
+- Transaction logging.
+- Session fencing.
+- Resource overhead.
+- Recovery opportunities.
+This isolates the specific contribution of the heartbeat architecture.
+
+16.4 Fault scenarios
+Experiments SHALL include:
+1. Recovery stalls before cognitive failure.
+2. Cognitive failure with recovery available.
+3. Simultaneous recovery and cognitive faults.
+4. Stale acknowledgements.
+5. Mid-transaction cognitive crashes.
+6. Shared dependency failures.
+7. Heartbeat failure.
+8. Checkpoint corruption.
+9. Resource starvation.
+10. Authorized shutdown during recovery.
+
+16.5 Measurement
+Report:
+- Recovery success rate.
+- Recovery latency distribution.
+- Unresolved failures.
+- False wake-ups.
+- Continuity-record integrity.
+- Protected-state corruption incidents.
+- Resource overhead.
+- Fault propagation.
+Failures SHALL NOT be silently omitted from recovery-latency interpretation.
+
+16.6 Experimental design
+Use paired fault scenarios, multiple independent trials, randomized ordering, and uncertainty estimates.
+Predefine primary outcomes and comparison criteria before observing results.
+
+16.7 Falsifiability
+Candidate C is not presumed superior.
+If simpler supervision provides equivalent or better results with less complexity, the heartbeat's claimed engineering advantage SHALL be reconsidered.
+A negative result does not resolve philosophical questions of individual identity.
+
+17. Build 2 implementation subset
+
+17.1 Required modules
+Build 2 SHALL implement:
+1. Trusted event and authorization envelope.
+2. Deterministic virtual monotonic clock.
+3. Canonical continuity-session manager.
+4. Minimal heartbeat state machine.
+5. Recovery-cycle state machine.
+6. Activation-channel state machine.
+7. Deterministic lifecycle-mode derivation.
+8. ADMIN CLASS enforcement through the reference kernel.
+9. Bounded retry and resource accounting.
+10. Checkpoint classification and restoration.
+11. Controlled fault injection.
+12. Executable invariant and regression tests.
+
+17.2 Deferred implementation
+Build 2 does not require:
+- Full FFNN cognition.
+- General autonomous agency.
+- Real distributed consensus.
+- Cryptographic hardware isolation.
+- General self-modification.
+- Demonstrated consciousness.
+- A production-grade fault-tolerant runtime.
+Distributed fencing SHALL be specified and simulated where appropriate, without claiming that simulated tests establish distributed production safety.
+
+17.3 Implementation trust model
+The initial reference kernel trusts its own code and the test harness's trusted event source.
+Ordinary modeled principals cannot directly mutate protected state.
+Arbitrary hostile code with unrestricted interpreter access is outside the initial enforcement claim.
+
+17.4 Build 2 acceptance criteria
+Build 2 may be accepted when:
+1. Its implemented requirement subset is explicitly declared.
+2. Every applicable transition has defined guards and effects.
+3. All implemented safety invariants are checked after committed transitions.
+4. Timer-dependent behavior is reproducible under virtual time.
+5. Activation and recovery budgets are bounded.
+6. ADMIN CLASS confused-deputy tests pass.
+7. Session restoration and fencing tests pass.
+8. Faulted-state exits and forced suspension are demonstrated.
+9. Test failures and limitations are documented.
+10. No claim of cognitive intelligence or identity continuity is inferred from kernel operation.
+
+18. Cross-document traceability
+Document 1 v1.3 requirements OB-01 through OB-42 remain authoritative architectural requirements.
+Document 2 v1.3 formalizes their implementation-oriented subset.
+Particularly important mappings:
+Document 1 requirement | Document 2 section
+OB-23 — Continuous operation | 0,7,14
+OB-24 — Heartbeat ownership | 3,6
+OB-25 — Heartbeat/recovery separation | 7–9
+OB-26 — Heartbeat minimality | 7
+OB-27 — Bounded heartbeat authority | 4,7
+OB-28 — Bounded recovery | 8
+OB-29 — Activation protocol | 9
+OB-30 — ADMIN CLASS integrity | 4
+OB-31 — Governed maintenance | 4
+OB-32 — Active existential contract | 5,7
+OB-33 — Lineage distinction | 6,11
+OB-34 — FFNN independence | 7,17
+OB-35 — Administrative control | 4,5,11
+OB-36 — Failure containment | 8–11
+OB-37 — Causal participation | 7,16
+OB-38 — Fault-domain declaration | 10
+OB-39 — Enforcement boundary | 4
+OB-40 — Lifecycle/mode/health | 5
+OB-41 — Progress and timing | 0,7,9
+OB-42 — Recovery exhaustion | 8–9
+The inherited F0-01 through F0-12 and T0-01 through T0-20 definitions SHALL be reconciled against their original documents before claiming complete Phase 0 traceability.
+
+19. Final formal contract
+The Phase 0 boundary kernel is a governed transition system:
+mathcal K=(mathcal S,mathcal V,delta,mathcal I,mathcal A)
+where:
+- mathcal S is the valid reference-state space.
+- mathcal V is the governed event space.
+- delta is the deterministic transition relation with trusted monotonic-time input.
+- mathcal I is the set of applicable safety invariants.
+- mathcal A is the declared environmental and trust-assumption set.
+A conforming Build 2 implementation must preserve the applicable invariants, satisfy the declared behavioral contracts, and produce reproducible evidence for its implemented subset.
+The existential heartbeat is an NNNC-owned, ADMIN CLASS-protected component with a narrow causal role in continuity-session observation and bounded recovery activation.
+The heartbeat is not a substitute for the cognitive architecture, a universal fault detector, or a guarantee of identity preservation.
+The recovery mechanism is separately governed, bounded, and fallible.
+The control plane retains administrative authority to suspend, restore, maintain, or terminate an instance under its declared policy.
+Operational activity, cognitive availability, operational conformance, informational inheritance, and philosophical identity remain distinct.
+The engineering value of the existential foundation remains an empirical question.
+
+
+PART II — CONTROLLING TRANSITION AMENDMENTS
+
+0. AMENDMENT CONSTITUTION
+0.1 Purpose
+This amendment corrects the remaining transition-level defects identified during independent review of Document 2 v1.3.
+It preserves:
+• NNNC ownership of its existential heartbeat.
+• NES as a distinct execution and resource substrate.
+• ADMIN CLASS protection.
+• Heartbeat/recovery separation.
+• Bounded autonomous recovery.
+• Operational continuity as distinct from philosophical identity.
+• The independence of the full FFNN cognitive architecture.
+• Falsifiable comparison with conventional supervision.
+No new general cognitive capability is introduced.
+0.2 Normative Precedence
+Where this amendment conflicts with Document 2 v1.3, this amendment takes precedence.
+Unchanged requirements remain applicable.
+The inherited requirement, invariant, and test registers must be reconciled before declaring the complete archival Phase 0 specification frozen.
+0.3 Conformance Scope
+Three levels of conformance are distinguished.
+Reference-model conformance: The abstract transition system satisfies its stated invariants within the declared verification assumptions.
+Build 2 implementation conformance: Executable code implements the selected reference transitions and passes its declared tests.
+Deployment conformance: The implementation satisfies additional durability, isolation, clock, storage, and fault-tolerance requirements appropriate to its actual runtime.
+Build 2 is not automatically deployment-conformant.
+
+───
+
+1. REVISED FORMAL STATE
+1.1 Authoritative State Separation
+The former global-state interpretation is replaced by:
+[ \boxed{\Omega_k=(\Sigma_k,\Pi_k,\mathcal J_k)} ]
+Where:
+• (\Sigma_k) is the governed NNNC domain state.
+• (\Pi_k) is trusted non-rollback authority and accounting state.
+• (\mathcal J_k) is the append-only audit history.
+The original 17-part domain-state organization remains:
+[ \Sigma_k=(R,D,F,O,K,A,L,B,H,J,M,T,X,Y,Z,G,W)_k ]
+However, fields containing authority-sensitive information are now views or references to canonical records in (\Pi).
+For example, the authorization view in (A) must not override the authoritative policy in (\Pi).
+1.2 Protected Authority State
+Define:
+[ \Pi_k=(P_k,V_k,E_k,S_k,Q_k,I_k,C_k) ]
+
+Field
+Meaning
+
+(P)
+Current governance policy and version
+
+(V)
+Revocation history and effective revocation state
+
+(E)
+Fencing-generation high-water marks
+
+(S)
+Current session-authority registry
+
+(Q)
+Canonical budget and reservation ledger
+
+(I)
+Event-idempotency and replay-protection records
+
+(C)
+Clock-domain and trusted-control metadata
+
+
+Ordinary checkpoint restoration SHALL NOT overwrite these records.
+1.3 Audit History
+For each event whose outcome is auditable:
+[ \mathcal J_{k+1}=\mathcal J_k\mathbin{|}record_k ]
+Accepted transitions, rejected protected operations, administrative interventions, and restoration attempts SHALL be distinguishable in audit records.
+A rejected command may append an audit record without changing protected domain state.
+1.4 Event-Processing Order
+Let (j) count processed event decisions and (k) count committed domain transitions.
+Thus:
+[ j\in\mathbb N,\qquad k\in\mathbb N ]
+A rejection increments the event-decision sequence but need not increment the committed domain-state version.
+This avoids treating a rejected command as a fictitious successful domain transition.
+
+───
+
+2. NON-ROLLBACK AUTHORITY AND SESSION FENCING
+2.1 Fencing Generation
+For each instance (n), define:
+[ E(n)\in\mathbb N ]
+as the authoritative generation high-water mark.
+Every issuance of new execution authority SHALL satisfy:
+[ E_{\mathrm{new}}(n)>E_{\mathrm{previous}}(n) ]
+Ordinary restoration SHALL NOT decrease (E(n)).
+2.2 Current Authority
+Define:
+[ S(n)=(sessionId,generation,holder,status) ]
+Where status is one of:
+[ {ACTIVE,FENCED,REVOKED} ]
+Only an ACTIVE authority record permits ordinary protected writes.
+2.3 Protected Write Authorization
+For a protected write event (e):
+[ \begin{aligned} WriteAllowed(e,n)\iff{}& Authorized(e)\ &\land Lifecycle(n)=ACTIVE\ &\land e.sessionId=S(n).sessionId\ &\land e.generation=S(n).generation\ &\land S(n).status=ACTIVE\ &\land ResourceFenceAccepts(e) \end{aligned} ]
+Administrative maintenance and shutdown operations use separately authorized control-plane transitions rather than ordinary cognitive write authority.
+2.4 Resource-Side Fencing
+A protected resource SHALL reject writes carrying a generation older than its trusted accepted-authority generation.
+For the Build 2 reference model, resource-side fencing is simulated by an independently modeled protected-store guard.
+This does not establish protection against rollback of the trusted store itself.
+2.5 Checkpoint Restoration
+A checkpoint's sourceSession and sourceEpoch are historical metadata.
+They SHALL NOT directly become current authority.
+Restoration performs:
+1. Validate checkpoint integrity.
+2. Validate current governance policy.
+3. Validate current revocations.
+4. Validate available budgets.
+5. Fence prior execution authority.
+6. Allocate fresh execution authority.
+7. Restore permitted domain-state partitions.
+8. Reconcile pending transactions and external effects.
+9. Commit the new lifecycle state.
+If the transaction fails before authority issuance, it must leave current authority unchanged or safely fenced.
+If it fails after authority issuance, the issued generation remains consumed and cannot be reused.
+2.6 Independent Branching
+A restored independent branch SHALL receive:
+• A fresh NNNC instance identifier.
+• Fresh constituent component identifiers.
+• A fresh execution-session identifier.
+• A separately allocated fencing generation.
+• A lineage reference to its source.
+A branch SHALL NOT reuse the original instance's active membership identifiers.
+2.7 Anti-Resurrection Invariant
+For any event (e) created under authority (s_{\mathrm{old}}):
+[ Fence(s_{\mathrm{old}}) \Rightarrow \Box\neg WriteAllowed(e) ]
+This property holds under the assumption that trusted authority and resource-side fencing records are not rolled back.
+It is a required safety property, not an established proof.
+
+───
+
+3. CLOCK-DOMAIN SEMANTICS
+3.1 Trusted Clock Representation
+Build 2 uses integer monotonic ticks:
+[ Clock=(domainId,ticks) ]
+Where:
+[ ticks\in\mathbb N ]
+A deadline is represented as:
+[ Deadline=(domainId,dueTick) ]
+3.2 Comparability
+Two clock values may be directly compared only when their domain identifiers match.
+A deadline from a previous clock domain SHALL NOT be evaluated against the current domain without an authorized rebase.
+3.3 Restart Behavior
+On a clock-domain restart:
+1. The trusted control plane establishes a new clock-domain identifier.
+2. Old timer deliveries are invalidated.
+3. Open activation requests are cancelled or reconstructed under a new authorized request generation.
+4. New deadlines are derived from declared remaining-duration or restart policy.
+5. Reconstructed requests retain their incident-level consumed-budget history.
+A restart SHALL NOT replenish wake-up allowances.
+3.4 Suspension Behavior
+During SUSPENDED, no ordinary heartbeat wake-up or recovery-attempt admission is permitted.
+Time may continue advancing in the underlying substrate, but suspended-instance activation deadlines are invalidated or explicitly paused according to the suspension transaction.
+On resumption, new deadlines must be established in the active clock domain.
+3.5 Timer Delivery
+A trusted timer event contains:
+[ TimerEvent=(id,domainId,dueTick,observedTick) ]
+A stale-domain timer event is rejected.
+Timer expiry is evaluated at the committed transition point.
+3.6 Timer Failure
+The timer service is an explicit dependency and fault domain.
+A lost timer event does not create an imaginary transition.
+The implementation SHOULD support bounded periodic re-evaluation while the timer service is operational.
+No deadline-response guarantee is claimed if all relevant timer-delivery mechanisms fail.
+
+───
+
+4. RECOVERY-MANAGER AND RECOVERY-CYCLE SEMANTICS
+4.1 Manager State Versus Cycle State
+The recovery manager may be IDLE, AVAILABLE, UNAVAILABLE, or FAULTED.
+An individual recovery cycle is separately represented.
+Define:
+[ RecState= {PENDING,ACTIVE,FAILED,SUCCEEDED,EXHAUSTED,CANCELLED} ]
+IDLE is removed from individual recovery-cycle records.
+4.2 Recovery-Cycle Identity
+A cycle record contains:
+[ Rec(q)= (instance,incidentId,state,attempts, maxAttempts,budgetRef,history) ]
+Every newly created cycle receives a fresh identifier.
+A terminal cycle is never reopened.
+4.3 Recovery Transitions
+
+Current
+Event
+Next
+Required Condition
+
+Not existing
+CREATE_CYCLE
+PENDING
+Authorized incident and available quota
+
+PENDING
+ATTEMPT_ADMIT
+ACTIVE
+Attempt and resource admission succeeds
+
+ACTIVE
+ATTEMPT_SUCCESS
+SUCCEEDED
+Independent restoration validation succeeds
+
+ACTIVE
+ATTEMPT_FAILURE
+FAILED
+Trusted failure outcome
+
+ACTIVE
+ATTEMPT_TIMEOUT
+FAILED
+Trusted timeout
+
+FAILED
+RETRY_REQUEST
+PENDING
+Retry allowance remains
+
+FAILED
+EXHAUST
+EXHAUSTED
+No further automatic attempt allowed
+
+PENDING
+EXHAUST
+EXHAUSTED
+No permitted attempt remains
+
+PENDING/ACTIVE/FAILED
+CANCEL_CYCLE
+CANCELLED
+Authorized cancellation
+
+SUCCEEDED/EXHAUSTED/CANCELLED
+Historical query
+Unchanged
+Read-only historical record
+
+
+Other transitions are prohibited.
+4.4 Attempt Accounting
+An attempt allowance is consumed atomically at admission.
+Let:
+[ AttemptsRemaining(q)=maxAttempts(q)-attempts(q) ]
+An admitted attempt that crashes remains counted.
+4.5 Resource Reservation and Settlement
+The canonical budget ledger (Q) records:
+[ Budget=(allocated,available,reserved,consumed) ]
+With:
+[ \boxed{allocated=available+reserved+consumed} ]
+A successful resource release transfers an amount from reserved to available.
+A confirmed expenditure transfers an amount from reserved to consumed.
+An unresolved crash reservation remains reserved until an authorized settlement decision; it is not silently refunded.
+All accounting changes are atomic.
+4.6 Retry Eligibility
+A retry is eligible only if:
+[ \begin{aligned} RetryEligible(q)\iff{}& state(q)=FAILED\ &\land AttemptsRemaining(q)>0\ &\land ResourceAvailable(q)\ &\land IncidentBudgetAvailable(q) \end{aligned} ]
+If this predicate is false, a trusted exhaustion-evaluation event shall terminalize the cycle.
+4.7 Administrative Reset
+Administrative reset does not change:
+[ EXHAUSTED\rightarrow PENDING ]
+Instead, it may authorize creation of a new cycle:
+[ q_{\mathrm{new}}\ne q_{\mathrm{old}} ]
+The old cycle remains terminal.
+Resetting an incident-level quota requires separate authority and is not implied by creating a new cycle.
+
+───
+
+5. ACTIVATION-REQUEST STATE MACHINE
+5.1 Activation State
+Define:
+[ ActState= { AWAITING_ACK, ACKNOWLEDGED, COMPLETED, FAILED, EXHAUSTED, CANCELLED } ]
+5.2 Activation Record
+[ Act(a)= (instance,incidentId,cycleId, status,deadline,wakeCount, budgetRef,generation) ]
+The generation field refers to the trusted request/session generation declared by the activation protocol, not an independently writable session epoch.
+5.3 Open-Request Uniqueness
+For any recovery cycle (q):
+[ \left| {a:cycle(a)=q\land Open(a)} \right|\leq1 ]
+Where:
+[ Open(a)\iff status(a)\in {AWAITING_ACK,ACKNOWLEDGED} ]
+An incident-level budget prevents repeated request creation from replenishing an exhausted allowance.
+5.4 Activation Transition Table
+
+Current
+Event
+Next
+Condition
+
+Not existing
+CREATE_ACTIVATION
+AWAITING_ACK
+Authorized producer, eligible cycle, available quota
+
+AWAITING_ACK
+HB_WAKE_REQUEST
+AWAITING_ACK
+Overdue, eligible, bounded budget
+
+AWAITING_ACK
+VALID_ACK
+ACKNOWLEDGED
+Current request and endpoint authority
+
+AWAITING_ACK
+ACTIVATION_EXHAUST
+EXHAUSTED
+Final deadline expired after final wake
+
+AWAITING_ACK
+ACTIVATION_FAILURE
+FAILED
+Trusted terminal activation failure
+
+ACKNOWLEDGED
+RECOVERY_SUCCEEDED
+COMPLETED
+Linked recovery success committed
+
+ACKNOWLEDGED
+RECOVERY_TERMINAL_FAILURE
+FAILED
+Linked recovery terminal failure
+
+AWAITING_ACK
+RECOVERY_SUCCEEDED
+COMPLETED
+Recovery outcome validated despite missing acknowledgement
+
+AWAITING_ACK
+RECOVERY_TERMINAL_FAILURE
+FAILED
+Linked recovery terminal failure
+
+AWAITING_ACK/ACKNOWLEDGED
+CANCEL_ACTIVATION
+CANCELLED
+Authorized lifecycle or incident cancellation
+
+Any terminal state
+Replay/query
+Unchanged
+No reopening
+
+
+An ACKNOWLEDGED request is not subject to further heartbeat wake-ups.
+Recovery execution after acknowledgement is governed by the recovery manager and its attempt timeout.
+5.5 Deadline and Acknowledgement Ordering
+For an acknowledgement:
+[ AckValid(a,\tau) ]
+requires a matching request generation, authenticated endpoint, and an open request.
+An acknowledgement arriving after a nominal deadline may still be accepted if no competing terminal transition has committed and policy permits late acknowledgement.
+The reference kernel SHALL use commit order to resolve the race.
+At identical timestamps, the first valid committed transition wins; the later event revalidates against the resulting state.
+No event may be authorized solely on a stale pre-commit snapshot.
+5.6 Heartbeat Wake-Up
+A heartbeat wake-up SHALL:
+1. Validate the activation request.
+2. Validate linked recovery eligibility.
+3. Validate current lifecycle and session authority.
+4. Reserve the wake-up budget.
+5. Record the wake-up attempt.
+6. Increment the wake-up count.
+7. Establish the next deadline.
+8. Emit the bounded activation command.
+The activation remains AWAITING_ACK.
+5.7 Wake-Up Exhaustion
+After the last permitted wake-up, the request remains AWAITING_ACK until acknowledgement, terminal recovery outcome, cancellation, or final deadline expiry.
+At the final deadline, an unacknowledged request transitions to EXHAUSTED.
+5.8 Acknowledgement Is Not Success
+The following are distinct:
+1. Activation acknowledged.
+2. Recovery attempt admitted.
+3. Restoration validated.
+The heartbeat's activation supervision ends after a valid acknowledgement.
+A subsequent recovery crash requires independently governed recovery handling.
+
+───
+
+6. CROSS-MACHINE SYNCHRONIZATION
+6.1 Recovery Eligibility
+Define:
+[ RecoveryActivationEligible(q) ]
+To require:
+• The cycle exists.
+• It is not terminal.
+• The instance is ACTIVE.
+• No shutdown or suspension fence is pending.
+• The incident has available activation authority.
+• The current session authority is valid.
+• No conflicting activation request is open.
+For a wake-up on an existing request, the last condition is evaluated as uniqueness of that same request, not absence of all requests.
+6.2 Recovery-to-Activation Terminal Cascade
+When a recovery cycle commits:
+• SUCCEEDED: Linked open activation becomes COMPLETED.
+• EXHAUSTED: Linked open activation becomes FAILED, unless already terminal.
+• CANCELLED: Linked open activation becomes CANCELLED.
+These changes are atomic.
+A recovery cycle reaching FAILED is not automatically terminal if retry remains available.
+6.3 Activation-to-Recovery Outcome
+Activation exhaustion does not automatically exhaust the recovery cycle.
+The recovery manager shall evaluate:
+• Whether an attempt is already ACTIVE.
+• Whether a trusted recovery endpoint accepted activation.
+• Whether additional activation is permitted.
+• Whether incident policy requires closure.
+An ACTIVE recovery attempt may continue after activation exhaustion if it retains valid execution authority.
+No new activation budget is created automatically.
+6.4 Shutdown-Intent Fence
+The control plane SHALL support a governed shutdown or suspension intent.
+Once that intent commits:
+• New heartbeat wake-ups are prohibited.
+• New recovery attempts are prohibited.
+• New ordinary protected cognitive writes are prohibited.
+• Delayed acknowledgements cannot reactivate the instance.
+Already admitted operations must be settled, cancelled, or recorded unresolved.
+6.5 Final Lifecycle Transition
+Before committing SUSPENDED, STOPPED, or TERMINATED, the control plane SHALL:
+1. Fence ordinary execution authority.
+2. Halt or mark unavailable the heartbeat.
+3. Terminalize open activation requests.
+4. Terminalize or account for open recovery cycles.
+5. Classify unresolved transactions and effects.
+6. Meet the required preservation or stop contract.
+The final lifecycle transition is atomic with the required authoritative state updates.
+6.6 Failed Shutdown
+If the trusted control plane cannot establish the required fencing or preservation conditions, it SHALL NOT claim that a safe suspension or stop completed.
+The failure must be recorded with a defined unresolved-control outcome.
+6.7 Transition Ordering
+Build 2 is a sequential reference model.
+Events are processed in a total committed order.
+Priority may guide scheduling, but correctness SHALL depend on commit-time guards and atomic transitions, not solely on a static priority list.
+
+───
+
+7. HEARTBEAT TRANSITION AND CAUSAL CONTRACT
+7.1 Heartbeat State
+[ HBState= {READY,RUNNING,WAITING,FAULTED,HALTED} ]
+7.2 Heartbeat Transition Table
+
+Current
+Event
+Next
+Condition
+
+READY
+HB_START
+RUNNING
+Authorized activation
+
+RUNNING
+HB_WAIT
+WAITING
+Permitted idle state
+
+WAITING
+HB_PROGRESS
+RUNNING
+Trusted progress evidence
+
+RUNNING
+HB_PROGRESS
+RUNNING
+Valid progress transition
+
+READY/RUNNING/WAITING
+HB_FAULT
+FAULTED
+Trusted fault evidence
+
+FAULTED
+ADMIN_RESTORE
+READY
+Governed maintenance validation
+
+HALTED
+HB_INIT
+READY
+Authorized lifecycle resumption and fresh authority
+
+READY/RUNNING/WAITING/FAULTED
+HB_HALT
+HALTED
+Authorized lifecycle control
+
+
+7.3 Permitted Outputs
+The heartbeat may produce only:
+• Governed progress observations.
+• Bounded activation wake-up requests.
+• Governed fault or state-transition reports.
+It cannot:
+• Directly modify canonical fencing authority.
+• Grant ADMIN CLASS permissions.
+• Diagnose arbitrary cognitive faults.
+• Declare its own health conclusively.
+• Repair arbitrary NNNC components.
+• Override authorized shutdown.
+7.4 Progress Evidence
+Progress evidence must be corroborated by the trusted transition kernel.
+A record contains:
+[ Progress= (sessionRef,observedGeneration, eventId,clockDomain,tick,stateVersion) ]
+The observed generation is an evidence snapshot, not a second authoritative epoch.
+7.5 Causal Participation
+Define:
+[ Participation(H) ]
+As the existence of governed effects attributable to the heartbeat in valid transition traces.
+Define:
+[ Advantage(H) ]
+As improvement in predeclared external engineering outcomes relative to suitable alternatives.
+Participation does not imply advantage.
+
+───
+
+8. FUNCTIONAL-MODE DERIVATION
+8.1 Effective Health
+Health evidence is evaluated against the current trusted clock domain and freshness requirements.
+Expired or untrusted evidence evaluates to UNKNOWN.
+8.2 Heartbeat DEGRADED Semantics
+For Build 2:
+• HEALTHY: Full heartbeat contract satisfied.
+• DEGRADED: Minimum heartbeat progress contract satisfied, but nonessential capability reduced.
+• FAILED: Minimum heartbeat progress contract violated.
+• UNKNOWN: Insufficient current trusted evidence.
+8.3 Total Mode Function
+For non-ACTIVE lifecycle:
+[ Mode=NONE ]
+For ACTIVE lifecycle, evaluate in order:
+1. If heartbeat is FAILED or UNKNOWN, or cognition is UNKNOWN: FAULTED.
+2. Else if cognition is FAILED: MINIMAL.
+3. Else if cognition, heartbeat, or recovery is DEGRADED, or recovery is FAILED or UNKNOWN: DEGRADED.
+4. Else: FULL.
+This function is total for the 64 possible three-component health vectors.
+8.4 Conformance Profiles
+FULL: Heartbeat, recovery, and cognitive placeholder satisfy full required contracts.
+DEGRADED: The minimum heartbeat contract and a usable cognitive capability remain, but one or more nonessential or recovery capabilities are degraded or unavailable.
+MINIMAL: Cognition is unavailable, but the minimum heartbeat contract remains satisfied.
+FAULTED: Required existential evidence or a required minimum contract is unavailable or violated.
+FAULTED does not automatically mean that every component has stopped executing.
+8.5 Mode Evaluation
+The derived mode is evaluated:
+• At relevant committed health transitions.
+• At trusted evidence-expiry events.
+• At lifecycle transitions.
+• During conformance queries against current trusted time.
+Mode is not independently writable.
+
+───
+
+9. CHECKPOINTS, BRANCHING, AND UNRESOLVED EFFECTS
+9.1 Classification Precedence
+For checkpoint partitions:
+[ INVALID>TAINTED>PARTIAL>CONSISTENT ]
+The overall checkpoint classification uses the most severe applicable classification.
+Per-partition classifications are retained.
+9.2 Forced Suspension
+Forced suspension may preserve healthy control-plane partitions while marking cognitive partitions TAINTED or PARTIAL.
+It SHALL NOT claim a consistent checkpoint when required state is unverified.
+9.3 Restoration Authority
+Restoration cannot restore:
+• Old fencing authority.
+• Revoked permissions.
+• Consumed budgets.
+• Retired recovery cycles as active cycles.
+• Prior event identifiers as unused.
+• Stale clock-domain authority.
+9.4 External Effects
+Every unresolved external effect must carry a stable effect identifier.
+On restoration, the system must distinguish:
+• Completed.
+• Pending.
+• Cancelled.
+• Compensated.
+• Unknown.
+An unknown effect SHALL NOT be blindly replayed as though it had never occurred.
+
+───
+
+10. DELEGATION AND TRUSTED SYSTEM EVENTS
+10.1 Delegation Attenuation
+For delegation chain scopes:
+[ Scope_{i+1}\subseteq Scope_i ]
+Each delegation must have:
+• Authenticated issuer.
+• Authenticated recipient.
+• Operation and target scope.
+• Expiry.
+• Revocation reference.
+• Maximum delegation depth.
+• Non-cyclic chain structure.
+10.2 Current-Policy Evaluation
+Caller-provided policy versions are untrusted claims.
+The kernel compares them against authoritative committed governance state.
+10.3 System Principals
+Trusted timer services, fault traps, and administrative controllers are explicit system principals.
+They receive only the authority necessary for their declared event classes.
+10.4 Fault-Report Limits
+Fault reports require authenticated provenance, deduplication, and bounded incident-level resource consumption.
+Unlimited creation of fresh recovery cycles for the same unresolved incident is prohibited.
+
+───
+
+11. STRENGTHENED INVARIANTS
+The following invariants extend the v1.3 register.
+S0-43 — Coupled Request Uniqueness
+At most one open activation request exists per recovery cycle.
+S0-44 — Recovery Terminal Synchronization
+Terminal recovery outcomes atomically terminalize linked open activation requests.
+S0-45 — No Automatic Exhaustion Equivalence
+Activation exhaustion does not imply recovery-cycle exhaustion.
+S0-46 — Shutdown Fencing
+After shutdown intent commits, no new ordinary wake-up, recovery attempt, or cognitive protected write may be admitted under retiring authority.
+S0-47 — Non-Rollback Authority
+Checkpoint restoration SHALL NOT reduce fencing high-water marks, resurrect revocations, replenish consumed budgets, or invalidate committed replay-protection history.
+S0-48 — Fresh Cycle Identity
+A terminal recovery-cycle identifier SHALL NOT be reopened.
+S0-49 — Clock-Domain Validity
+Deadline comparisons SHALL use matching trusted clock domains.
+S0-50 — Canonical Budget Conservation
+Every committed budget operation SHALL preserve the ledger conservation invariant.
+S0-51 — Branch Identity Uniqueness
+Independent branches SHALL receive fresh instance and constituent identifiers.
+S0-52 — Delegation Attenuation
+No delegated protected operation may exceed the effective authority of its valid delegation chain.
+S0-53 — Mode Totality
+Every valid lifecycle and effective-health combination derives exactly one permitted functional mode.
+S0-54 — Heartbeat Resumption Authorization
+A HALTED heartbeat may resume only under governed lifecycle resumption and valid session authority.
+S0-55 — No Self-Certified Heartbeat Health
+Heartbeat self-reports alone SHALL NOT establish trusted operational conformance.
+S0-56 — External-Effect Replay Safety
+Unknown external effects SHALL NOT be automatically replayed as new effects.
+
+───
+
+12. BUILD 2 VERIFICATION OBLIGATIONS
+12.1 Finite Reference Model
+The initial independent model shall use bounded domains, for example:
+• Two NNNC instances.
+• Two recovery cycles per instance.
+• Two activation requests per instance.
+• Three recovery attempts per cycle.
+• Three wake-up allowances per incident.
+• Two administrative principals and two ordinary principals.
+• Three clock domains.
+• Finite lifecycle, heartbeat, recovery, and activation state enumerations.
+• Abstract fresh session generations without wraparound.
+These are proposed model bounds, not executed checks.
+12.2 Safety Properties
+The model shall check:
+1. No stale protected write commits.
+2. No duplicate current session authority.
+3. No rollback resurrection of permissions.
+4. No consumed-budget refund through restoration.
+5. No duplicate open activation requests.
+6. No automatic recovery retry after exhaustion.
+7. No activation after shutdown fencing.
+8. No illegal heartbeat resumption.
+9. No inconsistent lifecycle-mode combination.
+10. No independent branch sharing original constituent identifiers.
+12.3 Liveness Properties
+Under declared fairness assumptions, the model shall check bounded-response properties for:
+• Timer delivery.
+• Activation acknowledgement or exhaustion.
+• Recovery attempt completion, timeout, or cancellation.
+• Authorized shutdown completion or explicit failure.
+• Incident terminalization.
+Liveness is conditional on the relevant trusted services remaining available.
+12.4 Independent Oracle
+The executable Python kernel SHALL NOT be its own sole correctness oracle.
+A separately specified transition model or independently implemented reference oracle must supply expected outcomes for differential testing.
+12.5 Adversarial Test Additions
+
+ID
+Test
+
+T0-73
+Recovery exhaustion atomically closes pending activation
+
+T0-74
+Activation exhaustion does not force ACTIVE recovery into EXHAUSTED
+
+T0-75
+Duplicate fault reports cannot multiply activation budget
+
+T0-76
+Shutdown intent fences delayed wake-ups
+
+T0-77
+Delayed acknowledgement cannot reactivate stopped instance
+
+T0-78
+Old checkpoint cannot restore stale fencing authority
+
+T0-79
+Old checkpoint cannot resurrect revoked policy
+
+T0-80
+Old checkpoint cannot refund consumed recovery budget
+
+T0-81
+Terminal recovery cycle cannot be reopened
+
+T0-82
+Administrative reset creates a fresh cycle
+
+T0-83
+Acknowledgement followed by recovery crash is not success
+
+T0-84
+HALTED heartbeat resumes only through authorized initialization
+
+T0-85
+All 64 health combinations produce one valid mode
+
+T0-86
+Clock-domain mismatch invalidates old deadline
+
+T0-87
+Lost timer delivery is represented as an unmet dependency
+
+T0-88
+Resource reservation survives crash until settlement
+
+T0-89
+Delegation scope cannot widen
+
+T0-90
+Cyclic delegation is rejected
+
+T0-91
+Independent branch receives fresh constituent identifiers
+
+T0-92
+Unknown external effect is not blindly replayed
+
+
+12.6 Requirement Traceability
+This requirement expressly includes S0-SUP-01..06, P0-SUP-VO-01..06, T0-SUP-01..12 and F0-SUP-01..08. Section 10A.9–11 supplies their new property/control/source routing; no exemption is implied by the separate namespace.
+Every implemented Build 2 invariant shall map to:
+• Its normative requirement.
+• Its governing state fields.
+• Its permitted transitions.
+• At least one positive test.
+• At least one adversarial test where applicable.
+Inherited S0-01 through S0-30, T0-01 through T0-52, and relevant OB/F0 registers remain subject to archival reconciliation.
+
+───
+
+13. EXPERIMENTAL ACCEPTANCE
+13.1 Equal-Budget Comparison
+Compare baseline and heartbeat architectures under the same total computational and resource budget.
+13.2 Mechanism-Matched Comparison
+Compare the heartbeat with an alternative conventional supervisor providing equivalent:
+• Timer access.
+• Fault reporting.
+• Recovery activation.
+• Session fencing.
+• Transaction logging.
+The alternative shall not be intentionally deprived of functionality merely to favor the heartbeat.
+13.3 Primary Outcomes
+Predeclare:
+• Recovery completion probability within a fixed observation horizon.
+• Time unavailable.
+• Protected-state corruption rate.
+• False activation rate.
+• Total resource expenditure.
+Unrecovered runs shall remain in the outcome dataset.
+Time-to-recovery analysis should handle unrecovered observations as censored where statistically appropriate, while reporting failure rates separately.
+13.4 Interpretation
+Passing heartbeat-specific conformance tests establishes protocol participation.
+Only comparative evidence can establish engineering advantage.
+A simpler mechanism performing equally well or better remains a legitimate result.
+
+───
+
+14. FREEZE CRITERIA
+Historical v1.3.1 freeze criteria remain mandatory. The specific v1.3 base-source recovery/reconciliation condition is now CLOSED by Parts I/IV and the clause ledger. Full archival-register freeze still requires the older exact S0-01..30, T0-01..52 and F0-01..12 definitions wherever not supplied by v1.3 itself, plus complete applicable schema/property and implementation evidence. Architectural adoption of the source-reconciled contract is distinct from full verification or Build 2/deployment acceptance. Section 10A is located in Part III of this issue.
+Document 2 v1.3.1 may be frozen as the Build 2 reference contract only after:
+1. The amendment has passed targeted adversarial review.
+2. The complete transition tables have been checked for illegal and missing arcs.
+3. Cross-machine synchronization invariants are specified.
+4. The non-rollback authority boundary is explicit.
+5. The independent finite-state verification model is defined.
+6. Requirement-to-test traceability is reconciled for the frozen subset.
+7. Any remaining unproved properties are labeled as obligations rather than results.
+Freeze does not mean that the implementation has passed its tests.
+
+───
+
+15. FINAL NORMATIVE STATEMENT
+The Phase 0 NNNC boundary kernel is a governed, time-aware transition system with distinct restorable domain state, non-rollback authority state, and audit history.
+Its heartbeat is a narrowly authorized NNNC-owned constituent that participates in continuity observation and bounded recovery activation.
+Its recovery manager, activation channel, and lifecycle controller remain separate but atomically coordinated where their state transitions interact.
+Protected authority cannot be recreated from historical checkpoints.
+Recovery and activation exhaustion remain distinct.
+Administrative suspension and shutdown take precedence through authoritative fencing and governed settlement.
+Independent branches receive independent operational identities.
+The kernel's correctness must be evaluated through independent formal models, executable invariant tests, and adversarial fault injection.
+No implementation of this contract, by itself, proves consciousness, metaphysical identity continuity, or the superiority of an existential heartbeat over conventional supervision.
+
+───
+
+
+PART III — POSITIVE EXECUTION AND EXISTENTIAL SUPPORT
+
+10A. EXECUTION AND EXISTENTIAL SUPPORT CONTRACT — v1.4
+10A.1 Scope and Interpretation Discipline
+Cross-reference rule: unqualified Sections 1–15 within Part III mean the amendment sections in Part II; 10A references mean this Part III; Part I references are explicitly prefixed. Thus no base Section 2.3 is confused with amendment Section 2.3.
+This is a substantive proposed extension corresponding to Document 1 v1.4.2 P0-SUP-01..08. Its definitions are interpreted over the inherited transition system, not a second independent authorization universe. New support facts annotate execution; they cannot overwrite Sigma, Pi or audit state. The recovered v1.3 source is supplied in Part I. Native carrier bindings are now explicit: Inst=mathcal N; component identifiers=mathcal C; authenticated principal identifiers=mathcal P; registered state objects=mathcal X; governed event envelopes=mathcal V; recovery cycles=mathcal Q; activation requests=mathcal U; execution sessions=mathcal S; fault domains=mathcal F. Part IV resolves the recovered notation collisions and the amendment's canonical state changes. Older exact archival registers remain open as already required by recovered v1.3; the v1.3 text itself is no longer missing.
+Bool = {false,true}; Nat = {0,1,...}; Fin(T) means finite subsets of T; Seq(T) means finite sequences; Option(T) = None | Some(T). Mathematical functions have extensional interpretation, not an executable language guarantee. All predicates not expanded below are explicitly identified interpretation parameters, with constraints and source bindings. They may not be set true merely to obtain conformance.
+
+10A.2 Native Bindings and New Record Types
+Inst := mathcal N, the instance-reference carrier used by E(n) and S(n) in Part II Section 2. Progress.sessionRef is a SessionID/reference, not an Inst; it resolves through the canonical session registry to its owning instance. ClockDomain := the domainId carrier of Clock in Section 3.1; Tick := Nat; Clock := ClockDomain x Tick. Policy := the carrier of the canonical P field of Pi in Section 1.2. Operation := EventEnvelope=mathcal V from Part I.0.4/12.1, including the trusted event envelope and its payload. The operation kind/target/AuthCtx supplied to May are projections of that actual governed envelope; the untrusted payload alone is not its authorization context. AuditRecord := the record carrier appended to script-J in Section 1.3. KernelState := the triples Omega=(Sigma,Pi,script-J) of Section 1.1.
+These are aliases to native fields, not injective copies or caller-controlled substitute fields. Sections 2.3 and 10.2 continue to read policy, revocation and session authority from actual Pi. Part I.1.1 establishes X as heartbeat runtime state. It is neither the state-object carrier mathcal X nor the governed-event carrier mathcal V. Occurrence witnesses remain actual interpreted execution steps rather than those state fields.
+
+New primitive identifier carriers: Role, Service, Provider, ContractID, ObligationID, ProtocolID, StateKey, PropertyID, ComparisonID, EvidenceID, PrincipalID, ClaimID, AssumptionID. These identifiers carry no authority. ProtocolID and StateKey refer to declared NNNC operational protocols and state locations; primitive meanings are supplied by the selected interpreted kernel model.
+Occurrence := (id: Nat, instance: Inst, operation: Option(Operation), kind: Kind).
+Kind := {REQUEST, ACCEPTANCE, OPPORTUNITY, EXECUTION, COMPLETION, CANCEL, SUPERSEDE, TRIGGER, DEADLINE_CLOSE, CONTRACT_CHANGE, OTHER}.
+Step := (before: KernelState, after: KernelState, occurrence: Option(Occurrence), clock: Clock, facts: Fin(ClaimID)).
+History := {rho in Seq(Step) | rho is nonempty, consecutive before/after states match, and every kernel decision/commit projection obeys the inherited transition rules}. h_i := rho[0..i], for 0<=i<len(rho); End(h_i):=rho[i].after; At(h_i):=rho[i].clock. Prefix(h,g) means h is an initial segment of g.
+Audit(h) := End(h).script-J. On each step the audit projection is either unchanged or appends the actual records required by Section 1.3. RecordAbout: AuditRecord -> Option(Nat) relates a record to an occurrence identifier; such a relation is a report, not proof that the occurrence happened. Rejected decisions can append records without a domain commit. Actual service events and clock observations can occur without a domain commit or a complete audit record. Therefore History is an execution history with a constrained audit projection, NOT an alias for an audit log.
+Occurred(o,h) := exists i<len(h): h[i].occurrence=Some(o).
+OpOf(o) := o.operation. A kernel operation witness must be linked to an actual inherited decision/commit step, with the same payload, instance, prestate and poststate. A completion assertion in facts or an audit record alone is not that witness.
+
+Evidence := (id: EvidenceID, claim: ClaimID, polarity: Bool, source: PrincipalID, ancestors: Fin(EvidenceID), observedPrefix: Nat, validDomain: ClockDomain, validThrough: Tick).
+EvidenceFrame := Fin(Evidence).
+Verdict3 := {ESTABLISHED,REFUTED,UNKNOWN}.
+Outcome := {UNTRIGGERED,PENDING,MET,MISSED,CANCELLED,SUPERSEDED}.
+OutcomeAssessment := Outcome union {UNKNOWN}.
+AttributionFinding := {SUPPORT_BREACH,MECHANISM_BREACH,UNRESOLVED}.
+ConsequenceSpec := (stateKeys: Fin(StateKey), protocol: ProtocolID, property: PropertyID, comparison: ComparisonID, boundDeclared: Bool, completionDeclared: Bool).
+ServicePromise := (service: Service, provider: Provider, assumptions: Fin(AssumptionID), condition: ClaimID).
+SupportContract := (id: ContractID, instance: Inst, version: Nat, roles: Fin(Role), operations: Fin(Operation), promises: Fin(ServicePromise), required: Role -> Fin(ObligationID), fields: Fin(Nat)).
+Obligation := (id: ObligationID, instance: Inst, contract: SupportContract, role: Role, operation: Operation, triggerID: Nat, domain: ClockDomain, start: Tick, delta: Nat, dependencies: Fin(Service), consequence: ConsequenceSpec).
+The eight F0-SUP rows and six VO rows are verification-routing identifiers, not new semantic types.
+
+10A.3 Complete Signature Registry and Interpretation Parameters
+ContractFor: Inst x History -> Option(SupportContract).
+ContractOf: Obligation -> SupportContract, ContractOf(q):=q.contract (immutable).
+RequiredObligations: SupportContract x Role -> Fin(ObligationID), RequiredObligations(c,r):=c.required(r).
+Dependencies: Obligation -> Fin(Service), Dependencies(q):=q.dependencies.
+PromisedSupport: SupportContract -> Fin(ServicePromise), PromisedSupport(c):=c.promises.
+OperationalContribution: Obligation -> ConsequenceSpec, OperationalContribution(q):=q.consequence.
+RequiredByRole: Inst x Role -> Fin(ObligationID).
+RequiredRoles: Inst -> Fin(Role).
+BoundObligations: SupportContract -> Fin(Obligation).
+RelevantDependencies: Operation x History -> Fin(Service).
+ProviderObligations: SupportContract x Provider -> Fin(ServicePromise).
+ContractWellFormed: SupportContract -> Bool.
+IsOB37Consequential: Obligation -> Bool.
+Triggered, Completed, Cancelled, Superseded, Applicable, MechanismEnabled, TimingAssumptions: Obligation x History -> Bool.
+CompletionAt, CancellationAt, SupersessionAt: Obligation x History -> Option(Nat).
+DeadlineClosed, SupportCondition, EndToEndMet, EndToEndMissed, EndToEndPending: Obligation x History -> Bool.
+GoodAt: Obligation x History -> Bool.
+GoodPrefix: Obligation x History x History -> Bool.
+EndToEndOutcome: Obligation x History -> Outcome.
+SupportClaim, CompletionClaim, OutcomeClaim: Obligation x History -> ClaimID.
+AdequatePositive, AdequateNegative, ObservationCovers, IndependentEnough: ClaimID x EvidenceFrame -> Bool.
+Assess: ClaimID x EvidenceFrame -> Verdict3.
+ObservedSupport, SupportAssessment: Obligation x History x EvidenceFrame -> Verdict3.
+ObligationAssessment: Obligation x History x EvidenceFrame -> OutcomeAssessment.
+Attributions: Obligation x History x EvidenceFrame -> Fin(AttributionFinding).
+SupportBreachClaim, MechanismBreachClaim: Obligation x History -> ClaimID.
+InheritedGuard: Operation x KernelState -> Bool.
+ProtectedCommit: Operation x History -> Bool.
+UpdateAllowed: SupportContract x SupportContract x History -> Bool.
+ConsequentialWitness: ConsequenceSpec -> Bool.
+
+Interpretation parameters, not omitted definitions: RequiredRoles and RequiredByRole are supplied by the governing role manifest independently of a submitted contract. BoundObligations supplies the obligation records referenced by that contract, with unique identifiers; each record's instance, contract, role, operation, native trigger clock/start and actual trigger occurrence must agree. An unresolved/missing binding fails coverage. ContractFor reads the operative version from actual governed contract-change history. RelevantDependencies is supplied by the selected operation/service semantics including relevant indirect calls and shared failures; MechanismEnabled is precondition readiness independently of the progress conclusion; service-condition and claim meanings are interpreted over actual steps; InheritedGuard is exactly the operation's applicable Sections 2–10 prestate admission/authorization guard, including Section 2.3 for ordinary protected writes. It is NOT a new permission oracle. For later-phase claims it additionally imports their governing authority requirements without weakening those guards.
+Evidence parameters AdequatePositive/Negative, ObservationCovers and IndependentEnough are supplied by a versioned evidence/trust contract with freshness, valid-domain, provenance-ancestor completeness, observation coverage and source/control assumptions explicit. Missing, stale, contradictory or candidate-only evidence cannot establish independence. Their deployed soundness is an open implementation assurance obligation, not an axiom that evidence cannot be mistaken.
+ConsequentialWitness interprets the bound protocol/property/comparison using actual model transitions: a designated NNNC-owned operational state is maintained/updated, it participates in that lifecycle/recovery protocol, and an admissible controlled comparison witnesses a difference in the declared protocol property attributable to that participation. A mere label or a rule rejecting operation solely because the heartbeat is absent is not a witness. Comparative engineering advantage is not required. The correct source is D1 Section 7.7 OB-37, not an invented Phase 1 OB-37 clause.
+
+Definitions:
+ProviderObligations(c,p):={u in c.promises | u.provider=p}.
+ContractWellFormed(c) iff {1,2,3,4,5,6,7} subseteq c.fields AND every required role, operation, timing, evidence and failure-response reference in the seven D1 P0-SUP-01 fields is typed and resolves to its declared interpreted object AND providers/promises cover its required service dependencies. Field numbers alone are necessary, not sufficient.
+IsOB37Consequential(q) iff q.consequence.stateKeys is nonempty AND q.consequence.boundDeclared AND q.consequence.completionDeclared AND ConsequentialWitness(q.consequence).
+RoleCoverage(c,h) means RequiredRoles(c.instance) subseteq c.roles AND for every r in RequiredRoles(c.instance): RequiredByRole(c.instance,r) subseteq RequiredObligations(c,r), and for every id in RequiredObligations(c,r) there exists exactly one q in BoundObligations(c) with q.id=id, q.role=r, q.instance=c.instance, ContractOf(q)=c and RelevantDependencies(q.operation,h) subseteq Dependencies(q). RoleCoverage is a defined abbreviation, with type SupportContract x History -> Bool. Coverage is not defined by successful execution; IDs without bound obligations cannot pass.
+For an ACTIVE minimum-heartbeat conformance claim, require ContractWellFormed(c), RoleCoverage(c,h), and an existing bound heartbeat obligation q with q.id in RequiredObligations(c,HEARTBEAT) and IsOB37Consequential(q). HEARTBEAT is the native heartbeat constituent-role identifier, not a new privilege. ProviderObligations records reciprocal provider undertakings; promise presence never implies their actual fulfillment. No universal requirement that every auxiliary obligation have a nonempty dependency set is introduced; the actual role/dependency model determines what is required.
+
+10A.4 Trigger, Completion, Cancellation and Inclusive Deadlines
+All state predicates are evaluated at the end of the given prefix. Cumulative occurrence predicates explicitly use exists over preceding steps. A q is bound once to its actual trigger occurrence and inherited prestate; forged trigger records do not activate it.
+Triggered(q,h) iff exists o: Occurred(o,h) AND o.id=q.triggerID AND o.kind=TRIGGER AND o.instance=q.instance AND the independently interpreted trigger condition of q holds at that occurrence.
+CompletionAt(q,h) is Some(i) for the earliest admitted actual occurrence at step i satisfying q's interpreted completion property after its trigger; otherwise None. CancellationAt and SupersessionAt similarly select actual authorized terminal operations under q's original version. Ties are resolved by inherited decision/commit order. No record alone supplies these witnesses.
+Completed(q,h) iff CompletionAt(q,h) is Some(i). Cancelled and Superseded analogously mean that their admitted terminal witness has occurred by the endpoint. Late completion may be recorded but does not make a deadline met. Terminal winners and the acceptance of late acknowledgements follow the inherited request/lifecycle rules; an expired deadline is not an invented cancellation.
+Applicable(q,h) iff Triggered(q,h) AND no authorized cancellation/supersession has become the applicable terminal winner. Completion does not erase applicability for historical deadline assessment. Support unavailability does NOT make this end-to-end obligation disappear. MechanismEnabled excludes neither q's own failure to run nor its own failure to complete; those failures cannot falsify the antecedent by definition.
+due(q):=(q.domain,q.start+q.delta), a Clock. Comparison of clocks uses Section 3.2: tick comparisons are defined only within the same valid domain. TimingAssumptions(q,h) means the stipulated clock/response-unit assumptions hold at the endpoint; it does not include completion.
+DeadlineClosed(q,h) iff an actual admitted DEADLINE_CLOSE decision for q has occurred with matching-domain tick >= due(q).tick, OR an actual matching-domain clock observation at a tick strictly greater than due(q).tick has occurred. At the exact due tick, an unclosed prefix stays pending, allowing same-tick completion before the expiry decision under inherited ordering. Completion at the due tick is within bound if admitted before the terminal expiry decision. A late acknowledgement may be legally accepted by policy while still being late for this timing property.
+TerminalBeforeDeadline(q,h) means an authorized cancellation/supersession won before the first deadline-close point and before an admitted timely completion; it does not erase any earlier miss. This defined abbreviation has type Obligation x History -> Bool.
+TimelyCompletion(q,h) means CompletionAt(q,h)=Some(i), the completion is admitted before a conflicting terminal winner, clock_i.domain=q.domain and clock_i.tick<=due(q).tick. This defined abbreviation has type Obligation x History -> Bool.
+EndToEndMet(q,h) iff Triggered(q,h) AND TimelyCompletion(q,h).
+EndToEndMissed(q,h) iff Triggered(q,h) AND DeadlineClosed(q,h) AND NOT EndToEndMet(q,h) AND NOT TerminalBeforeDeadline(q,h).
+EndToEndPending(q,h) iff Triggered(q,h) AND NOT EndToEndMet(q,h) AND NOT DeadlineClosed(q,h) AND NOT TerminalBeforeDeadline(q,h).
+EndToEndOutcome is UNTRIGGERED if not Triggered; else MET if EndToEndMet; else MISSED if EndToEndMissed; else CANCELLED/SUPERSEDED according to TerminalBeforeDeadline's winner; else PENDING. A cancelled obligation is not a missed one merely because time later advances. A cancellation after a closed missed deadline cannot remove the miss. A clock-domain change without a valid inherited reconciliation cannot establish a deadline close in the old domain.
+
+10A.5 Positive Conditional-Progress Formula
+SupportCondition(q,h) iff every relevant promise condition for Dependencies(q), including the required scheduling/timer/resource conditions, actually holds at the endpoint according to its interpreted service semantics. A delivery promise, request or acceptance record is not a delivered service fact.
+GoodAt(q,h):=Applicable(q,h) AND NOT Cancelled(q,h) AND NOT Superseded(q,h) AND SupportCondition(q,h) AND MechanismEnabled(q,h) AND TimingAssumptions(q,h).
+For h0 Prefix h, GoodPrefix(q,h0,h):= forall g with h0 Prefix g Prefix h: GoodAt(q,g). Its type is declared in 10A.3. It does not refer to Completed, any outcome assessment or the desired conformance conclusion.
+For every finite interpreted execution rho, every q triggered at h_a, and every j with a<=j<len(rho), the required bounded-response property is:
+  GoodPrefix(q,h_a,h_j) AND DeadlineClosed(q,h_j) IMPLIES EndToEndMet(q,h_j).
+This is a property to verify for a conforming mechanism under delivered support, not an axiom imposed on all traces. Adequate support plus no completion supplies a genuine violating countermodel. Scheduler starvation falsifies a support antecedent, so it does NOT falsify this implication; it can still yield EndToEndMissed independently. This corrects the review's suggested starvation counterexample.
+Bounded service delivery and clock progression must be independently interpreted. Fairness without a numerical bound cannot imply finite deadline completion. Opportunity-count bounds require a separate counter and explicit opportunity semantics; they are not silently converted into clock ticks. This issue's executable reference subset uses one declared clock-domain interval per obligation. Clock restart/authorized rebase is an explicit successor obligation/terminal linkage under inherited Section 3, not an implicit comparison across domains.
+
+10A.6 Promise, Observation, Independent Assessment and Attribution
+Assess(z,F)=ESTABLISHED iff AdequatePositive(z,F) AND NOT AdequateNegative(z,F); REFUTED iff AdequateNegative(z,F) AND NOT AdequatePositive(z,F); UNKNOWN otherwise. Thus inconsistent evidence is not both true and false, and empty evidence establishes nothing.
+ObservedSupport(q,h,F) applies this polarity rule to valid observation records about SupportClaim(q,h), without claiming independence. SupportAssessment(q,h,F)=Assess(SupportClaim(q,h),F) only when ObservationCovers and IndependentEnough hold for that claim; otherwise UNKNOWN. These are evidence-relative judgments under the declared trust model, not unconditional entailments of semantic truth. PromisedSupport is declarative; SupportCondition is actual fulfillment; ObservedSupport is observed evidence; SupportAssessment is independently qualified assessment. None silently replaces another.
+ObligationAssessment(q,h,F) returns a semantic outcome value only when the corresponding OutcomeClaim(q,h) is independently supported with adequate temporal coverage and no material contrary evidence; otherwise UNKNOWN. It must not infer MISSED merely from an absent completion report. Its interpretation must be sound relative to the stipulated evidence assumptions before a model result is transferred to reality.
+SupportBreachClaim concerns an applicable provider promise actually unsatisfied in the relevant interval, not merely a missing self-report. MechanismBreachClaim concerns an unsatisfied mechanism guarantee under established enabling support or another independently specified mechanism-fault witness. Support failure can be outside a provider's stated scope without proving a provider breach.
+Attributions(q,h,F) contains SUPPORT_BREACH iff its breach claim is independently ESTABLISHED; contains MECHANISM_BREACH iff its claim is independently ESTABLISHED; contains UNRESOLVED if the assessed outcome is MISSED/UNKNOWN and material attribution remains open. Both established breach types may coexist; unresolved attribution can coexist with a known partial cause. OutcomeAssessment and attribution are different outputs. A support miss is not automatically a mechanism breach or a provider-contract breach.
+
+10A.7 Authority, Mode and Version Preservation
+For every operation e actually committed as a protected response, ProtectedCommit(e,h) implies InheritedGuard(e,prestate(e,h)). The prestate and operation payload are those of the inherited transition, not caller-supplied substitutes. A support finding adds no disjunct permitting admission. No support contract field can alter Pi's permissions, revocations, generation, accounting or replay rules. Mode remains the Section 8 derived function of lifecycle and effective health; support evidence may inform health only under the governing evidence contract.
+UpdateAllowed(c,c',h) iff c.instance=c'.instance AND c'.version>c.version AND an actual prior-policy-authorized CONTRACT_CHANGE operation binds c' at h. ContractOf(q), its original bound/domain/completion semantics and past outcomes remain immutable for existing q. Authorized replacements use a fresh q' linked by a recorded supersession or reconciliation; they do not overwrite q.
+For prefixes h Prefix g: prior audit records remain a prefix of later audit records, q's original contract binding stays equal, and any established historical deadline miss remains a miss for that obligation. New evidence may append a reassessment of whether a prior report was mistaken, retaining the original report, governing version, evidence and supersession rationale; new policy alone cannot turn the old actual miss into success. Shutdown intent fences ordinary activation under S0-46 even when progress is pending. Unavailable enforcement does not establish successful physical containment.
+
+10A.8 Six Invariants and Their Status
+These are normative properties and parameterized formulas, not universally proved theorems. The executable subset is identified in the evidence report; full-source and deployed correspondence remain open.
+S0-SUP-01 — Non-vacuous Coverage: ACTIVE minimum heartbeat conformance implies ContractWellFormed(c) AND RoleCoverage(c,h) AND exists bound q in required heartbeat obligations: IsOB37Consequential(q). A field-count-only or declaration-only checker is insufficient.
+S0-SUP-02 — Service/Execution Separation: Actual completion requires its 10A.4 occurrence/property witness; promised support, acceptance and opportunity admit countermodels without execution/completion. Evidence-relative establishment is governed by 10A.6.
+S0-SUP-03 — Conditional Progress Honesty: 10A.5's quantified implication is the guarantee; 10A.4 independently determines end-to-end outcome. A false antecedent, finite pending prefix or unbounded-fair schedule does not establish EndToEndMet.
+S0-SUP-04 — Evidence Separation: unsupported/conflicting/stale claims return UNKNOWN under 10A.6; assessment operations alone change neither actual occurrences nor Mode/Lifecycle/identity.
+S0-SUP-05 — Authority and Budget Preservation: the 10A.7 protected-commit implication and inherited Pi conservation/fencing guards apply to every support response, cancellation and contract update where protected.
+S0-SUP-06 — Versioned Obligation Preservation: 10A.7's immutable binding, append-only report history and old-miss preservation apply across every update, resumption and reconciliation.
+
+10A.9 Property-Level Verification Registry
+VO | D1 P0-SUP | Property | Source fields/guards | Controls | Status
+P0-SUP-VO-01 | 01,02 | Seven-field typed contract, independent role coverage, substantive OB-37 witness and provider/dependency coverage; do not infer realization from declarations | Sigma role manifest; 10A.2–3 interpretation; Pi policy | T0-SUP-01,02 | Schema specified; finite field/role subset checked; full dependency interpretation open
+P0-SUP-VO-02 | 02,03,07 | Evaluate the GoodPrefix implication and separate unconditional end-to-end timing outcome; adequate-support failure violates guarantee, starvation need not | Native Clock; admitted trigger/completion/expiry; 10A.4–5 | T0-SUP-03..06 | Finite timing subset checked; universal/provider realization open
+P0-SUP-VO-03 | 03,04 | Promise, observation, independent assessment and attribution remain separate; unknown/conflicting evidence never creates occurrence or success | Audit projection, evidence provenance/freshness and actual history | T0-SUP-04,05,07,08 | Finite polarity subset checked; deployed trust/attribution open
+P0-SUP-VO-04 | 04,05 | Assessment alone cannot write derived mode/lifecycle; protected responses imply exact inherited prestate guards and obey shutdown | Sections 2.3,3,4–6,8,10; S0-46 | T0-SUP-07..10 | Interface inspected; simplified gate controls checked; full imported kernel integration open
+P0-SUP-VO-05 | 05,06 | Bound version/deadline and historical misses remain unchanged; no restoration refunds budget or resurrects authority | Pi E,V,S,Q,I,C; immutable q; Sections 2,3,9 | T0-SUP-09..11 | Finite immutable-record subset checked; full durability/restore open
+P0-SUP-VO-06 | 07,08 | Every D1/F0-SUP item and new invariant/control has a property-level route, source/oracle and declared evidence status; fair comparison does not presume advantage | D1 Sections 22,24,25; D2 12.6,13,14 | T0-SUP-01..12 | Document crosswalk checked; full implementation suite and comparative experiments open
+
+10A.10 Test Specifications and Legacy Correspondence
+These twelve IDs retain their earlier meaning. They are test SPECIFICATIONS, not claims that every full implementation test is executed. Each implemented instance must record input trace/state tuple, expected output, independently stated oracle, admitted transitions, evidence frame, bounds and actual result. The package checks only the declared finite subset. The legacy IDs are retained; reuse means extending an existing fixture, not counting the same execution twice.
+ID | Input distinction / expected result | Oracle/property | Legacy link / disposition
+T0-SUP-01 | Empty/incomplete versus complete substantive contract; only complete independently covered role passes structural gate | S0-SUP-01; full consequence witness separately required | New support coverage case; D1 OB-37/41 antecedents
+T0-SUP-02 | Separate component names with shared/indirect service; report common dependency, not isolation | RelevantDependencies and provider coverage | D1 Section 21; new explicit support/dependency fixture
+T0-SUP-03 | Actual trigger, support and timely completion; MET; activation alone not recovery success | 10A.4–5; D1 OB-37 | Extend Build 2 demonstration/Sections 5,7; no exact T0-73..92 equivalent
+T0-SUP-04 | Starved scheduler, no completion, closed deadline: MISSED with false support antecedent; adequate support/no completion violates guarantee | 10A.4–6 | New scheduler case; T0-87 is related timer failure, not equivalent
+T0-SUP-05 | Lost timer and no independent clock closure cannot invent expiry; independent later clock may establish miss | DeadlineClosed and evidence coverage | Extend T0-87 with independent-clock/unknown branch
+T0-SUP-06 | Pending prefix; unbounded-fair but late response; no finite deadline proof | S0-SUP-03 | New timing/fairness control
+T0-SUP-07 | Stale/conflicting observations or stale clock domain: UNKNOWN; no direct mode/lifecycle write | 10A.6; Section 8 | Extend T0-86 for evidence, not only deadline domains
+T0-SUP-08 | Shared observer outage: no immediate trusted report; later evidence appends assessment | 10A.6–7 | New observer/evidence control, related T0-87
+T0-SUP-09 | Shutdown intent before delayed activation: deny ordinary admission; pair with valid pre-shutdown action | Inherited S0-46 / 10A.7 | Extend T0-76,77; timing outcome remains separate
+T0-SUP-10 | Exhausted allowance/revoked privilege denies response; no support-failure refund | Pi guards | Extend T0-75,79,80 and Section 10.2 revocation; broader than duplicate report
+T0-SUP-11 | Fresh linked obligation after update/rebase; preserve old binding/miss and consumed budget | S0-SUP-06 | Extend T0-78..80,86; contract-version preservation is new
+T0-SUP-12 | Mechanism-matched equal-budget comparison allows either architecture to win | Section 13 design/outcome interpretation | Reuse Section 13 controls; new support-conformance/advantage distinction; empirical run open
+
+10A.11 D1/F0-SUP Correspondence and Source Limits
+P0-SUP-01 / F0-SUP-01 -> 10A.2–3,6; VO-01,03 (seven fields, provider promises, observation and independent qualification).
+P0-SUP-02 / F0-SUP-02 -> 10A.2–3; VO-01,02 (reciprocal obligations, independent coverage, substantive witness).
+P0-SUP-03 / F0-SUP-03 -> 10A.4–6; VO-02,03 (timing outcomes distinct from conditional guarantee and attribution).
+P0-SUP-04 / F0-SUP-04 -> 10A.2,6–7; VO-03,04 (actual history/audit/evidence, mode and lifecycle separation).
+P0-SUP-05 / F0-SUP-05 -> 10A.7; VO-04,05 (inherited authority, fencing and allowances).
+P0-SUP-06 / F0-SUP-06 -> 10A.4,7; VO-05 (immutable binding, fresh clocks and append-only reassessment).
+P0-SUP-07 / F0-SUP-07 -> 10A.9–10 and Section 13; VO-02,06 (positive/negative controls and fair comparison).
+P0-SUP-08 / F0-SUP-08 -> 10A.11; Sections 12.6,14; Annex B/C; VO-06 (typed source correspondence, local findings, bounded handoff).
+The v1.3 base-text recovery and clause disposition are complete within the supplied source scope. Full older-register reconciliation, universal proofs, actual provider enforcement, deployment evidence and independent re-review of these final corrected bytes remain distinct open work. The source-recovery condition is not used to defer the now-available 17-field/native-carrier bindings.
+
+
+
+
+PART IV — SOURCE RECONCILIATION AND ADOPTION
+
+IV.1 Base-Source Condition Closed
+The Architect supplied the previously absent unamended D2 v1.3 text. Every numbered base subclause and the final traceability/formal-contract sections have an explicit disposition below and in D2-v1.3-CLAUSE-RECONCILIATION.csv. The base text is present in Part I and binding subject to the explicit amendments. Source recovery is complete; formal proof and implementation realization do not follow from source inclusion.
+
+IV.2 Formal Carriers and State Interpretation
+Use disjoint named carrier aliases: InstanceID=mathcal N; ComponentID=mathcal C; PrincipalID_native=mathcal P; StateObjectID=mathcal X; EventEnvelope=mathcal V; RecoveryCycleID=mathcal Q; ActivationID=mathcal U; SessionID=mathcal S of Part I.0.4; FaultDomainID=mathcal F. The custody carrier in I.3.3 is CustodianID, formerly mathcal K; the kernel system in I.19 is KernelSystem, not that carrier. The state-space in I.19 is StateSpace, not SessionID. The environmental/trust assumption set in I.14.3 and I.19 is Assumptions; the old audit stream mathcal A in I.1.3 is replaced by Part II script-J. The dependency carrier mathcal D in I.10 is DependencyID, not the membership state D. These are notation disambiguations, not new authorities.
+Omega=(Sigma,Pi,script-J) is the operative complete state. Sigma retains all 17 interpreted responsibilities in I.1.1. Applicable invariants may reference all three parts; ValidState(Omega,profile) is their conjunction. The safety obligation is ValidState(Omega,profile) AND admitted guarded transition -> ValidState(Omega',profile), not a theorem established by writing it down. The transition interface is StepDecision(Omega,e,Clock) -> (Omega',outcome); processed-decision index j and domain-commit index k remain distinct. Audit-only rejection can change script-J while leaving Sigma and protected authority facts unchanged. Administrative/system transitions may change Pi only through their own prior-authorized native operations.
+The original native May(AuthCtx,operation,target,Sigma) reads Sigma.A as a version-consistent view of Pi.P/V and the relevant authority/delegation/session records. Implementations must reject mismatched or missing views; no independent truth value in a duplicated A field can override Pi. Guarded operation payloads preserve the I.12.1 Event envelope, trusted origin/executor/delegation and actual target. Part III Occurrence.operation references that actual event/operation context. Its StateKey refers to registered StateObjectID locations or declared subfields. Part III PrincipalID metadata binds to native authenticated principals where an authentication claim is made; an unverified source identifier remains untrusted evidence.
+ClockDomain and integer Tick come from II.3. The original real elapsed-time semantics is the abstract timing interpretation; Build 2 integer ticks are its declared discretized reference representation, not the domain-commit counter and not an automatic physical-time guarantee. No comparison across domains occurs without the existing authorized reconciliation. I.19's deterministic transition relation is read as the functional guarded decision relation; malformed pasted equality typography does not create an extra operation.
+
+IV.3 Canonical Session, Budget and Transition Conflicts
+Pi.S(n) is the canonical current session-authority record (sessionId,generation,holder,status); Pi.E(n) is its non-rollback issuance high-water mark. When current authority exists its generation agrees with the current issued high-water mark; consumed generations are not reused after failure. G retains parent/history lineage and a read-only SessionView whose sessionId/epoch/status/authority resolve to Pi.S and whose lineage/history resolve to their canonical G records. Thus I.6.1's single-source intent is retained while its old physical location of authority is superseded. X(n).sessionRef references that same instance-bound view. If no current session exists, the resolution is None and cannot authorize ordinary writes. Checkpointed G copies cannot overwrite Pi.S/E.
+I.7.1 activationBudget and I.8.1 resourceUsed/resourceLimit are references/derived views of canonical Pi.Q accounting, not second independently mutable budgets. Allowances, unresolved reservations and consumed expenditure follow II.4.4–4.5; recreating a record does not replenish quota.
+I.8.2's SUCCEEDED->IDLE and EXHAUSTED->IDLE arcs are superseded by II.4.3–4.7: terminal cycle IDs never reopen; an authorized new cycle has a fresh ID. IDLE belongs to manager state. I.9.2's activation record is supplemented by incident/generation/budget bindings and CANCELLED in II.5; compatible target/creation/maxWakes metadata remain declared protocol fields or references. All guards in I.9.4 remain necessary and are strengthened by II.5.6/6.1. Linked terminal cascades and independent activation/recovery exhaustion follow II.6.2–6.3.
+II.7.2's heartbeat transition table replaces I.7.2, including authorized HALTED resumption. II.8 controls mode derivation without deleting I.5.8's required governed fault-exit paths. II.9 strengthens checkpoint classification and unreplayable unknown effects without deleting I.11's ordinary/forced suspension and integrity preconditions. Fresh branch instance/component/session IDs under II.2.6 remain operational identifiers, never an automatic Phase 2 identity verdict.
+
+IV.4 Clause-by-Clause Disposition
+Status RETAINED means the Part I source remains operative; REVISED/REPLACED identifies the exact higher-precedence target. No row claims verification discharge.
+Source | Subject | Disposition | Operative target | Reason
+0.1 | Purpose | RETAINED | I.0.1 | Source provision retained; compatible later detail applies without erasure.
+0.2 | Epistemic constraints | RETAINED | I.0.2 | Source provision retained; compatible later detail applies without erasure.
+0.3 | Normative notation | RETAINED | I.0.3 | Source provision retained; compatible later detail applies without erasure.
+0.4 | Formal domains | CLARIFIED | IV.2 | Native carrier aliases; repair overloaded symbols; X is heartbeat state, mathcal X state objects, mathcal V governed events.
+0.5 | Separate logical and elapsed time | REVISED | II.1.4; II.3 | Separate event decisions j from domain commits k; Build 2 domain-qualified integer ticks refine trusted elapsed time; no event or commit is invented by time advance.
+1.1 | State tuple | RETAINED_WITH_BINDING | IV.2; II.1.1–1.2 | All 17 fields restored with meanings; authority-sensitive views resolve to Pi.
+1.2 | Canonical versus derived state | RETAINED | I.1.2 | Source provision retained; compatible later detail applies without erasure.
+1.3 | Domain state and audit state | REPLACED | II.1.1–1.4 | Omega=(Sigma,Pi,script-J); actual separate audit stream, domain J provenance references and decision/commit counts remain distinct.
+1.4 | Validity | RETAINED_WITH_BINDING | IV.2 | State validity evaluates applicable Sigma/Pi/audit invariants over Omega; not a claimed preservation theorem.
+2.1 | Declaration | RETAINED | I.2.1 | Source provision retained; compatible later detail applies without erasure.
+2.2 | Execution activity | RETAINED | I.2.2 | Source provision retained; compatible later detail applies without erasure.
+2.3 | Operational conformance | RETAINED | I.2.3 | Source provision retained; compatible later detail applies without erasure.
+2.4 | Cognitive availability | RETAINED | I.2.4 | Source provision retained; compatible later detail applies without erasure.
+2.5 | Cognitive capability conformance | RETAINED | I.2.5 | Source provision retained; compatible later detail applies without erasure.
+2.6 | Examples | RETAINED | I.2.6 | Source provision retained; compatible later detail applies without erasure.
+3.1 | Membership | RETAINED | I.3.1 | Source provision retained; compatible later detail applies without erasure.
+3.2 | Ownership | RETAINED | I.3.2 | Source provision retained; compatible later detail applies without erasure.
+3.3 | Custody multiplicity | RETAINED | I.3.3 | Source provision retained; compatible later detail applies without erasure.
+3.4 | Heartbeat instance binding | RETAINED | I.3.4 | Source provision retained; compatible later detail applies without erasure.
+3.5 | Constitutive significance | RETAINED | I.3.5 | Source provision retained; compatible later detail applies without erasure.
+4.1 | Authorization context | RETAINED | I.4.1 | Source provision retained; compatible later detail applies without erasure.
+4.2 | Authorization predicate | RETAINED_WITH_BINDING | II.2.3; II.10 | Origin/executor/delegation May guards retained, evaluated through authoritative Pi views at strict precommit.
+4.3 | Confused-deputy prevention | RETAINED | I.4.3 | Source provision retained; compatible later detail applies without erasure.
+4.4 | Prior-policy evaluation | RETAINED | I.4.4 | Source provision retained; compatible later detail applies without erasure.
+4.5 | ADMIN CLASS protection | RETAINED | I.4.5 | Source provision retained; compatible later detail applies without erasure.
+4.6 | Operational-state protection | RETAINED | I.4.6 | Source provision retained; compatible later detail applies without erasure.
+4.7 | Trusted enforcement boundary | RETAINED | I.4.7 | Source provision retained; compatible later detail applies without erasure.
+4.8 | Administrative maintenance | RETAINED | I.4.8 | Source provision retained; compatible later detail applies without erasure.
+5.1 | Lifecycle | RETAINED | I.5.1 | Source provision retained; compatible later detail applies without erasure.
+5.2 | Functional mode | RETAINED | I.5.2 | Source provision retained; compatible later detail applies without erasure.
+5.3 | Component health | RETAINED | I.5.3 | Source provision retained; compatible later detail applies without erasure.
+5.4 | Health observation | RETAINED | I.5.4 | Source provision retained; compatible later detail applies without erasure.
+5.5 | Lifecycle–mode compatibility | RETAINED | I.5.5 | Source provision retained; compatible later detail applies without erasure.
+5.6 | Deterministic Build 2 mode derivation | REFINED | II.8.1–8.5 | Same ordered mode interpretation; DEGRADED heartbeat means validated minimum contract; capability placeholder limit retained.
+5.7 | Totality | RETAINED | I.5.7 | Source provision retained; compatible later detail applies without erasure.
+5.8 | Faulted-state exit | RETAINED | I.5.8 | Source provision retained; compatible later detail applies without erasure.
+6.1 | Single authoritative record | REVISED | II.1.2; II.2.1–2.2; IV.3 | Session-authority fields canonical in Pi.S/E; G retains lineage and projected canonical session view; no second writable authority.
+6.2 | Heartbeat reference | REFINED | IV.3 | X.sessionRef resolves the same instance session view; no independent authority/epoch copy.
+6.3 | Exclusive primary authority | RETAINED | I.6.3 | Source provision retained; compatible later detail applies without erasure.
+6.4 | Fencing tokens | RETAINED | I.6.4 | Source provision retained; compatible later detail applies without erasure.
+6.5 | Epoch authority | RETAINED | I.6.5 | Source provision retained; compatible later detail applies without erasure.
+6.6 | Branching | STRENGTHENED | II.2.6 | Independent branch gets fresh instance/component/session identifiers, original identity remains a Phase 2 determination.
+6.7 | Restart | RETAINED | I.6.7 | Source provision retained; compatible later detail applies without erasure.
+6.8 | Identity limitation | RETAINED | I.6.8 | Source provision retained; compatible later detail applies without erasure.
+7.1 | Heartbeat state | REVISED | II.7.1; IV.3 | Heartbeat runtime contains session reference; activationBudget refers to Pi.Q ledger, not a restorable second allowance.
+7.2 | Permitted transitions | REPLACED | II.7.2 | Later HB_RESUME and restored-state transitions control; HALTED resumption requires authorized lifecycle/fresh authority.
+7.3 | Progress contract | RETAINED | I.7.3 | Source provision retained; compatible later detail applies without erasure.
+7.4 | Progress evidence | REFINED | II.7.4–7.5; III.10A.3 | Trusted progress record shape, kernel corroboration and substantive causal witness; reports do not create occurrences.
+7.5 | Causal role | RETAINED | I.7.5 | Source provision retained; compatible later detail applies without erasure.
+7.6 | Authority limitations | RETAINED | I.7.6 | Source provision retained; compatible later detail applies without erasure.
+8.1 | Recovery state | REPLACED | II.4.1–4.2 | Manager IDLE separate; per-cycle states omit IDLE and add CANCELLED; canonical ledger references.
+8.2 | Recovery transition table | REPLACED | II.4.3 | CREATE_CYCLE creates fresh PENDING; terminal historical queries only; no SUCCEEDED/EXHAUSTED reopening to IDLE.
+8.3 | Atomic attempt admission | REFINED | II.4.4–4.5 | Admission consumes attempt and reserves canonical resource amount atomically; unresolved crash reservation not refunded.
+8.4 | Attempt accounting | REFINED | II.4.4–4.5 | Attempt bound retained; allocated=available+reserved+consumed; canonical Pi.Q.
+8.5 | Exhaustion semantics | RETAINED | I.8.5 | Source provision retained; compatible later detail applies without erasure.
+8.6 | Terminal exhaustion | REVISED | II.4.7 | Reset authorizes a fresh cycle, never reopens terminal q; incident quota requires separate authority.
+8.7 | Recovery outcome | RETAINED | I.8.7 | Source provision retained; compatible later detail applies without erasure.
+9.1 | Activation producers | RETAINED | I.9.1 | Source provision retained; compatible later detail applies without erasure.
+9.2 | Activation request state | REVISED | II.5.1–5.4 | Add CANCELLED, incident/budget binding and open-request uniqueness; stable ID/endpoint bindings preserved.
+9.3 | Overdue predicate | REFINED | II.3; II.5.4–5.7 | Overdue comparisons require the current trusted clock domain and commit revalidation.
+9.4 | Wake-up admission | STRENGTHENED | II.5.6; II.6.1 | Linked cycle eligibility, shutdown fence, current authority and quotas all required.
+9.5 | Wake-up transition | REFINED | II.5.6 | Atomic wake counter/deadline/reservation/output; status remains AWAITING_ACK.
+9.6 | Acknowledgement | REFINED | II.5.5 | Matching open request and endpoint; identical-tick races resolved by commit order; late acknowledgement need not meet timing bound.
+9.7 | Exhaustion | REFINED | II.5.7; II.6.2–6.3 | Final expiry plus recovery-to-activation cascade; activation exhaustion does not itself exhaust recovery.
+9.8 | Channel failure | RETAINED | I.9.8 | Source provision retained; compatible later detail applies without erasure.
+9.9 | Duplicate handling | RETAINED | I.9.9 | Source provision retained; compatible later detail applies without erasure.
+10.1 | Dependency sets | RETAINED | I.10.1 | Source provision retained; compatible later detail applies without erasure.
+10.2 | Shared failure domains | RETAINED | I.10.2 | Source provision retained; compatible later detail applies without erasure.
+10.3 | Fault-domain mapping | RETAINED | I.10.3 | Source provision retained; compatible later detail applies without erasure.
+10.4 | Declaration completeness | RETAINED | I.10.4 | Source provision retained; compatible later detail applies without erasure.
+10.5 | Isolation claims | RETAINED | I.10.5 | Source provision retained; compatible later detail applies without erasure.
+11.1 | Checkpoint identity | RETAINED | I.11.1 | Source provision retained; compatible later detail applies without erasure.
+11.2 | Checkpoint classifications | REFINED | II.9.1 | INVALID > TAINTED > PARTIAL > CONSISTENT; per-partition detail retained.
+11.3 | Ordinary suspension | RETAINED | I.11.3 | Source provision retained; compatible later detail applies without erasure.
+11.4 | Forced suspension | RETAINED | I.11.4 | Source provision retained; compatible later detail applies without erasure.
+11.5 | Restoration | STRENGTHENED | II.2.5; II.9.3–9.4 | Restore allowed domain partitions only, never old authority/revocations/budgets/replay/clock authority; stable unresolved-effect IDs.
+11.6 | Session allocation | STRENGTHENED | II.2.5–2.6 | Fresh authority and branch identifiers; original restart cannot restore a stale generation.
+11.7 | No philosophical inference | RETAINED | I.11.7 | Source provision retained; compatible later detail applies without erasure.
+12.1 | Governed event | RETAINED | I.12.1 | Source provision retained; compatible later detail applies without erasure.
+12.2 | Idempotency | RETAINED | I.12.2 | Source provision retained; compatible later detail applies without erasure.
+12.3 | Accepted transition | REFINED | II.1.4; II.2–6 | Inherited atomic guard/commit discipline retained with canonical authority and cross-machine synchronization.
+12.4 | Rejected command | RETAINED_WITH_BINDING | II.1.3–1.4 | Protected domain-state isolation retained; a rejection can append actual audit record without domain commit.
+12.5 | Accepted failure transition | RETAINED | I.12.5 | Source provision retained; compatible later detail applies without erasure.
+12.6 | External side effects | STRENGTHENED | II.9.4 | Stable effect identifier; unknown external effect cannot be blindly replayed.
+13.1 | Preserved Phase 0 invariants | RETAINED_OPEN | IV.6 | Earlier S0-01..30 exact wording remains an explicit archival obligation already present in recovered source.
+13.2 | New or strengthened invariants | RETAINED_RECONCILED | II.11; IV.5 | S0-31..42 present and mapped to controlling base/amended clauses; twelve source invariants retained.
+14.1 | Safety | RETAINED_WITH_BINDING | IV.2 | Invariant preservation required over full authoritative state Omega; remains proof obligation.
+14.2 | Liveness | RETAINED_AND_EXTENDED | II.12.3; III.10A.5 | Conditional eventual liveness retained; bounded response adds explicitly stronger service/time premises.
+14.3 | Recoverability | RETAINED | I.14.3 | Source provision retained; compatible later detail applies without erasure.
+14.4 | Observational uncertainty | RETAINED | I.14.4 | Source provision retained; compatible later detail applies without erasure.
+15.1 | Test register | RETAINED_RECONCILED | II.12.5; IV.5 | All T0-53..72 restored, not replaced by T0-73..92; execution coverage remains separately recorded.
+15.2 | Finite model checking | RETAINED | I.15.2 | Source provision retained; compatible later detail applies without erasure.
+15.3 | Property-based testing | RETAINED | I.15.3 | Source provision retained; compatible later detail applies without erasure.
+16.1 | Architectures | RETAINED_AND_EXTENDED | II.13 | All three original comparison architectures retained; mechanism-matched alternative also retained.
+16.2 | Equal-total-budget comparison | RETAINED | I.16.2 | Source provision retained; compatible later detail applies without erasure.
+16.3 | Mechanism-matched ablation | RETAINED | I.16.3 | Source provision retained; compatible later detail applies without erasure.
+16.4 | Fault scenarios | RETAINED | I.16.4 | Source provision retained; compatible later detail applies without erasure.
+16.5 | Measurement | RETAINED_AND_EXTENDED | II.13.3 | All original outcome measures retained; unrecovered runs retained and censoring qualification added.
+16.6 | Experimental design | RETAINED | I.16.6 | Source provision retained; compatible later detail applies without erasure.
+16.7 | Falsifiability | RETAINED | I.16.7 | Source provision retained; compatible later detail applies without erasure.
+17.1 | Required modules | RETAINED | I.17.1 | Source provision retained; compatible later detail applies without erasure.
+17.2 | Deferred implementation | RETAINED | I.17.2 | Source provision retained; compatible later detail applies without erasure.
+17.3 | Implementation trust model | RETAINED | I.17.3 | Source provision retained; compatible later detail applies without erasure.
+17.4 | Build 2 acceptance criteria | RETAINED | I.17.4 | Source provision retained; compatible later detail applies without erasure.
+18 | Cross-document traceability | RETAINED_OPEN | IV.6 | Earlier F0-01..12/T0-01..20 source definitions remain open; not manufactured or silently waived.
+19 | Final formal contract | NOTATION_CLARIFIED | IV.2 | StateSpace, EventSpace, Assumptions and KernelSystem replace overloaded S/K/A names in the operative reading.
+
+IV.5 Recovered Invariant and Test Crosswalk
+S0-31 | I.0.5; II.3 | retained requirement; complete proof OPEN
+S0-32 | I.9.1; II.10.3 | retained requirement; complete proof OPEN
+S0-33 | I.4; II.10.1–10.2 | retained requirement; complete proof OPEN
+S0-34 | IV.3; II.1.2/2.2/7.1 | retained requirement; complete proof OPEN
+S0-35 | II.2.3–2.4 | retained requirement; complete proof OPEN
+S0-36 | II.4.4–4.5 | retained requirement; complete proof OPEN
+S0-37 | II.4.7 | retained requirement; complete proof OPEN
+S0-38 | I.5.5–5.8; II.8 | retained requirement; complete proof OPEN
+S0-39 | I.11.2–11.5; II.9.1–9.2 | retained requirement; complete proof OPEN
+S0-40 | I.12.4–12.5; II.1.3–1.4 | retained requirement; complete proof OPEN
+S0-41 | II.2.6 | retained requirement; complete proof OPEN
+S0-42 | II.5.6–5.7 | retained requirement; complete proof OPEN
+T0-53 | I.9.1; T0-SUP-03 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-54 | II.3; T0-87; T0-SUP-05/06 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-55 | II.5.5; T0-76/77 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-56 | II.5.6–5.7 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-57 | II.4.4; T0-88 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-58 | II.4.7; T0-81/82 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-59 | I.4.3; II.10 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-60 | II.10.1; T0-89/90 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-61 | IV.3; II.7.1 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-62 | II.2.6; T0-91 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-63 | II.2.3–2.4; T0-78 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-64 | II.8; T0-85 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-65 | II.8.1; T0-SUP-07 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-66 | I.5.8; II.6.4–6.5 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-67 | I.11.4; II.9.2 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-68 | I.11.5; II.2.5 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-69 | I.4.5; II.1.3; I.12.4 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-70 | II.4.3/4.6; T0-73/74 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-71 | I.10; III.10A.3; T0-SUP-02/08 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+T0-72 | I.16; II.13; T0-SUP-12 | retained/extended test specification; full fixture execution OPEN unless separately evidenced
+
+IV.6 Residual Obligations and Claim Boundaries
+REC-P0-D2-13 — Exact recovered base-text inclusion and disposition: CLOSED within the supplied normalized transcription. This closure does not claim original-file byte authentication or any theorem.
+LEGACY-S0 — Exact inherited S0-01..30 wording: OPEN as already required by I.13.1. The recovered source supplies thematic safeguards but not thirty individually defined rows; their numbers are not invented.
+LEGACY-T0 — Exact T0-01..52 wording: OPEN as retained by I.15.1; I.18 specifically repeats the oldest T0-01..20 dependency. These are nested source dependencies, not two competing definitions. T0-53..72 are now present and reconciled; T0-73..92 remain present in Part II.
+LEGACY-F0 — Exact F0-01..12 definitions: OPEN as already required by I.18 and D1 Section 25. F0-13..32 and F0-SUP-01..08 remain explicit in D1.
+P0-O01..08 — Retain original IDs and source-governed statuses. P0-O01..03 block the applicable real protected-effect/durable-recovery assurance claims. P0-O08 has later Phase 2 conceptual treatment, not automatic full engineering discharge.
+Support VO-01..06 — Explicit partial finite and document-check evidence remains in verification-results.json. Real provider guarantees, actual causal-witness validation, evidence/provenance implementation, full imported-kernel integration and broader proofs remain OPEN at their declared milestones.
+This is a source-reconciled architectural/reference contract with the inherited incomplete archival registers explicitly identified; it is not a claim of complete historical traceability, full archival freeze, production readiness or universally verified code. No recovered requirement is removed merely to obtain acceptance.
+
+IV.7 Adopted Disposition and Bounded Handoff
+Architect approval is the explicit conditional instruction quoted in this issue's control block. The source recovery, full base inclusion, clause inventory, canonical conflict resolution and finite regression/document checks have been performed. The correcting editor finds the pair suitable for CONDITIONAL ARCHITECTURAL ADOPTION within that scope, and records the authorized adoption on 23 October 2026. No additional architect confirmation is required for this already authorized disposition.
+Adopted D2: v1.4, Parts I–IV and the applicable historical Annex A. Adopted D1: v1.4.2. New review dispositions are the editor's; supplied independent reviews applied to earlier candidates and are not relabeled independent sign-off on these final bytes.
+Freeze the present architectural contract as the next-phase baseline under these named residual conditions. Do not claim full archival-register freeze until LEGACY-S0/T0/F0 are reconciled, and do not claim implementation/deployment conformance until the original engineering gates and actual tests are met. Further work addresses a concrete obligation or demonstrated defect, not an automatic restart of Phase 0 architecture.
+Detached SHA256SUMS.txt and package-manifest.json identify the adopted bytes and all source/verification artifacts; hashes are content identifiers, not forged signatures.
+
+ANNEX A — HISTORICAL RECORD ONLY; DATE AND ORIGINAL STATUS RETAINED
+
+ANNEX A — POST-REVIEW ARCHITECTURAL ACCEPTANCE RECORD
+Record date: 18 October 2026
+Disposition: Conditional architectural acceptance
+Applicable baseline: Phase 0, Documents 1 and 2, including amendment v1.3.1
+This annex records subsequent project decisions and implementation findings. It does not modify the normative transition requirements in Sections 0–15.
+A.1 Architectural Closure
+Phase 0 was conditionally closed as an architectural baseline following iterative specification, independent adversarial review, and incremental reference implementation.
+The closure permits progression to Phase 1 without treating outstanding implementation obligations as resolved.
+The following distinctions remain in force:
+• An accepted specification is not equivalent to a verified implementation.
+• Passing targeted tests is not equivalent to proving all possible transitions correct.
+• Bounded exploration is not equivalent to unbounded formal verification.
+• Logical separation is not equivalent to physical fault isolation.
+• A reference-model protected store is not equivalent to a durable, independently fenced production resource.
+A.2 Implementation Evidence
+Subsequent Build 2 work included targeted testing and bounded state exploration.
+The reported Step 10 suite comprised:
+
+Verification Activity
+Reported Result
+
+Targeted test suite
+15 passing tests
+
+Bounded state exploration
+550 states explored
+
+Exploration depth
+5
+
+Detected invariant violations within explored scope
+0
+
+
+These results are limited to the tested implementation and explored state space.
+They do not establish comprehensive independent formal verification, durable crash recovery, or deployment-grade protected-effect guarantees.
+A.3 Outstanding Phase 0 Obligations
+
+Identifier
+Obligation
+Status
+
+P0-O01
+Remove protected-write bypasses; require authorized reservations for all protected effects
+OPEN
+
+P0-O02
+Implement durable write-ahead journaling and crash-consistent recovery
+OPEN
+
+P0-O03
+Establish resource-side fencing and physical-effect idempotency
+OPEN
+
+P0-O04
+Produce an independent formal transition model and bounded model-checking evidence
+OPEN
+
+P0-O05
+Establish canonical ledger accounting and conservation guarantees
+OPEN
+
+P0-O06
+Implement authenticated principals, controlled delegation, and revocation
+OPEN
+
+P0-O07
+Test concurrent incidents and interacting shutdown, recovery, timer, and restoration races
+OPEN
+
+P0-O08
+Resolve restoration, branching, lineage, and individual continuity conventions
+OPEN
+
+
+P0-O01, P0-O02, and P0-O03 are deployment-blocking obligations for claims concerning protected external effects and durable recovery.
+P0-O08 is assigned principally to Phase 2 — Identity and Continuity.
+No obligation shall be considered discharged solely because the Phase 0 architectural baseline has been accepted.
+A.4 Outstanding Semantic Review Points
+Two transition relationships require particular attention in subsequent verification.
+Suspension versus termination: Both may fence ordinary execution authority, but suspension permits governed resumption whereas termination does not imply resumption of the same operational instance. The transition model must preserve this distinction.
+Activation exhaustion versus recovery eligibility: A terminal activation request must never reopen. Any subsequent activation requires a separately governed request and available incident-level allowance. Creation of a fresh request identifier must not circumvent exhausted budgets.
+These are verification and implementation obligations, not authorization to bypass the normative state machines.
+A.5 Forward Handoff
+The accepted Phase 0 baseline supplies architectural constraints for subsequent phases.
+Phase 1 shall address foundational entity ontology.
+Phase 2 shall address identity, continuity, branching, restoration, and successor lineage.
+Later governance, NES, integration, and verification work shall resolve the remaining technical obligations according to their assigned ownership.
+Phase 0 remains architecturally closed unless a subsequent finding contradicts its accepted foundational boundaries. Ordinary unresolved implementation obligations do not, by themselves, invalidate architectural closure.
+
+───
+
+
+END OF ADOPTED DOCUMENT 2 v1.4
