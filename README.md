@@ -1,3 +1,9 @@
+> **Repository navigation:** [Start here](docs/START-HERE.md) · [Architecture index](docs/ARCHITECTURE-INDEX.md) · [Verification](verification/README.md) · [Original Systemic Algorithms](systemic-algorithms/README.md)
+>
+> Specifications are architectural research baselines, not implementation certification. Phase 4 D2 remains conditionally adopted; Phase 5 D2 is under development.
+
+---
+
 Project NNNC
 
 Neutral Neural Network Core
